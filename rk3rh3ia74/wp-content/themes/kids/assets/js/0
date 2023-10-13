@@ -1,0 +1,235 @@
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function (d, w) {
+  w.addEventListener("load", function () {
+    // 投稿カテゴリー
+    if (d.body.classList.contains("post-type-post") && !d.body.classList.contains("taxonomy-category")) {
+      var parent_check_script = function parent_check_script() {
+        var categoryInput = document.querySelectorAll("#taxonomy-category .children input");
+
+        function parentNodes(checked, nodes) {
+          var parents = nodes.parentElement.parentElement.parentElement.previousElementSibling.querySelector("input");
+
+          if (parents) {
+            parents.checked = checked;
+            parentNodes(checked, parents);
+          }
+        }
+
+        categoryInput.forEach(function (input) {
+          input.addEventListener("change", function () {
+            var checked = this.checked;
+            var siblingInputs = this.parentElement.parentElement.nextElementSibling.querySelectorAll("label input");
+            siblingInputs.forEach(function (siblingInput) {
+              checked = checked || siblingInput.checked;
+            });
+            parentNodes(checked, this);
+          });
+        });
+      };
+
+      var uncheckOtherInputs = function uncheckOtherInputs(event) {
+        // クリックされたチェックボックスの要素を取得
+        var clickedCheckbox = event.target; // #categorychecklistの直下のli要素を全て取得
+
+        var listItems = d.querySelectorAll("#categorychecklist > li"); // チェックを外す対象のinput要素のリストを作成
+
+        var inputsToUncheck = [];
+        listItems.forEach(function (li) {
+          // クリックされたチェックボックス以外のinput要素を全て取得し、inputsToUncheckに追加
+          if (li !== clickedCheckbox.closest("li")) {
+            var inputs = li.querySelectorAll("input");
+            inputs.forEach(function (input) {
+              inputsToUncheck.push(input);
+            });
+          }
+        }); // inputsToUncheckの全てのチェックを外す
+
+        inputsToUncheck.forEach(function (input) {
+          input.checked = false;
+        });
+      };
+
+      // チェックボックス要素の取得関数
+      var getCheckboxElements = function getCheckboxElements() {
+        return document.querySelectorAll("#categorychecklist > li > ul > li > label > input");
+      }; // チェックボックスの変更イベントを追加
+
+
+      d.addEventListener("DOMContentLoaded", function () {
+        parent_check_script();
+      });
+      var addButton = d.getElementById("category-add-submit"); // 初期ロード時にクラスを追加
+
+      d.body.classList.add("add-notSelectParent"); // ボタンの無効化・有効化を管理する関数
+
+      var toggleButtonState = function toggleButtonState(disable) {
+        addButton.disabled = disable;
+      }; // 初期状態でボタンを無効化
+
+
+      toggleButtonState(true);
+      var selectElement = d.getElementById("newcategory_parent");
+      selectElement.addEventListener("change", function () {
+        if (d.body.classList.contains("add-notSelectParent")) {
+          toggleButtonState(false); // クラスがある場合はボタンを有効化
+        } else {
+          toggleButtonState(true); // クラスがない場合はボタンを無効化
+        }
+      });
+      /*-------- 
+      カテゴリ追加の項目を消す
+      ---------*/
+      // postform クラスを持つ要素を取得
+
+      var postForm = d.querySelector(".postform");
+      var firstOption = postForm.querySelector("option");
+      firstOption.hidden = true;
+      /*-------- 
+      親要素のチェックボックス
+      ---------*/
+
+      var checkboxes = d.querySelectorAll("#categorychecklist > li > label > input");
+      checkboxes.forEach(function (checkbox) {
+        checkbox.classList.add("add-parent");
+        checkbox.style.display = "none";
+        checkbox.parentNode.classList.add("add-parentLabel");
+        checkbox.addEventListener("click", uncheckOtherInputs);
+      });
+      getCheckboxElements().forEach(function (checkbox) {
+        checkbox.addEventListener("click", function () {
+          var _this = this;
+
+          // チェックされた要素の値を取得
+          var checkedValue = this.value; // 他のチェックボックスのチェックを解除
+
+          getCheckboxElements().forEach(function (otherCheckbox) {
+            if (otherCheckbox !== _this && otherCheckbox.value !== checkedValue) {
+              otherCheckbox.checked = false;
+            }
+          });
+        });
+      }); // チェックボックス要素の変更を監視する
+
+      getCheckboxElements().forEach(function (checkbox) {
+        checkbox.addEventListener("click", function (event) {
+          // チェックボックス要素にチェックが入った場合の処理
+          if (checkbox.checked) {
+            // checkboxから上位のinput要素を取得
+            var parentInput = checkbox.closest("input");
+            var parent = parentInput.parentElement.parentElement.parentElement.parentElement;
+            var inputInLabel = parent.querySelector("label > input"); // 他のチェックボックスのチェックを外す
+
+            var _checkboxes = document.querySelectorAll("#categorychecklist > li > label > input");
+
+            _checkboxes.forEach(function (cb) {
+              if (cb !== inputInLabel) {
+                cb.checked = false;
+              }
+            });
+
+            if (inputInLabel) {
+              inputInLabel.checked = true;
+            }
+          }
+        });
+      });
+    } // 投稿カテゴリー管理ページ
+
+
+    if (d.body.classList.contains( true && "taxonomy-category")) {
+      d.querySelector('option[value="-1"]').remove();
+    }
+  });
+})(document, window);
+
+/***/ })
+/******/ ]);

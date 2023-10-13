@@ -1,0 +1,56 @@
+@function getSize( $size , $width: 750 ) {
+  @return #{ $size / $width * 100 };
+}
+
+@function calcvw($num, $width: 375px) {
+  @return (1vw * $num / $width * 100);
+}
+
+@function ls($tracking) {
+  @return ($tracking / 1000) + em;
+}
+
+@function lh($tracking,$fontsize) {
+  @return ($tracking / $fontsize);
+}
+
+
+
+
+//指定したclassがネスト内にあるかチェック
+@function is-inside($target) {
+  $replacedSelector: #{selector-replace(&, $target, ".replaced")};
+  $nestedAllSelector: #{&};
+  @return if($replacedSelector != $nestedAllSelector, true, false);
+}
+
+//ネストされたセレクターの直前の親セレクターを取得する関数
+//.hoge .hoge__box だと .hoge__box を取得
+@function parent($value) {
+  $selector: $value;
+  $array: "";
+  $space: if(
+    str-index($selector, " "),
+    str-index($selector, " "),
+    0
+  ); //セレクターのスペースの位置を保存※スペースがなければ0
+
+  //セレクターにスペースがあれば繰り返し
+  @while $space > 0 {
+    $selector: str-insert(
+      $selector,
+      ",",
+      $space
+    ); //スペースの位置に,（カンマ）を挿入
+    $array: selector-parse($selector); //配列に変換
+    //  // $l: length($array);
+    $selector: #{nth($array, length($array))}; //配列の最後を取得
+    $space: if(
+      str-index($selector, " "),
+      str-index($selector, " "),
+      0
+    ); //セレクターのスペースの位置を保存※スペースがなければ0
+  }
+  @return #{$selector};
+}
+

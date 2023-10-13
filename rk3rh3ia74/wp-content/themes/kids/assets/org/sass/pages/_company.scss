@@ -1,0 +1,534 @@
+@mixin companyTitleStyle {
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  position: relative;
+  text-align: center;
+  color: $primary-b;
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 3px;
+    width: getSize(61vw);
+    left: 50%;
+    bottom: getSize(-26vw);
+    transform: translateX(-50%);
+    background-color: #64aee5;
+    @include media(pc,min){
+      width: 61px;
+      bottom: -26px;
+    }
+  }
+}
+.company-kv_outer {
+  position: relative;
+  &:after {
+    content: '';
+      width: 100%;
+      height: getSize(32vw);
+      position: absolute;
+      display: block;
+      left: 0;
+      top: calc(100% - 1px);
+      background-image: url($images + 'company/archi.png');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    @include media(pc,min){
+      top: 0;
+      height: 34.28vw;
+      background-image: url($images + 'company/pc/archi.png');
+      background-color: #fff;
+      background-position-y: calc((var(--vw) * 100 - 1400px) * (-480 / 1400));
+    }
+    @media screen and (min-width:$width) and (max-width:1400px) {
+      background-position-y: top;
+      height: 480px;
+    }
+  }
+}
+.company-kv {
+  @include media(pc,min){
+    max-width: calc(1400px - 97.2px * 2);
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+}
+.company-kv_inner {
+  padding-top: getSize(583vw);
+  position: relative;
+  @include fadeUp;
+  &.add-inView {
+    @include show;
+  }
+  @include media(pc,min){
+    margin-left: 52.8px;
+    padding-top: 480px;
+  }
+}
+.company-kv_ttl {
+  font-size: getSize(30vw);
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  color: #fff;
+  position: absolute;
+  top: getSize(57.7vw);
+  left: getSize(52vw);
+  @include media(pc,min){
+    font-size: 30px;
+    top: 74px;
+    left: 0;
+  }
+}
+.company-kv_bg {
+  position: absolute;
+  top: 0;
+  &.mod-gfd {
+    width: getSize(334.5vw);
+    top: getSize(182vw);
+    @include media(sp,max){
+      left: getSize(42vw);
+    }
+    @include media(pc,min){
+      width: 431px;
+      top: 55px;
+      right: 370px;
+    }
+  }
+  &.mod-yokohama {
+    width: getSize(345vw);
+    top: getSize(17.5vw);
+    right: 0;
+    @include media(pc,min){
+      width: 343px;
+      top: 97px;
+      z-index: 1;
+    }
+  }
+}
+.company-message {
+  background-color: #fff;
+  margin-top: getSize(29vw);
+  padding: getSize(52vw) getSize(50vw) getSize(109vw) getSize(50vw);
+  @include media(pc,min){
+    margin-top: 0;
+    padding: 1243px 0 0 0;
+    position: relative;
+  }
+}
+.company-message_inner {
+  @include media(pc,min){
+    max-width: 1400px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+}
+.company-message_inner_inner {
+  @include media(pc,min){
+    width: 631px;
+    position: absolute;
+    top: 133px;
+    left: calc(50% - 100px);
+  }
+}
+.company-message_ttl {
+  font-size: getSize(24vw);
+  line-height: 1;
+  color: $primary-b;
+  @include companyTitleStyle();
+  text-align: left;
+  display: inline-block;
+  letter-spacing: 0.15em;
+  @include fadeUp;
+  &.add-inView {
+    @include show;
+  }
+  @include media(pc,min){
+    font-size: 23px;
+  }
+  &:before {
+    background-color: #64aee5;
+    left: 0;
+    transform: translateX(0);
+  }
+}
+.company-message_subTtl {
+  font-size: getSize(31vw);
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  color: $primary-b;
+  white-space: nowrap;
+  margin-top: getSize(48vw);
+  @include fadeUp;
+  &.add-inView {
+    @include show;
+  }
+  @include media(pc,min){
+    font-size: 30px;
+    margin-top: 46px;
+    letter-spacing: .06em;
+  }
+}
+.company-message_wrap {
+  margin-top: getSize(58vw);
+  @include media(pc,min){
+    margin-top: 60px;
+  }
+}
+.company-message_textArea_text {
+  font-size: getSize(24vw);
+  letter-spacing: 0.05em;
+  line-height: lh(42,24);
+  text-align: justify;
+  @include fadeUp;
+  &.add-inView {
+    @include show;
+  }
+  @include media(pc,min){
+    font-size: 15px;
+    line-height: lh(32,15);
+    letter-spacing: 0.11em;
+  }
+  + .company-message_textArea_text {
+    margin-top: getSize(42vw);
+    @include media(pc,min){
+      margin-top: 31px;
+    }
+  }
+  &.mod-author {
+    text-align: right;
+    margin-top: getSize(47vw);
+    @include media(pc,min){
+      font-size: 17px;
+      margin-top: 39px;
+    }
+  }
+}
+.company-message_imgArea_img {
+  @include fadeUp;
+  &.add-inView {
+    @include show;
+  }
+  @include media(pc,min){
+    position: absolute;
+  }
+  &.mod-president {
+    width: getSize(261vw);
+    @include media(sp,max){
+      float: right;
+      margin: getSize(7vw) 0 0 getSize(25vw);
+    }
+    @include media(pc,min){
+      width: 323px;
+      top: 2px;
+      left: -394px;
+    }
+  }
+}
+.company-message_textArea_text_author {
+  @include media(pc,min){
+    position: relative;
+    top: -0.2em;
+  }
+}
+.company-info_outer {
+  padding-top: getSize(108vw);
+  margin-top: getSize(-109vw);
+  @include media(pc,min){
+    padding-top: 90px;
+    margin-top: -91px;
+  }
+}
+.company-info {
+  background-image: url($images + 'company/info-bg.jpg');
+  background-size: 100% getSize(2565vw);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  padding: getSize(45vw) getSize(46vw) getSize(66vw);
+  @include media(sp,max){
+    background-color: #F2F4FA;
+  }
+  @include media(pc,min){
+    padding: 44px 0 126px 0;
+    background-image: url($images + 'company/pc/info-bg.jpg');
+    background-size: 1400px 1405px;
+    background-position: center bottom;
+  }
+  @media screen and (min-width:1401px) and (max-width:1450px) {
+    background-size: 100% 100%;
+    background-position: center top;
+  }
+  @media screen and (min-width:1451px) {
+    background-size: 100% auto;
+    background-position: center top;
+  }
+}
+.company-info_ttl {
+  @include companyTitleStyle();
+  letter-spacing: 0.09em;
+  @include media(pc,min){
+    font-size: 23px;
+  }
+  &:before {
+    bottom: getSize(-16.2vw);
+    @include media(pc,min){
+      bottom: -6px;
+    }
+  }
+}
+.company-info_ttl_item {
+  margin-top: getSize(64vw);
+  border-top: 1px #646464 solid;
+  @include media(pc,min){
+    width: 1000px;
+    margin: 44px auto 0;
+  }
+  + .company-info_ttl_item {
+    margin-top: getSize(52vw);
+    @include media(pc,min){
+      margin-top: 34px;
+    }
+  }
+  &.mod-last {
+    padding-bottom: getSize(25vw);
+    border-bottom: 1px solid #646464;
+    @include media(pc,min){
+      border-top: none;
+      margin-top: 20px;
+      padding-bottom: 97px;
+    }
+    .company-info_ttl_item_inner.mod-adjust {
+      @include media(pc,min){
+        margin-top: 0;
+      }
+    }
+  }
+}
+.company-info_ttl_item_inner {
+  margin-top: getSize(38vw);
+  display: flex;
+  flex-wrap: wrap;
+  @include media(pc,min){
+    margin-top: 27px;
+  }
+  + .company-info_ttl_item_inner {
+    @include media(sp,max){
+      margin-top: getSize(1.75vw);
+    }
+    @include media(pc,min){
+      margin-top: 0;
+    }
+  }
+  &.mod-adjust {
+    margin-top: getSize(65vw);
+    @include media(pc,min){
+      margin-top: 41px;
+    }
+  }
+}
+.company-info_ttl_term {
+  font-size: getSize(24vw);
+  line-height: 2.38;
+  color: $primary-b;
+  font-weight: bold;
+  width: getSize(161.5vw);
+  letter-spacing: 0.1em;
+  @include media(pc,min){
+    font-size: 16px;
+    line-height: lh(39,16);
+    width: 207px;
+    padding-left: 41px;
+  }
+}
+.company-info_ttl_desc {
+  font-size: getSize(24vw);
+  line-height: 2.38;
+  font-weight: 500;
+  width: calc(100% - #{getSize(161.5vw)});
+  letter-spacing: 0;
+  @include media(pc,min){
+    font-size: 16px;
+    line-height: lh(39,16);
+    width: calc(100% - 207px);
+    letter-spacing: 0.1em;
+  }
+  &.mod-adjust {
+    line-height: 2.11;
+    @include media(sp,max){
+      margin-top: getSize(6vw);
+    }
+    @include media(pc,min){
+      letter-spacing: .19em;
+      display: flex;
+      flex-wrap: nowrap;
+    }
+  }
+}
+.company-info_ttl_desc_link {
+  font-weight: normal;
+  color: $primary-b;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 14.066667vw;
+  letter-spacing: 0.05em;
+  @include media(pc,min){
+    margin-left: 16px;
+    font-size: 14px;
+    position: relative;
+    top: -0.1em;
+  }
+  &::before {
+    content: '';
+    display: inline-block;
+    width: getSize(28vw);
+    height: getSize(28vw);
+    background-image: url($images + 'common/arrow2-reverse.svg');
+    background-size: 100% 100%;
+    margin-right: getSize(12vw);
+    position: relative;
+    top: 0.2em;
+    @include media(pc,min){
+      width: 17px;
+      height: 17px;
+      margin-right: 8.4px;
+    }
+  }
+}
+_::-webkit-full-page-media, _:future, :root .company-info_ttl_desc_link {
+  @include media(sp,max){
+    margin-left: 13vw;
+  }
+}
+.company-info_ttl_desc_list {
+  @include media(pc,min){
+    width: 49.6%;
+  }
+}
+.company-outer {
+  .parts-privacyMark {
+    margin: getSize(21.2vw) 0 0 getSize(-6vw);
+    justify-content: flex-start;
+    @include media(pc,min){
+      margin: -111px 0 0 392px;
+    }
+  }
+  .parts-privacyMark_img {
+    &.mod-iso {
+      width: 24.8vw;
+      @include media(pc,min){
+        width: 121px;
+      }
+    }
+    &.mod-privacyMark {
+      width: getSize(81.5vw);
+      margin-left: 5.6vw;
+      margin-top: getSize(3.6vw);
+      @include media(pc,min){
+        width: 54px;
+        margin: 2px 0 0 30px;
+      }
+    }
+  }
+}
+.company-history {
+  background-color: #fff;
+  padding: getSize(65.7vw) 0 getSize(118.7vw);
+  @include media(pc,min){
+    padding: 58px 0 247px;
+  }
+}
+.company-history_ttl {
+  @include companyTitleStyle();
+  margin-left: getSize(9vw);
+  letter-spacing: 0.3em;
+  font-size: getSize(23vw);
+  @include fadeUp;
+  &.add-inView {
+    @include show;
+  }
+  @include media(pc,min){
+    font-size: 23px;
+    margin-left: 7px;
+    letter-spacing: 0.4em;
+  }
+  &:before {
+    bottom: -0.7em;
+    left: 49.5%;
+    @include media(pc,min){
+      bottom: -4px;
+      left: 49.7%;
+    }
+  }
+}
+.company-history_list {
+  margin-top: getSize(93.2vw);
+  @include media(pc,min){
+    width: 1000px;
+    margin: 64px auto 0;
+  }
+}
+.company-history_item {
+  @include fadeUp;
+  &.add-inView {
+    @include show;
+  }
+  &.mod-paragraphNone {
+    padding-bottom: 11vw;
+    @include media(pc,min){
+      padding-bottom: 70px;
+    }
+  }
+}
+.company-history_item_wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  text-align: justify;
+  word-break:break-all;
+}
+.company-history_item_date {
+  width: getSize(166vw);
+  background-color: $primary-b;
+  color: #fff;
+  font-size: getSize(24vw);
+  line-height: lh(42,24);
+  padding: getSize(27vw) 0 getSize(27vw) 0;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  @include media(pc,min){
+    font-size: 15px;
+    width: 164px;
+    padding: 17px 0;
+  }
+}
+.company-history_item_desc {
+  width: calc(100% - #{getSize(166vw)});
+  background-color: #e9e9e9;
+  font-size: getSize(24vw);
+  line-height: lh(42,24);
+  padding: getSize(27vw) getSize(29.5vw) getSize(27vw) getSize(29.5vw);
+  letter-spacing: 0em;
+  @include media(pc,min){
+    font-size: 15px;
+    width: calc(1000px - 164px);
+    padding: 17px 36px 17px 36px;
+    letter-spacing: 0.1em;
+  }
+}
+.company-history_item_paragraph {
+  font-size: getSize(24vw);
+  line-height: 2.3;
+  padding: 1.65vw getSize(16vw) 3.25vw 25.9333333333vw;
+  letter-spacing: 0em;
+  text-align: justify;
+  word-break:break-all;
+  @include media(pc,min){
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    padding: 12px 30px 23px 200px;
+  }
+}

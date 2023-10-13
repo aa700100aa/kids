@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+@import "reset";
+
+// libs
+@import "libs/swiper";
+// @import "libs/perfect-scrollbar";
+
+/*
+ + mixin , variableのimportはここで呼び出す
+ +
+ + ※mixinで使われる可能性があるので、variableが先になるように
+ */
+
+@import "variables/common";
+@import "variables/fontfamily";
+@import "variables/skin";
+@import "variables/responsive";
+
+@import "mixins/common";
+@import "function/common";
+
+/*
+ +	core css
+ */
+@import "core";
+
+/*
+  +	partsのimportはここで呼び出す
+  */
+@import "parts/*";
+
+/*
+  +	pageのimportはここで呼び出す
+  */
+@import "pages/*";
+
+/*
+ +	utilのimportはここで呼び出す
+ */
+@import "util";
+
+/*
+ +	print対策用
+ */
+@media print {
+  html {
+    zoom: 0.8;
+  }
+}
+
+

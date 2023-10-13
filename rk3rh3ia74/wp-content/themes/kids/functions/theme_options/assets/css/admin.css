@@ -1,0 +1,433 @@
+#group_admin_menu figure {
+    margin: -1px 0 0;
+    padding: 15px 40px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    display: none;
+}
+#group_admin_menu figcaption {
+    display: none;
+}
+#group_admin_menu figure > ul ul {
+  margin-left: 2em;
+}
+#group_admin_menu figure li label {
+  margin-bottom: 6px;
+  display: inline-block;
+}
+#group_admin_menu figure input:checked + .label:after {
+    content: ' - 非表示';
+    color: #aaa;
+    font-style: italic;
+}
+#group_admin_menu .tab {
+    margin: 0;
+    display: inline-block;
+    vertical-align: top;
+}
+#group_admin_menu .tab li {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 0;
+}
+#group_admin_menu .tab li input {
+    position: absolute;
+    visibility: hidden;
+}
+#group_admin_menu .tab li .label {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 5px;
+}
+#group_admin_menu .tab li + li .label {
+    border-left: none;
+}
+#group_admin_menu .tab li input:checked + .label {
+    background-color: #fff;
+    border-bottom-color: #fff;
+}
+
+
+
+
+
+
+
+
+#my-data * {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+         -o-box-sizing: border-box;
+            box-sizing: border-box;
+}
+#my-data {
+    max-width: 1280px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+         -o-box-sizing: border-box;
+            box-sizing: border-box;
+}
+#my-data .block {
+    display: block;
+}
+#my-data .inline-block {
+    display: inline-block;
+    vertical-align: middle;
+}
+#my-data li {
+    margin: 0;
+}
+#my-data .table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+#my-data .table-cell {
+    display: table-cell;
+    vertical-align: top;
+}
+#my-data .table-cell.col00 {
+    cursor: ns-resize;
+    width: 30px;
+}
+#my-data .table-cell.col00 .dashicons {
+    -webkit-transform: rotate(-90deg);
+       -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+         -o-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+}
+#my-data .table-cell.col01 {
+    width: 200px;
+}
+#my-data .table-cell.col02 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#my-data .table-cell.col03 {
+    width: 120px;
+}
+#my-data li .table {
+    margin: 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+#my-data li + li {
+    margin-top: -1px;
+}
+#my-data .del {
+    display: none;
+}
+#my-data .table-cell .label + span {
+    margin-top: 5px;
+}
+#my-data .table-cell.col03 span ,
+#my-data .uploadedLinkForm > * ,
+#my-data .uploadedImageForm > * ,
+#my-data button.button-secondary ,
+#my-data .colorbox + .del {
+    display: inline-block;
+    vertical-align: middle;
+}
+#my-data textarea {
+    min-height: 100px;
+}
+#my-data .table-cell.col03 {
+    vertical-align: bottom;
+}
+#my-data label > .label + span * {
+    width: 100%;
+}
+#my-data label > .label + span.checkbox * {
+    width: auto;
+    line-height: 2;
+}
+#my-data .business_hours > span input {
+    width: 10em;
+}
+#my-data .business_hours > span + span {
+    margin-top: 10px;
+}
+#my-data .business_hours .inline-block {
+    width: auto;
+    line-height: 28px;
+    vertical-align: top;
+}
+#my-data .business_hours .block select {
+    width: auto;
+    text-align: center;
+}
+#my-data .address > span + span {
+    margin-top: 10px;
+}
+#my-data .address .inline-block {
+    width: auto;
+    line-height: 28px;
+    vertical-align: top;
+}
+#my-data .address .zip input {
+    width: 8em;
+}
+#my-data .address .pref select {
+    width: auto;
+}
+#my-data .address .address01 input ,
+#my-data .address .address02 input ,
+#my-data .address .building input {
+    widht: -webkit-calc(100% - 6em);
+    width:    -moz-calc(100% - 6em);
+    width:         calc(100% - 6em);
+}
+#my-data .upload_image {
+    width: 150px !important;
+}
+#my-data .naiyoubox {
+    margin-top: 10px;
+}
+#my-data .naiyoubox textarea {
+    width: 100%;
+}
+#my-data .naiyoubox.image textarea ,
+#my-data .naiyoubox .upload_image {
+    display: none;
+}
+#my-data .naiyoubox.image .upload_image {
+    display: block;
+    width: 150px;
+}
+#my-data .info {
+    margin-top: 5px;
+}
+/* トップページ画像 */
+#my-data.submenu_01 input[type="text"] {
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px){
+    #my-data {
+        padding-right: 0;
+    }
+    #my-data li .table ,
+    #my-data li .table-cell {
+        display: block;
+    }
+    #my-data .table-cell.col01 {
+        width: 100%;
+    }
+    #my-data .table-cell.col02 ,
+    #my-data .sortable .table-cell.col03 {
+        border-top: 1px dotted #dcdcdc;
+        padding: 15px 0 0 0;
+        margin-top: 20px;
+        width: 100%;
+    }
+    #my-data .sortable .table-cell.col03 {
+        text-align: right;
+    }
+}
+
+/* カスタム投稿 */
+#my-data li .custom-post-types .dashicons {
+    font-size: 2rem;
+    line-height: 1;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+}
+#my-data li .custom-post-types .dashicons-plus-alt {
+    color: #008ec2;
+}
+#my-data li .custom-post-types .dashicons-dismiss {
+    color: #dc3232;
+}
+#my-data li .custom-post-types .dashicons-admin-collapse {
+    -webkit-transform: rotate(270deg);
+       -moz-transform: rotate(270deg);
+        -ms-transform: rotate(270deg);
+         -o-transform: rotate(270deg);
+            transform: rotate(270deg);
+    -webkit-transition:all 200ms linear;
+       -moz-transition:all 200ms linear;
+        -ms-transition:all 200ms linear;
+         -o-transition:all 200ms linear;
+            transition:all 200ms linear;
+}
+#my-data li .custom-post-types > * {
+    margin-top: 10px;
+}
+#my-data li .custom-post-types .item {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    overflow: hidden;
+}
+#my-data li .custom-post-types .table {
+    border: none;
+    background-color: #f1f1f1;
+}
+#my-data li .custom-post-types .table-cell {
+    vertical-align: middle;
+}
+#my-data li .custom-post-types .table-cell.col01 {
+    width: 3rem;
+    text-align: center;
+}
+#my-data li .custom-post-types .table-cell.col02 {
+    padding-left: 0;
+    padding-right: 0;
+}
+#my-data li .custom-post-types .table-cell.col02:before {
+    content: '投稿名：';
+    display: inline-block;
+    width: 4em;
+}
+#my-data li .custom-post-types .table-cell.col02 input[type="text"] {
+    width: -webkit-calc(100% - 5em);
+    width:    -moz-calc(100% - 5em);
+    width:         calc(100% - 5em);
+}
+#my-data li .custom-post-types .table-cell.col03 {
+    width: 5rem;
+    text-align: right;
+}
+#my-data li .custom-post-types .row02 {
+    overflow: hidden;
+    max-height: 200px;
+    padding: 0 10px;
+    box-shadow: #000 0 0 0;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    -webkit-transition:all 200ms linear;
+       -moz-transition:all 200ms linear;
+        -ms-transition:all 200ms linear;
+         -o-transition:all 200ms linear;
+            transition:all 200ms linear;
+}
+#my-data li .custom-post-types .row02 .row {
+    padding: 0 0 10px;
+}
+#my-data li .custom-post-types .row02 .row:first-child {
+    padding: 10px 0;
+}
+#my-data li .custom-post-types .row02_01:before {
+    content: '投稿スラッグ：';
+    display: inline-block;
+    width: 6em;
+}
+#my-data li .custom-post-types .row02_02:before {
+    content: '分 　類 　名 ：';
+    display: inline-block;
+    width: 6em;
+}
+#my-data li .custom-post-types .row02_03:before {
+    content: '分類スラッグ：';
+    display: inline-block;
+    width: 6em;
+}
+#my-data li .custom-post-types .row02 .row + .row {
+    border-top: 1px dotted #ddd;
+    padding-top: 10px;
+}
+#my-data li .custom-post-types .row02_01:after ,
+#my-data li .custom-post-types .row02_03:after {
+    content: '※半角英数字のみ';
+    font-style: italic;
+    color: #666;
+    padding-left: 6.5em;
+    display: block;
+}
+#my-data li .custom-post-types .row02_01 input[type="text"] ,
+#my-data li .custom-post-types .row02_02 input[type="text"] ,
+#my-data li .custom-post-types .row02_03 input[type="text"] {
+    width: -webkit-calc(100% - 7em);
+    width:    -moz-calc(100% - 7em);
+    width:         calc(100% - 7em);
+}
+#my-data li .custom-post-types .row03 {
+    padding: 0 10px;
+}
+#my-data li .custom-post-types .item.close .row02 {
+    max-height: 0;
+}
+#my-data li .custom-post-types .item.close .dashicons-admin-collapse {
+    -webkit-transform: scaleY(-1) rotate(270deg);
+       -moz-transform: scaleY(-1) rotate(270deg);
+         -o-transform: scaleY(-1) rotate(270deg);
+            transform: scaleY(-1) rotate(270deg);
+    -ms-filter: "FlipV";
+        filter: FlipV;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#my-data label > .label + span.imagessortable > * {
+    padding: 1em;
+    border: 1px solid #ccc;
+    display: inline-block;
+    vertical-align: top;
+    width: auto !important;
+    border-radius: 4px;
+    margin: 0 5px 10px;
+    background-color: #fff;
+    min-width: 178px;
+}
+#my-data label > .label + span.imagessortable > .ui-state-highlight {
+    background: #FFC0CB;
+}
+#my-data label > .label + span.imagessortable > .ui-sortable-helper {
+    background: #89CEEB;
+}
+#my-data label > .label + span .images-item .infoArea.table {
+    width: 150px;
+    border: none;
+    padding: 0;
+}
+#my-data label > .label + span .images-item .infoArea.table .table-cell {
+    vertical-align: middle;
+    width: auto;
+    padding: 0;
+}
+#my-data label > .label + span .images-item .infoArea.table .table-cell.col02 > span {
+    display: inline-block;
+    width: auto;
+}
+#my-data label > .label + span .images-item .infoArea.table .table-cell .dashicons {
+    font-size: 1.8rem;
+    width: auto;
+    height: auto;
+    line-height: 1;
+}
+#my-data label > .label + span .images-item .infoArea.table .table-cell.col02 {
+    text-align: right;
+}
+#my-data label > .label + span .images-item .infoArea.table .dashicons-plus-alt {
+    color: #008ec2;
+}
+#my-data label > .label + span .images-item .infoArea.table .dashicons-dismiss {
+    color: #dc3232;
+}

@@ -1,0 +1,83 @@
+/*
+ +	core css
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  font-family: $font_def;
+  font-feature-settings: "palt";
+  font-size: getSize(24vw);
+  line-height: lh(42, 24);
+  letter-spacing: 0.05em;
+  background-color: $primary-b;
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  scrollbar-width: none; /*Firefox対応のスクロールバー非表示コード*/
+  @include media(pc) {
+    font-size: 15px;
+    line-height: lh(42, 15);
+    min-width: $min-width;
+  }
+  &:not(#top) {
+    @include media(pc,min){
+      height: 100%;
+      overflow-y: hidden;
+    }
+  }
+}
+
+body::-webkit-scrollbar {
+  display: none; /*Google Chrome、Safari、Microsoft Edge対応のスクロールバー非表示コード*/
+}
+
+a,
+button {
+  transition: opacity 0.2s;
+  text-decoration: none;
+  cursor: pointer;
+  @include media(pc) {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+img {
+  width: 100%;
+}
+
+main {
+  padding-top: getSize(108vw);
+  @include media(pc) {
+    padding-top: 80px;
+  }
+}
+
+.page-wrapper {
+  scrollbar-width: none;
+  @include media(sp, max) {
+    height: 100vh;
+    height: calc(var(--vh) * 100);
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+  body:not(#top) & {
+    overflow: scroll;
+    @include media(pc,min){
+      height: calc(var(--vh) * 100);
+    }
+  }
+  body.add-iPad:not(#top) & {
+    @include media(pc,min){
+      height: calc(var(--vh) * 100); //ipadで画面下に謎の余白ができるため
+    }
+  }
+}
+
+.page-wrapper::-webkit-scrollbar {
+  display: none; /*Google Chrome、Safari、Microsoft Edge対応のスクロールバー非表示コード*/
+}

@@ -1,0 +1,35 @@
+.posts-main {
+  padding: getSize(152%) 0 getSize(116%);
+  background-color: #fff;
+  @include media(sp, min) {
+    padding: 150px 0 309px;
+  }
+}
+
+.posts-contentWrap {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: getSize(44%) 0 0;
+  @include media(sp, min) {
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    width: 1100px;
+    margin: 58px auto 0;
+  }
+}
+
+.posts-contentWrapInner {
+  border-top: 1px solid #c8c8c8;
+  @include media(sp, min) {
+    width: 833px;
+    border: none;
+  }
+}
+
+.posts-sideMenuOuter {
+  border-top: 1px solid #c8c8c8;
+  @include media(sp, min) {
+    padding-top: 52px;
+    border: none;
+  }
+}

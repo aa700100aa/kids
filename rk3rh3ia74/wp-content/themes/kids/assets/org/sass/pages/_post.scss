@@ -1,0 +1,517 @@
+// main {
+//   &#case,
+//   &#news {
+//     background-color: #fff;
+//   }
+// }
+
+$mainB: #14509f;
+
+.post-outer {
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.post-ttlWrap {
+  margin-top: getSize(44vw);
+  @include media(pc) {
+    margin-top: 68px;
+  }
+}
+
+.post-wrap {
+  position: relative;
+  width: getSize(650vw);
+  margin: getSize(70vw) auto getSize(80vw);
+  @include media(pc) {
+    width: 1000px;
+    margin: 75px auto 309px;
+  }
+}
+
+.post-topWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 1;
+  border-bottom: 1px solid $mainB;
+  padding-bottom: getSize(20vw);
+  margin-bottom: getSize(27vw);
+  @include media(pc) {
+    justify-content: flex-start;
+    margin-bottom: 44px;
+    padding-bottom: 0;
+    border-bottom: 0;
+    border-top: 1px solid $mainB;
+    padding-top: 35px;
+  }
+}
+
+.post-time {
+  color: #646464;
+  letter-spacing: 0.12em;
+  @include media(pc) {
+    font-size: 15px;
+    display: block;
+    margin-left: 15px;
+  }
+}
+
+.post {
+  /*-------- 
+  見出し
+  ---------*/
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+    word-break: break-word;
+  }
+
+  // h1,
+  // h2 {
+
+  //   @include media(pc) {
+
+  //   }
+  // }
+
+  h1 {
+    font-size: getSize(30vw);
+    line-height: lh(52, 30);
+    margin-bottom: getSize(47vw);
+    padding: 0 getSize(15vw);
+    @include media(pc) {
+      font-size: 28px;
+      line-height: lh(35, 28);
+      margin-bottom: 33px;
+      padding: 0 15px;
+    }
+  }
+
+  h2 {
+    font-size: getSize(30vw);
+    line-height: lh(42, 30);
+    margin-bottom: getSize(5vw);
+    @include media(pc) {
+      font-size: 24px;
+      margin-bottom: 7px;
+      line-height: lh(42, 24);
+    }
+  }
+
+  h3 {
+    font-size: getSize(28vw);
+    line-height: lh(42, 28);
+    margin-bottom: getSize(5vw);
+    @include media(pc) {
+      font-size: 22px;
+      margin-bottom: 7px;
+      line-height: lh(42, 22);
+    }
+  }
+
+  h4 {
+    font-size: getSize(26vw);
+    line-height: lh(42, 26);
+    margin-bottom: getSize(5vw);
+    @include media(pc) {
+      font-size: 20px;
+      margin-bottom: 7px;
+      line-height: lh(42, 20);
+    }
+  }
+
+  h5 {
+    font-size: getSize(24vw);
+    line-height: lh(42, 24);
+    margin-bottom: getSize(5vw);
+    @include media(pc) {
+      font-size: 18px;
+      margin-bottom: 7px;
+      line-height: lh(42, 18);
+    }
+  }
+
+  h6 {
+    font-size: getSize(22vw);
+    line-height: lh(42, 22);
+    margin-bottom: getSize(5vw);
+    @include media(pc) {
+      font-size: 16px;
+      margin-bottom: 7px;
+      line-height: lh(42, 16);
+    }
+  }
+
+  /*-------- 
+  テキスト系
+  ---------*/
+
+  p,
+  ol,
+  ul,
+  blockquote,
+  hr,
+  .list-indent {
+    margin-bottom: getSize(44vw);
+    word-break: break-word;
+    @include media(pc) {
+      margin-bottom: 26px;
+    }
+  }
+
+  // 段落
+  p,
+  .list-indent {
+    font-size: getSize(24vw);
+    line-height: lh(42, 24);
+    text-align: justify;
+    @include media(pc) {
+      font-size: 15px;
+      line-height: lh(32, 15);
+    }
+  }
+
+  // イタリック
+  em {
+    font-style: italic;
+  }
+
+  /*-------- 
+  リスト
+  ---------*/
+  ul {
+    li {
+      &::before {
+        content: "・";
+        font-feature-settings: normal;
+      }
+      text-indent: -1em;
+      padding-left: 1em;
+    }
+  }
+
+  ol {
+    counter-reset: count 0;
+    li {
+      text-indent: -1em;
+      padding-left: 1em;
+
+      &:before {
+        content: counter(count) ". ";
+        counter-increment: count 1;
+        font-feature-settings: normal;
+      }
+    }
+  }
+
+  li {
+    img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+    }
+    ol,
+    ul {
+      margin-bottom: 0;
+    }
+  }
+
+  /*-------- 
+  引用
+  ---------*/
+  blockquote {
+    quotes: auto;
+    padding: 1em 1.5em;
+    border-left: getSize(4vw) solid #d6dde3;
+    @include media(pc) {
+      border-left: 4px solid #d6dde3;
+    }
+
+    p {
+      margin-top: 0;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  P {
+    strong {
+      font-weight: bold;
+    }
+  }
+
+  /*-------- 
+  リンク
+  ---------*/
+  p {
+    a {
+      text-decoration: underline;
+
+      // &.add-one {
+      //   display: block;
+      // }
+    }
+  }
+
+  /*-------- 
+  hr
+  ---------*/
+  hr {
+    width: 100%;
+    position: relative;
+    border: 0;
+    &::before {
+      @include after;
+      background-color: $mainB;
+      height: 1px;
+    }
+  }
+
+  /*-------- 
+  img
+  ---------*/
+
+  p {
+    &.add-one,
+    &.add-two,
+    &.add-three,
+    &.add-four {
+      margin-bottom: getSize(44vw);
+      @include media(pc) {
+        margin-bottom: 45px;
+      }
+    }
+
+    &.add-one {
+      width: 100%;
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        @include media(sp, min) {
+          width: auto;
+          max-width: 100%;
+        }
+      }
+    }
+    &.add-two,
+    &.add-three,
+    &.add-four {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+
+      img {
+        width: getSize(313, 650) + "%";
+        display: block;
+        height: auto;
+
+        @include media(pc) {
+          // width: 380px;
+          width: calc(50% - 2.5%);
+        }
+
+        &:nth-child(n + 3) {
+          margin-top: getSize(25vw);
+          @include media(pc) {
+            margin-top: 40px;
+          }
+        }
+      }
+    }
+
+    // 画像にaタグを設定した場合
+    a {
+      &.add-one {
+        width: calc(50% - 2.5%);
+      }
+
+      &.add-one,
+      &.add-two,
+      &.add-three,
+      &.add-four {
+        &:nth-child(2) {
+          img {
+            width: 100%;
+          }
+          @include media(pc) {
+            width: calc(50% - 2.5%);
+          }
+        }
+
+        &:nth-child(n + 3) {
+          margin-top: getSize(25vw);
+          img {
+            width: 100%;
+          }
+          @include media(pc) {
+            margin-top: 40px;
+            width: calc(50% - 2.5%);
+          }
+        }
+      }
+    }
+  }
+}
+
+.post-category {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $mainB;
+  padding: getSize(6vw) getSize(17vw);
+  @include media(pc) {
+    padding: 4px 14px;
+    order: -1;
+    transform: translateY(1px);
+  }
+
+  span {
+    font-size: getSize(17.62vw);
+    color: #fff;
+    @include media(pc) {
+      font-size: 12px;
+    }
+  }
+}
+
+.post-orderWrap {
+  @include media(pc) {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
+}
+
+.post-inner {
+  margin-bottom: getSize(70vw);
+  @include media(pc) {
+    width: 800px;
+    margin: 0 auto 92px;
+  }
+}
+
+.post-btnBox {
+  border-top: 1px solid $mainB;
+  // text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  // @include media(pc) {
+  //   padding: 0 40px;
+  // }
+
+  span {
+    color: $mainB;
+    font-size: getSize(24vw);
+    font-weight: 500;
+    @include media(pc) {
+      font-size: 16px;
+    }
+  }
+}
+
+.post-backIndex {
+  display: inline-block;
+  line-height: 1;
+  margin-top: getSize(70vw);
+
+  @include media(pc) {
+    margin-top: 30px;
+  }
+
+  &.mod-disable {
+    opacity: 0.3;
+  }
+
+  &.mod-prev,
+  &.mod-next {
+    position: relative;
+    &::before {
+      @include after;
+      position: absolute;
+      top: 60%;
+      width: getSize(21vw);
+      height: getSize(21vw);
+      @include media(pc) {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  &.mod-prev {
+    padding-left: getSize(40vw);
+    @include media(pc) {
+      padding-left: 40px;
+    }
+    &::before {
+      background: url(../images/common/arrow2-reverse.svg) no-repeat center
+        center/100% auto;
+      transform: translateY(-50%) rotate(180deg);
+      left: getSize(10vw);
+      @include media(pc) {
+        left: 10px;
+      }
+    }
+  }
+
+  &.mod-next {
+    padding-right: getSize(40vw);
+    @include media(pc) {
+      padding-right: 40px;
+    }
+    &::before {
+      background: url(../images/common/arrow2-reverse.svg) no-repeat center
+        center/100% auto;
+      transform: translateY(-50%);
+      right: getSize(10vw);
+      @include media(pc) {
+        right: 10px;
+      }
+    }
+  }
+}
+
+/*-------- 
+回り込み
+---------*/
+
+p {
+  &.add-one {
+    display: flow-root;
+    .alignleft,
+    .alignright {
+      width: 50% !important;
+      height: auto !important;
+    }
+
+    .alignleft {
+      float: left !important;
+      margin-right: getSize(24vw) !important;
+
+      @include media(pc) {
+        margin-right: 35px !important;
+      }
+    }
+
+    .alignright {
+      float: right !important;
+      margin-left: getSize(24vw) !important;
+
+      @include media(pc) {
+        margin-left: 35px !important;
+      }
+    }
+  }
+}

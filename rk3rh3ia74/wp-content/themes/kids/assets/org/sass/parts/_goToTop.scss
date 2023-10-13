@@ -1,0 +1,37 @@
+.part-goToTopBtn {
+  position: relative;
+
+  width: getSize(564vw);
+  height: getSize(138vw);
+  margin: getSize(30vw) auto 0;
+  // border-radius: getSize(5vw);
+  @include media(sp, min) {
+    margin: 30px auto 0;
+    width: 240px;
+    height: 86px;
+  }
+}
+
+.part-gotoTop_link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #1450a0;
+  color: #fff;
+  font-size: getSize(30vw);
+  font-weight: bold;
+  border-radius: getSize(5vw);
+  @include media(pc) {
+    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid #14509f;
+    transition: background-color 0.3s, color 0.3s !important;
+    &:hover {
+      opacity: 1 !important;
+      background-color: #fff;
+      color: #14509f !important;
+    }
+  }
+}

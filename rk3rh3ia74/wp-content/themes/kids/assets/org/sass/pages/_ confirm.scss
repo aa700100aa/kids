@@ -1,0 +1,175 @@
+.contact-head_container {
+  margin: getSize(45vw) auto 0;
+
+  @include media(pc) {
+    margin: 45px auto 0;
+  }
+}
+
+.contact-head_txt {
+  text-align: center;
+  line-height: 1.75;
+  @include media(pc) {
+    font-size: 17px;
+  }
+}
+
+.contact-outer {
+  #confirm & {
+    padding-bottom: getSize(86vw * 1.5);
+
+    @include media(pc) {
+      padding-bottom: 294px;
+    }
+  }
+}
+
+.contact-requiredTxt,
+.contact-requiredTxt_inline,
+.mod-select .contact-form_inquiryDesc::before,
+.contact-form_mail:nth-of-type(2),
+.contact-form_hankaku,
+.contact-form_item.mod-personal,
+.contact-form_submitBtnWrap.mod-contact {
+  #confirm & {
+    display: none;
+  }
+}
+
+.contact-form_submitBtnFlexWrap {
+  #confirm & {
+    display: flex;
+    margin-top: getSize(32vw);
+    @include media(pc){
+      margin-top: 32px;
+      
+    }
+  }
+}
+
+.contact-container {
+  #confirm & {
+    margin: 6vw auto 0;
+
+    @include media(pc) {
+      margin: 45px auto 0;
+    }
+  }
+}
+
+.contact-form_submitBtnWrap {
+  #confirm & {
+    display: flex;
+    width: getSize(240vw);
+    margin: 0 auto;
+    @include media(pc) {
+      width: 240px;
+    }
+  }
+}
+
+.contact-form_inquiryDesc {
+  #confirm & {
+    text-align: left;
+    margin: 0;
+    justify-content: flex-start;
+    @include media(sp,max){
+      margin-top: getSize(20vw) !important;
+    }
+
+  }
+
+  .mod-detail &{
+    #confirm & {
+      line-height: 2;
+    }
+
+  }
+
+
+  .mod-select & {
+    #confirm & {
+      // margin: 0 0 0 27px;
+      @include media(pc) {
+        // margin: 0 0 0 27px;
+      }
+    }
+  }
+}
+
+
+
+.contact-form_item {
+  #confirm & {
+    padding: 3.4666666667vw 0;
+    @include media(pc) {
+      padding: 10px 30px;
+    }
+  }
+  &.mod-select {
+    #confirm & {
+      @include media(pc) {
+        display: flex;
+      }
+    }
+  }
+
+  &.mod-detail {
+    #confirm & {
+      @include media(pc) {
+        padding: 16.5px 30px;
+      
+      }
+    }
+  }
+}
+
+.contact-form_txtDelete {
+  #confirm & {
+    display: none;
+  }
+}
+
+.contact-form_inquiryTerm {
+  #confirm & {
+    font-weight: bold;
+    justify-content: left !important;
+    width: auto;
+    @include media(pc) {
+      width: 197px;
+    }
+  }
+
+  .mod-detail &{
+    #confirm & {
+      line-height: 2;
+    }
+
+  }
+
+
+
+}
+
+.contact-form_name {
+  #confirm & {
+    width: auto;
+    display: inline-block;
+    margin-right: getSize(20vw);
+    @include media(pc){
+      margin-right: 20px;
+      
+    }
+  }
+}
+
+.contact-form_name:nth-of-type(2){
+  #confirm & {
+    margin-left: 0;
+  }
+}
+#confirm .page-wrapper {
+  @include media(sp,max){
+    -webkit-overflow-scrolling: auto;
+  }
+}

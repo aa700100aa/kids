@@ -1,0 +1,252 @@
+.wp-admin.post-type-mw-wp-form #delete-action,
+.wp-admin.post-type-mw-wp-form .row-actions,
+.wp-admin.post-type-mw-wp-form .tablenav,
+.wp-admin.post-type-mw-wp-form .subsubsub, .wp-admin.post-type-mw-wp-form .search-box, .wp-admin.post-type-mw-wp-form .page-title-action, .wp-admin.post-type-mw-wp-form #postdivrich {
+  display: none; }
+
+.wp-admin.post-type-page.edit-php .page-title-action {
+  display: none; }
+
+.wp-admin.post-type-page.edit-php .tablenav {
+  display: none; }
+
+.wp-admin.post-type-page.edit-php .check-column {
+  display: none; }
+
+.wp-admin.post-type-page.edit-php .row-actions .inline,
+.wp-admin.post-type-page.edit-php .row-actions .trash,
+.wp-admin.post-type-page.edit-php .row-actions .clone,
+.wp-admin.post-type-page.edit-php .row-actions .edit_as_new_draft {
+  display: none; }
+
+.wp-admin.post-type-page.post-php .page-title-action {
+  display: none; }
+
+.wp-admin.post-type-page.post-php #edit-slug-buttons {
+  display: none; }
+
+.wp-admin.post-type-page.post-php .wp-editor-tools {
+  display: none; }
+
+.wp-admin.post-type-page.post-php #commentsdiv {
+  display: none; }
+
+.wp-admin.post-type-page.post-php #revisionsdiv {
+  display: none; }
+
+.wp-admin.post-type-page.post-php #pageparentdiv {
+  display: none; }
+
+.wp-admin.post-type-page.post-php #duplicate-action {
+  display: none; }
+
+.wp-admin.post-type-page.post-php #delete-action {
+  display: none; }
+
+.wp-admin.post-type-page.post-php .misc-pub-post-status {
+  display: none; }
+
+.wp-admin.post-type-page.post-php .misc-pub-visibility {
+  display: none; }
+
+.wp-admin.post-type-page.post-php .mce-top-part {
+  display: none; }
+
+.wp-admin.post-type-page.post-php #wp-content-wrap {
+  padding-top: 0 !important; }
+
+.wp-admin.post-php.post-type-post #mceu_10,
+.wp-admin.post-php.post-type-post #mceu_15,
+.wp-admin.post-php.post-type-post #mceu_17,
+.wp-admin.post-php.post-type-post #mceu_16,
+.wp-admin.post-php.post-type-post #mceu_37,
+.wp-admin.post-php.post-type-post #mceu_34,
+.wp-admin.post-php.post-type-post .level-1, .wp-admin.post-new-php.post-type-post #mceu_10,
+.wp-admin.post-new-php.post-type-post #mceu_15,
+.wp-admin.post-new-php.post-type-post #mceu_17,
+.wp-admin.post-new-php.post-type-post #mceu_16,
+.wp-admin.post-new-php.post-type-post #mceu_37,
+.wp-admin.post-new-php.post-type-post #mceu_34,
+.wp-admin.post-new-php.post-type-post .level-1 {
+  display: none; }
+
+.wp-admin.post-php.post-type-post .category-tabs li:last-child, .wp-admin.post-new-php.post-type-post .category-tabs li:last-child {
+  display: none; }
+
+.wp-admin.post-php.post-type-post .add-parent, .wp-admin.post-new-php.post-type-post .add-parent {
+  display: none;
+  pointer-events: none; }
+
+.wp-admin.post-php.post-type-post .add-parentLabel, .wp-admin.post-new-php.post-type-post .add-parentLabel {
+  pointer-events: none; }
+
+.wp-admin.post-php.post-type-post .postform option:first-child, .wp-admin.post-new-php.post-type-post .postform option:first-child {
+  visibility: hidden; }
+
+.wp-admin.post-php.post-type-post .mce-menu-item.mce-menu-item-normal.mce-stack-layout-item.mce-last, .wp-admin.post-new-php.post-type-post .mce-menu-item.mce-menu-item-normal.mce-stack-layout-item.mce-last {
+  display: none; }
+
+.wp-admin.post-php.post-type-post .mce-menu-item.mce-menu-item-normal.mce-stack-layout-item:nth-of-type(2), .wp-admin.post-new-php.post-type-post .mce-menu-item.mce-menu-item-normal.mce-stack-layout-item:nth-of-type(2) {
+  display: none; }
+
+.wp-admin.post-php.post-type-post #tagsdiv-post_tag, .wp-admin.post-new-php.post-type-post #tagsdiv-post_tag {
+  display: none; }
+
+.wp-admin.edit-php.post-type-post .inline.hide-if-no-js {
+  display: none; }
+
+.wp-admin.edit-php.post-type-post .inline-edit-categories {
+  display: none; }
+
+.wp-admin.edit-php.post-type-post .inline-edit-tags-wrap {
+  display: none; }
+
+.wp-admin.edit-php.post-type-post .inline-edit-wrapper .alignright {
+  display: none; }
+
+.wp-admin.edit-php.post-type-post .inline-edit-wrapper .inline-edit-col-right {
+  margin-top: 30px !important; }
+
+.wp-admin.edit-php.post-type-post .inline-edit-wrapper select[name='comment_status'] {
+  display: none; }
+
+.wp-admin.edit-php.post-type-post .inline-edit-wrapper .title:has(+ select[name='comment_status']) {
+  display: none; }
+
+.wp-admin.edit-tags-php.post-type-post.taxonomy-category .manage-column.column-name, .wp-admin.edit-tags-php.post-type-post.taxonomy-category .manage-column.column-description, .wp-admin.edit-tags-php.post-type-post.taxonomy-category .manage-column.column-slug, .wp-admin.edit-tags-php.post-type-post.taxonomy-category .manage-column.column-posts {
+  pointer-events: none; }
+
+.wp-admin.edit-tags-php.post-type-post.taxonomy-category .manage-column a {
+  color: #000; }
+
+.wp-admin.edit-tags-php.post-type-post.taxonomy-category .manage-column .sorting-indicator {
+  display: none; }
+
+.wp-admin.edit-tags-php.post-type-post.taxonomy-category .level-0 {
+  pointer-events: none; }
+  .wp-admin.edit-tags-php.post-type-post.taxonomy-category .level-0 .row-title {
+    color: #1d2327;
+    pointer-events: none; }
+  .wp-admin.edit-tags-php.post-type-post.taxonomy-category .level-0 input {
+    display: none; }
+  .wp-admin.edit-tags-php.post-type-post.taxonomy-category .level-0 .row-actions .edit,
+  .wp-admin.edit-tags-php.post-type-post.taxonomy-category .level-0 .row-actions .inline,
+  .wp-admin.edit-tags-php.post-type-post.taxonomy-category .level-0 .row-actions .delete {
+    display: none; }
+
+.wp-admin.edit-tags-php.post-type-post.taxonomy-category #parent option[value="-1"],
+.wp-admin.edit-tags-php.post-type-post.taxonomy-category #parent .level-1 {
+  display: none; }
+
+.wp-admin.term-php.post-type-post.taxonomy-category #parent option[value="-1"],
+.wp-admin.term-php.post-type-post.taxonomy-category #parent .level-1 {
+  display: none; }
+
+.wp-admin.edit-php.post-type-service-handling .page-title-action {
+  display: none; }
+
+.wp-admin.edit-php.post-type-service-handling .tablenav.top, .wp-admin.edit-php.post-type-service-handling .tablenav.bottom {
+  display: none; }
+
+.wp-admin.edit-php.post-type-service-handling .check-column {
+  display: none; }
+
+.wp-admin.edit-php.post-type-service-handling .row-actions {
+  display: none; }
+
+.wp-admin.post-php.post-type-service-handling input[name='post_title'] {
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(220, 220, 222, 0.75);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
+  color: rgba(44, 51, 56, 0.5);
+  pointer-events: none; }
+
+.wp-admin.post-php.post-type-service-handling #misc-publishing-actions {
+  display: none; }
+
+.wp-admin.post-php.post-type-service-handling .page-title-action {
+  display: none; }
+
+.wp-admin.post-php.post-type-service-handling #edit-slug-box {
+  display: none; }
+
+.wp-admin.post-php.post-type-service-handling .acf-label {
+  display: none; }
+
+.wp-admin.post-php.post-type-service-handling #minor-publishing-actions {
+  display: none; }
+
+.wp-admin.post-php.post-type-service-handling #delete-action {
+  display: none; }
+
+.post-type-company-info .page-title-action {
+  display: none; }
+
+.post-type-company-info .subsubsub {
+  display: none; }
+
+.post-type-company-info .search-box {
+  display: none; }
+
+.post-type-company-info .tablenav {
+  display: none; }
+
+.post-type-company-info .row-actions {
+  display: none; }
+
+.post-type-company-info #post-body-content {
+  display: none; }
+
+.post-type-company-info #minor-publishing-actions {
+  display: none; }
+
+.post-type-company-info #misc-publishing-actions {
+  display: none; }
+
+.post-type-company-info #delete-action {
+  display: none; }
+
+.post-type-company-info #message.notice a,
+.post-type-employment-info #message.notice a {
+  display: none; }
+
+.post-type-company-info .acf-postbox .acf-hndle-cog,
+.post-type-employment-info .acf-postbox .acf-hndle-cog {
+  visibility: hidden; }
+
+.post-type-employment-info #filter-by-date {
+  display: none; }
+
+.post-type-employment-info #post-query-submit {
+  display: none; }
+
+.post-type-employment-info #title a,
+.post-type-employment-info #date a {
+  pointer-events: none; }
+
+.post-type-employment-info .sorting-indicator {
+  display: none; }
+
+.post-type-employment-info .misc-pub-curtime {
+  display: none; }
+
+.post-type-employment-info #minor-publishing-actions {
+  display: none; }
+
+.post-type-employment-info #edit-slug-box {
+  display: none; }
+
+.post-type-employment-info .search-box {
+  display: none; }
+
+.post-type-employment-info .manage-column.column-title.column-primary.sortable.desc {
+  pointer-events: none; }
+
+.post-type-employment-info .manage-column.column-date.sortable.asc {
+  pointer-events: none; }
+
+.post-type-employment-info .row-actions .inline {
+  display: none; }
+
+.post-type-employment-info .row-actions .view {
+  display: none; }

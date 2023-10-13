@@ -1,0 +1,34 @@
+.part-mainTtl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  #posts &,
+  #post & {
+    transform: translateX(-3%);
+    @include media(sp, min) {
+      transform: translateX(0);
+    }
+  }
+}
+
+.part-mainTtl_img {
+  width: getSize(116%);
+  @include media(sp, min) {
+    width: 97px;
+  }
+}
+
+.part-mainTtl_span {
+  margin-left: getSize(34%);
+  font-size: getSize(36vw);
+  line-height: lh(64, 36);
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  color: #14509f;
+  @include media(sp, min) {
+    margin-left: 28px;
+    font-size: 30px;
+    line-height: lh(53, 30);
+  }
+}

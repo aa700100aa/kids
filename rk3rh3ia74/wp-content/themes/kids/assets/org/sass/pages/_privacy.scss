@@ -1,0 +1,145 @@
+@mixin privacyGeneralParagraph {
+  font-size: getSize(24vw);
+  line-height: 2.1;
+  letter-spacing: 0.05em;
+  text-align: justify;
+  @include media(pc,min){
+    font-size: 14px;
+    line-height: lh(24.5,14);
+  }
+}
+@mixin privacyTitle {
+  font-size: getSize(34vw);
+  letter-spacing: 0.075em;
+  color: $primary-b;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.5;
+  @include media(pc,min){
+    font-size: 30px;
+  }
+}
+@mixin privacryTerm {
+  font-size: getSize(30vw);
+  font-weight: bold;
+  line-height: 1.7;
+  @include media(pc,min){
+    font-size: 17px;
+  }
+}
+
+.privacy-container {
+  background-color: #fff;
+  padding: 0 getSize(50vw) getSize(119vw);
+  @include media(pc,min){
+    padding: 0 0 312px;
+  }
+  .parts-privacyMark {
+    margin-top: getSize(64vw);
+    @include media(pc,min){
+      margin-top: 64px;
+    }
+  }
+}
+.privacy-ttl {
+  @include privacyTitle();
+  padding-top: getSize(100vw);
+  line-height: 1;
+  @include media(pc,min){
+    padding-top: 90px;
+  }
+}
+.privacy-content {
+  margin-top: getSize(84vw);
+  @include privacyGeneralParagraph();
+  @include media(pc,min){
+    max-width: 830px;
+    margin: 73px auto 0;
+  }
+  + .privacy-content {
+    margin-top: getSize(50vw);
+    @include media(pc,min){
+      margin-top: 56px;
+    }
+  }
+}
+.privacy-lead_list {
+  margin-top: getSize(50vw);
+  @include media(pc,min){
+    margin-top: 26px;
+  }
+}
+.privacy-list_item {
+  + .privacy-list_item {
+    margin-top: getSize(50vw);
+    @include media(pc,min){
+      margin-top: 24px;
+    }
+  }
+}
+.privacy-list_term {
+  @include privacryTerm();
+}
+.privacy-date {
+  margin-top: getSize(50vw);
+  text-align: right;
+  max-width: 830px;
+  line-height: 2.1;
+  @include media(pc,min){
+    margin: 56px auto 0;
+  }
+}
+
+.privacy-content_ttl {
+  @include privacyGeneralParagraph();
+  @include privacryTerm();
+  border-bottom: 1px $primary-b solid;
+}
+.privacy-content_lead {
+  margin-top: getSize(20vw);
+  @include media(pc,min){
+    margin-top: 10px;
+  }
+}
+.privacy-content_list {
+  margin-top: getSize(40vw);
+  @include media(pc,min){
+    margin-top: 26px;
+  }
+}
+.privacy-content_item {
+  padding-left: 1.8em;
+  text-indent: -1.8em;
+  + .privacy-content_item {
+    margin-top: 2.5vw;
+    @include media(pc,min){
+      margin-top: 24px;
+    }
+  }
+  &.mod-adjustMargin {
+    @include media(sp,max){
+      margin-top: getSize(40vw);
+    }
+  }
+}
+.privacy-content_inner_item {
+  @include textIndent;
+  margin-top: 2.5vw;
+  @include media(pc,min){
+    margin-top: 15px;
+  }
+}
+.privacy-content_inner_inner_item {
+  @include textIndent;
+}
+.privacy-content_link {
+  color: #000;
+  text-decoration: underline;
+}
+.privacy-content_note {
+  @include textIndent;
+  display: block;
+}
+.privacy-noKerning {
+  font-feature-settings: normal;
+}

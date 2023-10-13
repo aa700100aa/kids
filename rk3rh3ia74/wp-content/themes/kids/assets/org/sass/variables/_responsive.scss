@@ -1,0 +1,66 @@
+$media: (
+  'sp': 768px,
+  'pc': $width,
+  'print': .8,
+);
+
+@mixin tab {
+  @media screen and (min-width: 768px) and (max-width: 1100px) {
+    @content;
+  }
+}
+
+@mixin kvMinH {
+  @media screen and (min-width: 768px) and (max-height: 600px) {
+    @content;
+  }
+}
+
+@mixin media($type: sp, $rule: null) {
+  @if $type == sp or $type == pc {
+    @if ($type == sp and ($rule == max or $rule == null)) or
+      ($type == pc and ($rule == max))
+    {
+      $rule: max;
+    } @else {
+      $rule: min;
+    }
+    $breakpoint: map-get($media, $type);
+    @if $rule == max {
+      $breakpoint: $breakpoint - 0.1;
+    }
+    @media screen and (#{$rule}-width: $breakpoint) {
+      @content;
+    }
+  } @else if $type == tb {
+    $min_breakpoint: map-get($media, sp);
+    $max_breakpoint: map-get($media, pc) - 0.1;
+    @media screen and (min-width: $min_breakpoint) and (max-width: $max_breakpoint) {
+      @content;
+    }
+  } @else if $type == fom {
+    @media screen and ( #{$rule}-width: 540px ) {
+      @content;
+    }
+  } @else if $type == retina {
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (min--moz-device-pixel-ratio: 2),
+      only screen and (-o-min-device-pixel-ratio: 2/1),
+      only screen and (min-device-pixel-ratio: 2),
+      only screen and (min-resolution: 192dpi),
+      only screen and (min-resolution: 2dppx) {
+      @content;
+    }
+  } @else if $type == print {
+    $magnification: map-get($media, $type);
+    @if $rule != null {
+      $magnification: $rule;
+    }
+    @media print {
+      html {
+        zoom: $magnification;
+      }
+      @content;
+    }
+  }
+}

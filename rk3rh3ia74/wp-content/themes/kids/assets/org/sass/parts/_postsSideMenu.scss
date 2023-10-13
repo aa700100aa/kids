@@ -1,0 +1,67 @@
+.part-sideMenu {
+  width: getSize(650%);
+  margin: 0 auto;
+  @include media(sp, min) {
+    width: 179px;
+    margin: 0;
+    position: sticky;
+    top: 150px;
+  }
+}
+
+.part-sideMenuList {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: getSize(575%, 650);
+  margin: 0 auto;
+  padding: getSize(44%, 650) 0 getSize(54%, 650);
+  @include media(sp, min) {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 28px 0;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+  }
+}
+
+.part-sideMenuItem {
+  width: getSize(250%, 575);
+  @include media(sp, max) {
+    &:nth-of-type(n + 3) {
+      margin-top: getSize(31%, 575);
+    }
+  }
+  @include media(sp, min) {
+    width: 100%;
+    &:nth-of-type(n + 2) {
+      margin-top: 9px;
+    }
+  }
+}
+
+.part-sideMenuItem_link {
+  display: block;
+  padding: 3% 6% 3.5%;
+  font-size: getSize(25vw);
+  line-height: 1;
+  font-weight: 700;
+  color: #000;
+  word-wrap: break-word;
+  &.add-selected {
+    background-color: #14509f;
+    color: #fff;
+  }
+  &:hover {
+    @include media(sp, min) {
+    background-color: #14509f;
+    color: #fff;
+    opacity: 1;
+    }
+  }
+  @include media(sp, min) {
+    padding: 9px 14px 10px;
+    font-size: 18px;
+  }
+}

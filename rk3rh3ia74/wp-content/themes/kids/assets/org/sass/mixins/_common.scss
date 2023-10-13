@@ -1,0 +1,339 @@
+/*
+ +	共通で使うmixinはここにまとめる
+ */
+
+@mixin clearfix {
+  &:after {
+    display: table;
+    content: "";
+    clear: both;
+  }
+}
+
+@mixin after {
+  content: "";
+  display: block;
+}
+
+@mixin font-size($s) {
+  font-size: $s * 10 + px;
+  font-size: $s + rem;
+}
+
+@mixin textJustify {
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+
+@mixin none-appearance {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none transparent;
+  background-clip: padding-box;
+  color: inherit;
+  font-size: inherit;
+  vertical-align: middle;
+  box-sizing: border-box;
+
+  &::-ms-clear {
+    display: none;
+  }
+
+  &::-ms-reveal {
+    display: none;
+  }
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+@mixin triangle($color: #000, $width: 10px, $height: 10px, $dir: top) {
+  width: 0;
+  height: 0;
+
+  @if $dir == "top" {
+    border-width: 0 #{$width/2} #{$height} #{$width/2};
+    border-color: transparent transparent $color transparent;
+  } @else if $dir == "bottom" {
+    border-width: #{$height} #{$width/2} 0 #{$width/2};
+    border-color: $color transparent transparent transparent;
+  } @else if $dir == "right" {
+    border-width: #{$height/2} 0 #{$height/2} #{$width};
+    border-color: transparent transparent transparent $color;
+  } @else {
+    border-width: #{$height/2} #{$width} #{$height/2} 0;
+    border-color: transparent $color transparent transparent;
+  }
+
+  border-style: solid;
+}
+
+@mixin indent {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+@mixin border {
+  @include after;
+  background: #646464;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 0%;
+  bottom: 0;
+}
+@mixin border_contact {
+  @include after;
+  background: #cccccc;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 0%;
+  bottom: 0;
+}
+
+@mixin font-bold {
+  font-family: $font_bold;
+  font-weight: bold;
+}
+
+// inViewアニメーション
+// 上へフェードイン
+@mixin fadeUp {
+  transform: translate(0, getSize(50vw)) translateY(1px);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
+
+  @include media(pc) {
+    transform: translate(0, 50px);
+  }
+}
+
+// 震え制御
+@mixin fadeUp_f {
+  transform: translate(0, getSize(50vw)) translateY(1px) rotate(0.0001deg);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
+
+  @include media(pc) {
+    transform: translate(0, 50px) rotate(0.0001deg);
+  }
+}
+
+
+
+// その場フェードイン
+@mixin fadeIn {
+  opacity: 0;
+  transition: opacity 0.5s;
+  transition-timing-function: ease-out;
+}
+
+
+
+// 下へフェードイン
+@mixin fadeDown {
+  transform: translate(0, getSize(-50vw)) translateY(1px);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
+  transition-timing-function: ease-out;
+
+  @include media(pc) {
+    transform: translate(0, -50px);
+  }
+}
+
+// 左から右フェードイン
+@mixin fadeRight {
+  transform: translate(getSize(-50vw), getSize(0)) translateX(-1px);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
+  transition-timing-function: ease-out;
+
+  @include media(pc) {
+    transform: translate(-50px, 0);
+  }
+}
+// 左から右フェードイン
+@mixin fadeLeft {
+  transform: translate(getSize(50vw), getSize(0)) translateX(-1px);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
+  transition-timing-function: ease-out;
+
+  @include media(pc) {
+    transform: translate(50px, 0);
+  }
+}
+
+@mixin show {
+  transform: translate(0, 0);
+  opacity: 1;
+
+  @include media(pc) {
+    transform: translate(0, 0);
+  }
+}
+@mixin show_f {
+  transform: translate(0, 0) rotate(0.0001deg);
+  opacity: 1;
+
+  @include media(pc) {
+    transform: translate(0, 0) rotate(0.0001deg);
+  }
+}
+
+// 枠広がる
+@mixin spread {
+  width: 0vw;
+  transition: width 0.3s;
+
+  @include media(pc) {
+    width: 0px;
+  }
+
+  .add-inView & {
+    width: 82vw;
+
+    @include media(pc) {
+      width: 786px;
+    }
+  }
+
+  .add-phase2 & {
+    width: 75vw;
+
+    @include media(pc) {
+      width: 715px;
+    }
+  }
+}
+
+// 四角形ボタンのアニメーション
+@mixin squareBtnAnimation(
+  $bg-before: #fff,
+  $bg-after: #d12b38,
+  $txt-before: #d12b38,
+  $txt-after: #fff
+) {
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  color: $txt-before;
+  background-color: $bg-before;
+  border: 1px solid #d12b38;
+  border-radius: getSize(4.7325vw);
+  transition: 0.3s;
+
+  @include media(pc) {
+    border-radius: 4.7px;
+
+    &::before {
+      content: "";
+    }
+
+    &:hover::before {
+      transform-origin: 0% 50%;
+      transform: scaleX(1);
+    }
+
+    &:hover {
+      opacity: 1;
+      color: $txt-after;
+    }
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0);
+    transform-origin: 100% 50%;
+    transition: transform 0.6s cubic-bezier(0.79, 0.17, 0.15, 0.96);
+    background-color: $bg-after;
+  }
+}
+
+//記事ページの横幅
+@mixin postWidth {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1045px;
+}
+
+@mixin postRadius {
+  border-radius: getSize(12.6316vw);
+  @include media(pc) {
+    border-radius: 20px;
+  }
+}
+
+// 親要素に〜がついていたら
+@mixin state($target, $state) {
+  //ネストの外か内を判定
+  @if is-inside($target) {
+    @at-root #{selector-replace(&, $target, $target + $state)} {
+      @content;
+    }
+  } @else {
+    @if $target ==parent(#{&}) {
+      @at-root #{selector-replace(&, parent(#{&}),
+      $target +$state) } {
+        @content;
+      }
+    } @else {
+      @at-root #{selector-replace(&, parent(#{&}),
+    $target +$state +" "+parent(#{&}))
+          } {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin santen {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  word-break: break-word;
+
+}
+
+
+
+// @mixin fadeUp {
+//   opacity: 0;
+//   position: relative;
+//   transform: translateY(50px);
+//   transition: transform 0.5s, opacity 0.3s;
+
+//   &.add-inView {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
+
+
+@mixin screenBelowKv {
+  @media screen and (max-width: 1100px) {
+    @content;
+  }
+}
+
+
+@mixin textIndent {
+  padding-left: 1em;
+  text-indent: -1em;
+}

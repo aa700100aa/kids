@@ -1,0 +1,7 @@
+.ai1wm-backups tbody td.ai1wm-backup-actions span {
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: baseline;
+    line-height: 1;
+}

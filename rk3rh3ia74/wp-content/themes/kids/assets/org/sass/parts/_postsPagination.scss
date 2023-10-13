@@ -1,0 +1,113 @@
+.part-paginationWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: getSize(654%);
+  margin: getSize(56%) auto 0;
+  @include media(sp, min) {
+    justify-content: center;
+    width: 100%;
+    margin: 85px auto 0;
+  }
+}
+
+.page-numbers {
+  display: block;
+  min-width: 1.85em;
+  margin: 0 getSize(10%, 654);
+  padding: 0.8vw 0 0;
+  font-size: getSize(24vw);
+  line-height: 1;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  color: #000;
+  text-align: center;
+  @include media(sp, min) {
+    padding: 4px 0px 0;
+    margin: 0 8px;
+    font-size: 15px;
+  }
+
+  // &:last-of-type {
+  //   margin: 0 0 0 getSize(10%, 654);
+  //   @include media(sp, min) {
+  //     margin: 0 0 0 8px;
+  //   }
+  // }
+
+  &.dots {
+    margin: 0 -0.33em;
+    min-width: 1em;
+    @include media(sp ,min) {
+      margin: 0;
+    }
+  }
+
+  &.prev, &.next {
+    width: getSize(112%, 654);
+    margin: 0;
+    position: relative;
+    @include media(sp, min) {
+      width: 82px;
+    }
+    &:after {
+      @include after;
+      width: getSize(14%, 135);
+      padding-top: getSize(20%, 135);
+      background: url(../images/posts/arrow1.png) no-repeat center center / 100%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      @include media(sp, min) {
+        width: 9px;
+        padding-top: 13px;
+        transform: translateY(-55%);
+      }
+    }
+  }
+  &.current {
+    color: #14509f;
+    font-weight: 700;
+  }
+  &.prev {
+    border-right: 1px solid #000;
+    padding: getSize(6%, 654) 0 getSize(10%, 654) getSize(28%, 654);
+    text-align: start;
+    @include media(sp, min) {
+      padding: 3px 0 7px 23px;
+      margin-right: 30px;
+    }
+    &:after {
+      left: 0;
+    }
+  }
+  &.next {
+    border-left: 1px solid #000;
+    padding: getSize(6%, 654) getSize(28%, 654) getSize(10%, 654) 0;
+    text-align: end;
+    @include media(sp, min) {
+      padding: 3px 23px 7px 0;
+      margin-left: 30px;
+    }
+    &:after {
+      right: 0;
+      transform: translateY(-50%) rotate(180deg);
+      @include media(sp, min) {
+        transform: translateY(-55%) rotate(180deg);
+      }
+    }
+  }
+  &.disabled {
+    opacity: 0.3;
+  }
+}
+
+.page-numbersWrap {
+  display: flex;
+  justify-content: center;
+  width: getSize(384%, 654);
+  @include media(sp, min) {
+    min-width: 278px;
+    width: auto;
+  }
+}

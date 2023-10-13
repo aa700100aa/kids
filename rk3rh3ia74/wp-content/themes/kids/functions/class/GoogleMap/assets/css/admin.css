@@ -1,0 +1,33 @@
+.GoogleMapsView {
+    border: 1px solid #eee;
+    padding: 1em;
+}
+.GoogleMapsView .google-maps-iframe {
+    height: 400px;
+}
+.GoogleMapsView .colbox {
+    letter-spacing: -0.4em;
+}
+.GoogleMapsView .colbox .col {
+    letter-spacing: normal;
+    display: inline-block;
+}
+.GoogleMapsView .colbox .col + .col {
+    margin-left: 1em;
+}
+.GoogleMapsView .short-text {
+    min-width: 100px;
+    width: 120px;
+}
+.GoogleMapsView .row + .row {
+    margin-top: 1em;
+}
+.GoogleMapsView *[data-label]:before {
+    content: '■ ' attr(data-label);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.4em;
+}
+.GoogleMapsView textarea {
+    width: 100%;
+}

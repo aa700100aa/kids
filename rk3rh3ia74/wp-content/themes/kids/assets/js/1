@@ -1,0 +1,670 @@
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */,
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ../kids/rk3rh3ia74/wp-content/themes/gfd/assets/org/js/module/extend.js
+/* harmony default export */ var extend = (function (dest, source) {
+  for (var property in source) {
+    dest[property] = source[property];
+  }
+
+  return dest;
+});
+// CONCATENATED MODULE: ../kids/rk3rh3ia74/wp-content/themes/gfd/assets/org/js/module/scrollTo.js
+
+var Eases = {
+  linear: function linear(t, b, c, d) {
+    return c * t / d + b;
+  },
+  easeInQuad: function easeInQuad(t, b, c, d) {
+    t /= d;
+    return c * t * t + b;
+  },
+  easeOutQuad: function easeOutQuad(t, b, c, d) {
+    t /= d;
+    return -c * t * (t - 2) + b;
+  },
+  easeInOutQuad: function easeInOutQuad(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return c / 2 * t * t + b;
+    t--;
+    return -c / 2 * (t * (t - 2) - 1) + b;
+  },
+  easeInCubic: function easeInCubic(t, b, c, d) {
+    t /= d;
+    return c * t * t * t + b;
+  },
+  easeOutCubic: function easeOutCubic(t, b, c, d) {
+    t /= d;
+    t--;
+    return c * (t * t * t + 1) + b;
+  },
+  easeInOutCubic: function easeInOutCubic(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return c / 2 * t * t * t + b;
+    t -= 2;
+    return c / 2 * (t * t * t + 2) + b;
+  },
+  easeInQuart: function easeInQuart(t, b, c, d) {
+    t /= d;
+    return c * t * t * t * t + b;
+  },
+  easeOutQuart: function easeOutQuart(t, b, c, d) {
+    t /= d;
+    t--;
+    return -c * (t * t * t * t - 1) + b;
+  },
+  easeInOutQuart: function easeInOutQuart(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return c / 2 * t * t * t * t + b;
+    t -= 2;
+    return -c / 2 * (t * t * t * t - 2) + b;
+  },
+  easeInQuint: function easeInQuint(t, b, c, d) {
+    t /= d;
+    return c * t * t * t * t * t + b;
+  },
+  easeOutQuint: function easeOutQuint(t, b, c, d) {
+    t /= d;
+    t--;
+    return c * (t * t * t * t * t + 1) + b;
+  },
+  easeInOutQuint: function easeInOutQuint(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return c / 2 * t * t * t * t * t + b;
+    t -= 2;
+    return c / 2 * (t * t * t * t * t + 2) + b;
+  },
+  easeInSine: function easeInSine(t, b, c, d) {
+    return -c * Math.cos(t / d * (Math.PI / 2)) + c + b;
+  },
+  easeOutSine: function easeOutSine(t, b, c, d) {
+    return c * Math.sin(t / d * (Math.PI / 2)) + b;
+  },
+  easeInOutSine: function easeInOutSine(t, b, c, d) {
+    return -c / 2 * (Math.cos(Math.PI * t / d) - 1) + b;
+  },
+  easeInExpo: function easeInExpo(t, b, c, d) {
+    return c * Math.pow(2, 10 * (t / d - 1)) + b;
+  },
+  easeOutExpo: function easeOutExpo(t, b, c, d) {
+    return c * (-Math.pow(2, -10 * t / d) + 1) + b;
+  },
+  easeInOutExpo: function easeInOutExpo(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return c / 2 * Math.pow(2, 10 * (t - 1)) + b;
+    t--;
+    return c / 2 * (-Math.pow(2, -10 * t) + 2) + b;
+  },
+  easeInCirc: function easeInCirc(t, b, c, d) {
+    t /= d;
+    return -c * (Math.sqrt(1 - t * t) - 1) + b;
+  },
+  easeOutCirc: function easeOutCirc(t, b, c, d) {
+    t /= d;
+    t--;
+    return c * Math.sqrt(1 - t * t) + b;
+  },
+  easeInOutCirc: function easeInOutCirc(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return -c / 2 * (Math.sqrt(1 - t * t) - 1) + b;
+    t -= 2;
+    return c / 2 * (Math.sqrt(1 - t * t) + 1) + b;
+  }
+};
+/* harmony default export */ var scrollTo = (function (config) {
+  var Config = {
+    target: null,
+    durationTime: 1000,
+    easing: 'linear',
+    headerPadding: null,
+    reference: window
+  };
+  if (config) extend(Config, config);
+  var HeaderHeight = Config.headerPadding || 0;
+  var Ease = Config.easing;
+  var WindowOffset = Config.reference === window ? pageYOffset : Config.reference.scrollTop;
+  var BeginTime = new Date() - 0;
+  var TargetOffset = Config.target ? Config.target.getBoundingClientRect().top + WindowOffset - HeaderHeight : 0;
+  var Distance = WindowOffset - TargetOffset;
+  var Timer = setInterval(function () {
+    var current = new Date() - BeginTime;
+
+    if (current > Config.durationTime) {
+      clearInterval(Timer);
+      current = Config.durationTime;
+    }
+
+    var currentOffset = WindowOffset + Eases[Ease](current, 0, Distance * (current / Config.durationTime) * -1, Config.durationTime);
+    Config.reference === window ? Config.reference.scrollTo(0, currentOffset) : Config.reference.scrollTop = currentOffset;
+  }, 16);
+});
+// CONCATENATED MODULE: ../kids/rk3rh3ia74/wp-content/themes/gfd/assets/org/js/module/lockScroll.js
+//スクロール禁止
+//参考：https://spyweb.media/2017/09/21/modal-window-fixed-background-also-support-ios/
+var overlayHeight;
+var currentY;
+var isTop = false;
+var isBottom = false;
+var touchStartY;
+var handler;
+window.addEventListener('touchstart', function (e) {
+  touchStartY = e.changedTouches[0].clientY;
+});
+
+var lockScroll = function lockScroll(e) {
+  currentY = e.changedTouches[0].clientY;
+  overlayHeight = this.clientHeight;
+  isTop = touchStartY <= currentY && this.scrollTop <= 0;
+  isBottom = touchStartY >= currentY && this.scrollHeight - this.scrollTop <= overlayHeight;
+
+  if (isTop || isBottom) {
+    if (e.cancelable) {
+      e.preventDefault();
+    }
+  }
+};
+
+var lockModal = function lockModal(overlay) {
+  handler = lockScroll.bind(overlay);
+  window.addEventListener('touchmove', handler, {
+    passive: false
+  });
+};
+
+var releaseModal = function releaseModal() {
+  window.removeEventListener('touchmove', handler, {
+    passive: false
+  });
+};
+
+
+// CONCATENATED MODULE: ../kids/rk3rh3ia74/wp-content/themes/gfd/assets/org/js/module/util.js
+var util_w = window;
+var util = {
+  mql: util_w.matchMedia("screen and (min-width: 768px)"),
+  loadAnimationDuration: 200
+};
+/* harmony default export */ var module_util = (util);
+// CONCATENATED MODULE: ../kids/rk3rh3ia74/wp-content/themes/gfd/assets/org/js/module/getUserAgent.js
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var GetUserAgent = /*#__PURE__*/function () {
+  function GetUserAgent() {
+    _classCallCheck(this, GetUserAgent);
+
+    this._ua = navigator.userAgent.toLowerCase();
+    this._objects = {};
+
+    this._initialize();
+
+    return this._objects;
+  }
+
+  _createClass(GetUserAgent, [{
+    key: "_initialize",
+    value: function _initialize() {
+      this._objects = {
+        isIe: null,
+        isIe11: null,
+        isEdge: null,
+        isChrome: null,
+        isSafari: null,
+        isFirefox: null,
+        isMobile: null,
+        isIphone: null,
+        isAndroidPhone: null,
+        isTablet: null,
+        isIpad: null,
+        isAndroidTablet: null
+      };
+
+      for (var key in this._objects) {
+        this._objects[key] = this["_".concat(key)]();
+      }
+    }
+  }, {
+    key: "_isIe",
+    value: function _isIe() {
+      return this._ua.indexOf('msie') !== -1 || this._isIe11();
+    }
+  }, {
+    key: "_isIe11",
+    value: function _isIe11() {
+      return this._ua.indexOf('trident') !== -1;
+    }
+  }, {
+    key: "_isEdge",
+    value: function _isEdge() {
+      return this._ua.indexOf('edge') !== -1;
+    }
+  }, {
+    key: "_isChrome",
+    value: function _isChrome() {
+      return !this._isEdge() && this._ua.indexOf('chrome') !== -1;
+    }
+  }, {
+    key: "_isSafari",
+    value: function _isSafari() {
+      return !this._isChrome() && this._ua.indexOf('safari') !== -1;
+    }
+  }, {
+    key: "_isFirefox",
+    value: function _isFirefox() {
+      return this._ua.indexOf('firefox') !== -1;
+    }
+  }, {
+    key: "_isMobile",
+    value: function _isMobile() {
+      return this._isIphone() || this._isAndroidPhone();
+    }
+  }, {
+    key: "_isIphone",
+    value: function _isIphone() {
+      return this._ua.indexOf('iphone') !== -1;
+    }
+  }, {
+    key: "_isAndroidPhone",
+    value: function _isAndroidPhone() {
+      return this._ua.indexOf('android') !== -1 && this._ua.indexOf('mobile') !== -1;
+    }
+  }, {
+    key: "_isTablet",
+    value: function _isTablet() {
+      return this._isIpad() || this._isAndroidTablet();
+    }
+  }, {
+    key: "_isIpad",
+    value: function _isIpad() {
+      return this._ua.indexOf('ipad') !== -1 || this._ua.indexOf('macintosh') !== -1 && 'ontouchend' in document;
+    }
+  }, {
+    key: "_isAndroidTablet",
+    value: function _isAndroidTablet() {
+      return this._ua.indexOf('android') !== -1 && this._ua.indexOf('mobile') === -1;
+    }
+  }]);
+
+  return GetUserAgent;
+}();
+
+
+// CONCATENATED MODULE: ../kids/rk3rh3ia74/wp-content/themes/gfd/assets/org/js/pages/common.js
+
+
+
+
+var common_common = function common() {
+  (function (d, w) {
+    // スクロール無効
+    function disableScroll(e) {
+      e.preventDefault();
+    }
+
+    var scrollOff = function scrollOff() {
+      d.addEventListener("touchmove", disableScroll, {
+        passive: false
+      });
+      d.addEventListener("mousewheel", disableScroll, {
+        passive: false
+      });
+    };
+
+    scrollOff();
+
+    var scrollOn = function scrollOn() {
+      d.removeEventListener("touchmove", disableScroll, {
+        passive: false
+      });
+      d.removeEventListener("mousewheel", disableScroll, {
+        passive: false
+      });
+    };
+
+    w.addEventListener("load", function () {
+      d.body.classList.add("add-loaded");
+      var loader = d.getElementById("js-loader");
+      setTimeout(function () {
+        if (d.body.id !== "top") {
+          scrollOn();
+        }
+      }, 100);
+
+      if (d.body.id == "top") {
+        setTimeout(function () {
+          scrollOn();
+        }, 1050);
+      }
+    });
+    /**
+     * 広範囲で使われる変数
+     */
+
+    var hmbg = d.getElementById("js-hmbg"); //ハンバーガーボタン
+
+    var headerNav = d.getElementById("js-headerNav"); //ヘッダー内のナビ
+
+    var headerOpen = "add-headerOpen";
+    var burgerClose = "add-burgerClose";
+    var ua = new GetUserAgent();
+    /**
+     * ipadの時にクラスを付与
+     */
+
+    if (ua.isIpad) d.body.classList.add("add-iPad");
+    /**
+     * タブレット時にviewportを設定
+     */
+
+    if (ua.isTablet) d.querySelector('meta[name="viewport"]').setAttribute("content", "width=1220");
+    /**
+     * Androidの時にのみCSSを適用
+     */
+
+    if (ua.isAndroidPhone) d.body.classList.add("add-android");
+    /**
+     * ヘッダーメニュー
+     */
+
+    var headerFunc = function () {
+      var cancelBurgerMenu = function cancelBurgerMenu() {
+        d.body.classList.remove(headerOpen);
+        hmbg.classList.add(burgerClose);
+        releaseModal(headerNav);
+      };
+
+      hmbg.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        if (!d.body.classList.contains(headerOpen)) {
+          headerNav.scrollTop = 0; //ナビ要素のスクロール位置を初期位置に戻す
+
+          hmbg.classList.remove(burgerClose);
+          d.body.classList.add(headerOpen);
+          lockModal(headerNav);
+        } else {
+          cancelBurgerMenu();
+        }
+      });
+      if (module_util.mql.matches) cancelBurgerMenu();
+      module_util.mql.addListener(cancelBurgerMenu);
+    }();
+    /**
+     * ヘッダーアコーディオン関連の処理
+     */
+
+
+    var headerAccordionFunc = function () {
+      var headerNavItemService = d.getElementById("js-headerNavItemService");
+      var headerNavLinkService = d.getElementById("js-headerNavLinkService");
+      var noClick = "add-noClick";
+      var hoverAction = "add-hoverAction";
+      var isheaderNavItemServiceClicked = false;
+
+      if (ua.isTablet) {
+        headerNavItemService.addEventListener("touchstart", function (e) {
+          if (!isheaderNavItemServiceClicked) {
+            isheaderNavItemServiceClicked = true;
+            headerNavItemService.classList.add(noClick);
+            headerNavLinkService.classList.add(hoverAction);
+          } else {
+            isheaderNavItemServiceClicked = false;
+            headerNavItemService.classList.remove(noClick);
+          }
+        });
+        headerNav.addEventListener("touchstart", function (e) {
+          e.stopPropagation();
+        });
+        d.body.addEventListener("touchstart", function () {
+          if (isheaderNavItemServiceClicked) {
+            isheaderNavItemServiceClicked = false;
+            headerNavLinkService.classList.remove(hoverAction);
+            headerNavItemService.classList.remove(noClick);
+          }
+        });
+      }
+
+      var headerAccordion = d.getElementById("js-headerServiceList");
+
+      var cancelAnimation = function cancelAnimation() {
+        if (module_util.mql.matches) {
+          headerAccordion.style.transition = "opacity 0.3s";
+          setTimeout(function () {
+            headerAccordion.style.transition = "";
+          }, module_util.loadAnimationDuration);
+        }
+      };
+
+      module_util.mql.addListener(cancelAnimation); //事業紹介のアコーディオンにカーソル合わせてもホバーアクションが出るように。
+
+      headerAccordion.addEventListener("mouseover", function () {
+        if (module_util.mql.matches) {
+          headerNavLinkService.classList.add(hoverAction);
+        }
+      });
+      headerAccordion.addEventListener("mouseleave", function () {
+        if (module_util.mql.matches) {
+          headerNavLinkService.classList.remove(hoverAction);
+        }
+      });
+    }();
+
+    var setFillHeight = function setFillHeight() {
+      var vh = w.innerHeight * 0.01;
+      var vw = w.innerWidth * 0.01;
+      d.documentElement.style.setProperty("--vh", "".concat(vh, "px"));
+      d.documentElement.style.setProperty("--vw", "".concat(vw, "px"));
+    }; // 画面のサイズ変動があった時に高さを再計算する
+
+
+    w.addEventListener("resize", function () {
+      setFillHeight();
+    }); // 初期化
+
+    w.addEventListener("load", function () {
+      setFillHeight(); //ロード直後では正しく計算されないため、
+
+      setTimeout(function () {
+        setFillHeight();
+      }, module_util.loadAnimationDuration);
+
+      if (ua.isIpad) {
+        setInterval(function () {
+          setFillHeight();
+        }, 500);
+      }
+    }); //横スクロール時のheader位置調整
+
+    var headerOuter = d.getElementById("js-headerOuter");
+    w.addEventListener("scroll", function () {
+      if (module_util.mql.matches) {
+        headerOuter.style.left = "-".concat(pageXOffset, "px");
+      } else {
+        headerOuter.style.left = 0;
+      }
+    });
+    /**
+     * スムーススクロール
+     */
+
+    var smoothScrollFunc = function () {
+      var smoothScrollElements = [].slice.call(d.querySelectorAll(".js-smoothScroll"));
+      smoothScrollElements.forEach(function (target) {
+        target.addEventListener("click", function (event) {
+          event.preventDefault();
+          scrollTo({
+            target: d.querySelector(event.currentTarget.children[0].getAttribute("href")),
+            durationTime: 500
+          });
+        });
+      });
+    }();
+    /**
+     * 別ページからアンカーリンク移動した際のズレ防止
+     */
+
+
+    w.addEventListener("load", function () {
+      if (location.hash) {
+        setTimeout(function () {
+          var target = d.querySelector(location.hash);
+
+          if (target) {
+            target.scrollIntoView();
+          }
+        }, 100);
+      }
+    });
+  })(document, window);
+};
+// CONCATENATED MODULE: ../kids/rk3rh3ia74/wp-content/themes/gfd/assets/org/js/entry/app.js
+ // import { top } from "../pages/top";
+// import { about } from "../pages/about";
+// import { posts } from "../pages/posts";
+// import { post } from "../pages/post";
+// import { contact } from "../pages/contact";
+// import { confirm } from "../pages/confirm";
+// import { company } from "../pages/company";
+// import { employment } from "../pages/employment";
+// import { service } from "../pages/service";
+
+(function (d, w) {
+  console.log('aaa');
+  common_common();
+
+  switch (d.body.id) {
+    case "top":
+      top();
+      break;
+
+    case "about":
+      about();
+      break;
+
+    case "posts":
+      posts();
+      break;
+
+    case "post":
+      post();
+      break;
+
+    case "contact":
+      contact();
+      break;
+
+    case "confirm":
+      confirm();
+      break;
+
+    case "company":
+      company();
+      break;
+
+    case "employment":
+      employment();
+      break;
+
+    case "service":
+      service();
+      break;
+  }
+})(document, window);
+
+/***/ })
+/******/ ]);

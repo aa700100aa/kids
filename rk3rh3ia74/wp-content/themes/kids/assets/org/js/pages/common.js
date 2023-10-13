@@ -1,0 +1,214 @@
+import scrollTo from "../module/scrollTo";
+import { lockModal, releaseModal } from "../module/lockScroll";
+import util from "../module/util";
+import GetUserAgent from "../module/getUserAgent";
+
+export const common = () => {
+  ((d, w) => {
+    // スクロール無効
+    function disableScroll(e) {
+      e.preventDefault();
+    }
+    const scrollOff = () => {
+      d.addEventListener("touchmove", disableScroll, {
+        passive: false,
+      });
+      d.addEventListener("mousewheel", disableScroll, {
+        passive: false,
+      });
+    };
+    scrollOff();
+
+    const scrollOn = () => {
+      d.removeEventListener("touchmove", disableScroll, {
+        passive: false,
+      });
+      d.removeEventListener("mousewheel", disableScroll, {
+        passive: false,
+      });
+    };
+
+    w.addEventListener("load", () => {
+      d.body.classList.add("add-loaded");
+      const loader = d.getElementById("js-loader");
+      setTimeout(() => {
+        if (d.body.id !== "top") {
+          scrollOn();
+        }
+      }, 100);
+      if (d.body.id == "top") {
+        setTimeout(() => {
+          scrollOn();
+        }, 1050);
+      }
+    });
+    /**
+     * 広範囲で使われる変数
+     */
+    const hmbg = d.getElementById("js-hmbg"); //ハンバーガーボタン
+    const headerNav = d.getElementById("js-headerNav"); //ヘッダー内のナビ
+    const headerOpen = "add-headerOpen";
+    const burgerClose = "add-burgerClose";
+    const ua = new GetUserAgent();
+    /**
+     * ipadの時にクラスを付与
+     */
+    if (ua.isIpad) d.body.classList.add("add-iPad");
+    /**
+     * タブレット時にviewportを設定
+     */
+    if (ua.isTablet)
+      d.querySelector('meta[name="viewport"]').setAttribute(
+        "content",
+        "width=1220"
+      );
+    /**
+     * Androidの時にのみCSSを適用
+     */
+    if (ua.isAndroidPhone) d.body.classList.add("add-android");
+    /**
+     * ヘッダーメニュー
+     */
+    const headerFunc = (() => {
+      const cancelBurgerMenu = () => {
+        d.body.classList.remove(headerOpen);
+        hmbg.classList.add(burgerClose);
+        releaseModal(headerNav);
+      };
+      hmbg.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (!d.body.classList.contains(headerOpen)) {
+          headerNav.scrollTop = 0; //ナビ要素のスクロール位置を初期位置に戻す
+          hmbg.classList.remove(burgerClose);
+          d.body.classList.add(headerOpen);
+          lockModal(headerNav);
+        } else {
+          cancelBurgerMenu();
+        }
+      });
+      if (util.mql.matches) cancelBurgerMenu();
+      util.mql.addListener(cancelBurgerMenu);
+    })();
+    /**
+     * ヘッダーアコーディオン関連の処理
+     */
+    const headerAccordionFunc = (() => {
+      const headerNavItemService = d.getElementById("js-headerNavItemService");
+      const headerNavLinkService = d.getElementById("js-headerNavLinkService");
+      const noClick = "add-noClick";
+      const hoverAction = "add-hoverAction";
+      let isheaderNavItemServiceClicked = false;
+      if (ua.isTablet) {
+        headerNavItemService.addEventListener("touchstart", function (e) {
+          if (!isheaderNavItemServiceClicked) {
+            isheaderNavItemServiceClicked = true;
+            headerNavItemService.classList.add(noClick);
+            headerNavLinkService.classList.add(hoverAction);
+          } else {
+            isheaderNavItemServiceClicked = false;
+            headerNavItemService.classList.remove(noClick);
+          }
+        });
+        headerNav.addEventListener("touchstart", (e) => {
+          e.stopPropagation();
+        });
+        d.body.addEventListener("touchstart", () => {
+          if (isheaderNavItemServiceClicked) {
+            isheaderNavItemServiceClicked = false;
+            headerNavLinkService.classList.remove(hoverAction);
+            headerNavItemService.classList.remove(noClick);
+          }
+        });
+      }
+      const headerAccordion = d.getElementById("js-headerServiceList");
+      const cancelAnimation = () => {
+        if (util.mql.matches) {
+          headerAccordion.style.transition = "opacity 0.3s";
+          setTimeout(() => {
+            headerAccordion.style.transition = "";
+          }, util.loadAnimationDuration);
+        }
+      };
+      util.mql.addListener(cancelAnimation);
+
+      //事業紹介のアコーディオンにカーソル合わせてもホバーアクションが出るように。
+      headerAccordion.addEventListener("mouseover", () => {
+        if (util.mql.matches) {
+          headerNavLinkService.classList.add(hoverAction);
+        }
+      });
+      headerAccordion.addEventListener("mouseleave", () => {
+        if (util.mql.matches) {
+          headerNavLinkService.classList.remove(hoverAction);
+        }
+      });
+    })();
+
+    const setFillHeight = () => {
+      const vh = w.innerHeight * 0.01;
+      const vw = w.innerWidth * 0.01;
+      d.documentElement.style.setProperty("--vh", `${vh}px`);
+      d.documentElement.style.setProperty("--vw", `${vw}px`);
+    };
+    // 画面のサイズ変動があった時に高さを再計算する
+    w.addEventListener("resize", () => {
+      setFillHeight();
+    });
+    // 初期化
+    w.addEventListener("load", () => {
+      setFillHeight();
+      //ロード直後では正しく計算されないため、
+      setTimeout(() => {
+        setFillHeight();
+      }, util.loadAnimationDuration);
+      if (ua.isIpad) {
+        setInterval(() => {
+          setFillHeight();
+        }, 500);
+      }
+    });
+    //横スクロール時のheader位置調整
+    const headerOuter = d.getElementById("js-headerOuter");
+    w.addEventListener("scroll", () => {
+      if (util.mql.matches) {
+        headerOuter.style.left = `-${pageXOffset}px`;
+      } else {
+        headerOuter.style.left = 0;
+      }
+    });
+
+    /**
+     * スムーススクロール
+     */
+    const smoothScrollFunc = (() => {
+      const smoothScrollElements = [].slice.call(
+        d.querySelectorAll(".js-smoothScroll")
+      );
+      smoothScrollElements.forEach((target) => {
+        target.addEventListener("click", (event) => {
+          event.preventDefault();
+          scrollTo({
+            target: d.querySelector(
+              event.currentTarget.children[0].getAttribute("href")
+            ),
+            durationTime: 500,
+          });
+        });
+      });
+    })();
+
+    /**
+     * 別ページからアンカーリンク移動した際のズレ防止
+     */
+    w.addEventListener("load", () => {
+      if (location.hash) {
+        setTimeout(() => {
+          const target = d.querySelector(location.hash);
+          if (target) {
+            target.scrollIntoView();
+          }
+        }, 100);
+      }
+    });
+  })(document, window);
+};

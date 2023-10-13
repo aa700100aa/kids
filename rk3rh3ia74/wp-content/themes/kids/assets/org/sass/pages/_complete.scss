@@ -1,0 +1,42 @@
+.contact-complete_wrap {
+  width: getSize(650vw);
+  margin: getSize(60vw) auto;
+
+  text-align: center;
+
+  @include media(pc) {
+    width: 1100px;
+    margin: 60px auto;
+  }
+}
+
+.contact-complete_ttl {
+  font-size: getSize(32vw);
+  font-weight: bold;
+  // color: $primary-d;
+  line-height: 1;
+
+  @include media(pc) {
+    font-size: 30px;
+  }
+}
+
+.contact-complete_txt {
+  margin-top: getSize(24vw);
+  line-height: 1.75;
+  @include media(pc) {
+    margin-top: 24px;
+  }
+}
+
+.contact_submitBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grecaptcha-badge {
+  #complete & {
+    display: none !important; 
+  }
+}

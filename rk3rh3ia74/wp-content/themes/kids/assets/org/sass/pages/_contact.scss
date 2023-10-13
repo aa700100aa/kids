@@ -1,0 +1,804 @@
+$sp: 750;
+
+@mixin border_contact {
+  @include after;
+  background: #969696;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 0%;
+  bottom: 0;
+}
+
+.contact-outer {
+  overflow: hidden;
+  position: relative;
+  background-color: #fff;
+  padding-bottom: getSize(86vw);
+
+  @include media(pc) {
+    padding-bottom: 289px;
+  }
+}
+
+.contact-ttl {
+  width: getSize(380vw);
+  margin: getSize(44vw) auto 0;
+  font-weight: bold;
+  font-size: getSize(36vw);
+  color: #14509f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  span {
+    @include media(sp, max) {
+      transform: translateX(getSize(-15vw));
+    }
+  }
+  img {
+    width: getSize(116vw);
+  }
+
+  @include media(pc) {
+    width: 302px;
+    margin: 70px auto 0;
+    font-size: 30px;
+
+    img {
+      width: 96px;
+    }
+  }
+}
+
+.contact-container {
+  position: relative;
+  width: getSize(650vw);
+  margin: getSize(62vw) auto 0;
+  @include media(pc) {
+    width: 1000px;
+    margin: 48px auto 0;
+  }
+}
+
+.contact-requiredTxt {
+  position: relative;
+  font-weight: 500;
+  @include media(sp, max) {
+    display: flex;
+    align-items: center;
+  }
+  @include media(pc) {
+    line-height: 1;
+    font-size: 15px;
+    // padding: 0px 0px;
+  }
+}
+
+.contact-requiredTxt_inline {
+  background-color: #14509f;
+  color: #fff;
+  margin-right: getSize(17vw);
+  font-size: getSize(16.94vw);
+  width: getSize(61vw);
+  line-height: 2;
+  text-align: center;
+  display: inline-block;
+
+  @include media(pc) {
+    padding: 0;
+    margin-right: 0px;
+    width: 43px;
+    line-height: 1.917;
+    font-size: 12px;
+    transform: translateY(-1px);
+  }
+
+  .mod-personal & {
+    @include media(pc) {
+      margin-right: 13px !important;
+      transform: translateY(-1px);
+    }
+  }
+
+  &.mod-first {
+    margin-right: getSize(5vw);
+    font-size: getSize(20vw);
+    width: getSize(74vw);
+    @include media(pc) {
+      margin-right: 5px;
+      width: 43px;
+      font-size: 12px;
+    }
+  }
+
+  &.mod-order {
+    order: 0;
+
+    margin: 0;
+    @include media(pc) {
+      order: 0;
+    }
+  }
+
+  &.mod-order_left {
+    order: -1;
+
+    @include media(pc) {
+      order: 0;
+    }
+  }
+
+  .mod-select & {
+    @include media(pc) {
+      transform: translate(9px, 0);
+    }
+  }
+}
+
+.contact-form_list {
+  margin-top: getSize(16vw);
+  @include media(pc) {
+    margin-top: 18px;
+  }
+}
+
+.contact-form_item {
+  position: relative;
+  padding: getSize(26vw) 0 getSize(54vw);
+  font-weight: 500;
+
+  @include media(pc) {
+    padding: 37.5px 30px;
+    &:not(.mod-select) {
+      display: flex;
+      align-items: center;
+    }
+    &.mod-detail {
+      align-items: flex-start;
+    }
+  }
+
+  &::after {
+    @include after;
+    @include border_contact;
+  }
+
+  &.mod-select {
+    @include media(pc) {
+      padding: 40px 30px 63px;
+    }
+    &::before {
+      @include after;
+      @include border_contact;
+      top: 0;
+    }
+  }
+
+  &.mod-personal {
+    padding-top: getSize(45vw);
+    padding-bottom: getSize(35vw);
+    @include media(pc) {
+      display: block;
+      padding-top: 45px;
+      padding-bottom: 25px;
+    }
+  }
+
+  &.mod-detail {
+    align-items: flex-start;
+  }
+
+  &.mod-departName,
+  &.mod-corpName {
+    .add-hidden & {
+      display: none;
+    }
+  }
+}
+
+.contact-form_inquirySelect {
+  font-size: getSize(24vw);
+  width: 100%;
+  text-align: left;
+  padding: getSize(14vw) getSize(28vw) !important;
+  background-color: #f0f0f0 !important;
+  border: 1px solid #c8c8c8 !important;
+  @include none-appearance;
+  position: relative;
+  border-radius: getSize(3vw);
+
+  @include media(sp, max) {
+    height: getSize(70vw);
+  }
+
+  @include media(pc) {
+    padding: 12.5px 18px !important;
+    font-size: 17px;
+    border-radius: 3px;
+  }
+}
+
+.contact-form_inquiryDesc {
+  position: relative;
+  word-break: break-all;
+  @include media(sp, max) {
+    margin-top: getSize(28vw) !important;
+  }
+
+  .mod-name & {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .mod-select & {
+    width: getSize(498vw);
+    margin: 0 auto;
+  }
+
+  @include media(pc) {
+    margin-left: 30px;
+    font-size: 17px;
+  }
+
+  .mod-select & {
+    @include media(pc) {
+      width: 390px;
+      // margin-top: 0;
+      margin: 5px auto 0;
+    }
+
+    &::before {
+      @include after;
+      pointer-events: none;
+      border-top: getSize(13vw) solid #000;
+      border-right: getSize(7.5vw) solid transparent;
+      border-left: getSize(7.5vw) solid transparent;
+      position: absolute;
+      top: 55%;
+      transform: translateY(-50%);
+      right: getSize(20vw);
+      z-index: 10;
+      @include media(pc) {
+        border-top: 8px solid #000;
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
+        right: 10px;
+      }
+    }
+  }
+
+  .mod-departName & {
+    @include media(pc) {
+      margin-left: 75px;
+    }
+  }
+}
+
+.contact-form_inquiryTerm {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  @include media(pc) {
+    font-size: 17px;
+  }
+
+  .mod-select & {
+    @include media(sp, max) {
+      justify-content: center;
+      // width: 498px;
+      margin: 0 auto;
+    }
+    @include media(pc) {
+      justify-content: center;
+    }
+  }
+
+  &.mod-left {
+    margin-top: getSize(-20vw) !important;
+    @include media(pc) {
+      margin-top: -7px !important;
+    }
+  }
+
+  &.mod-center {
+    text-align: center;
+    justify-content: center !important;
+  }
+
+  .mod-personal & {
+    justify-content: flex-start;
+    &:last-of-type {
+      margin-top: getSize(35vw);
+    }
+    @include media(pc) {
+      justify-content: center;
+      width: 950px;
+      &:first-of-type {
+        margin-top: -7px;
+      }
+      &:last-of-type {
+        margin-top: 36px;
+      }
+    }
+  }
+
+  label {
+    @include media(pc) {
+      width: 200px;
+    }
+  }
+}
+
+.contact-form_personalTerm {
+  @include media(pc) {
+    font-size: 16px;
+    line-height: lh(28, 16);
+  }
+}
+
+.contact-form_personalDesc {
+  @include media(pc) {
+    font-size: 16px;
+    line-height: lh(28, 16);
+  }
+}
+
+.contact_formTerm {
+  margin-top: getSize(10vw);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  word-break: break-all;
+
+  @include media(pc) {
+    margin: 0 0 0 auto;
+    width: 540px;
+  }
+}
+
+.contact-form_txt {
+  font-size: getSize(24vw);
+  width: 100%;
+  @include none-appearance;
+  border: 1px solid #c8c8c8;
+  padding: getSize(20vw) getSize(27vw);
+  background-color: #f0f0f0;
+  opacity: 0.7;
+  border-radius: getSize(3vw);
+
+  @include media(sp, max) {
+    height: getSize(64vw);
+  }
+
+  @include media(pc) {
+    border-radius: 3px;
+    font-size: 17px;
+    padding: 12.5px;
+  }
+
+  &.mod-tel,
+  &.mod-mail {
+    width: getSize(475vw);
+    @include media(pc) {
+      width: 507px;
+    }
+  }
+
+  .mod-corpName &,
+  .mod-departName & {
+    @include media(pc) {
+      width: 507px;
+    }
+  }
+
+  // お問い合わせ内容
+  &.mod-detail {
+    min-width: getSize(650vw);
+    max-width: getSize(650vw);
+    min-height: getSize(288vw);
+    max-height: getSize(500vw);
+    @include media(pc) {
+      min-width: 635px;
+      max-width: 635px;
+      min-height: 225px;
+      max-height: 1000px;
+    }
+  }
+}
+
+.contact-form_hankaku {
+  font-size: getSize(20vw);
+  color: #acacac;
+  margin-left: getSize(32vw);
+
+  @include media(pc) {
+    font-size: 15px;
+    margin-left: 15px;
+  }
+}
+
+.contact-form_name {
+  .mod-name & {
+    @include media(sp, max) {
+      margin-top: 0 !important;
+      width: getSize(307vw);
+    }
+  }
+}
+
+.contact-form_name,
+.contact-form_mail {
+  &:nth-of-type(2) {
+    margin-top: getSize(10vw);
+
+    @include media(pc) {
+      margin-top: 0px;
+      margin-left: 22px;
+    }
+  }
+}
+
+.contact-form_mail {
+  @include media(pc) {
+    &:nth-of-type(2) {
+      margin-top: 16px;
+      margin-left: 0;
+    }
+  }
+}
+
+.contact-form_name {
+  @include media(pc) {
+    width: 239px;
+    display: inline-block;
+  }
+}
+
+.contact-form_personalList {
+  margin-top: getSize(16vw);
+  background-color: #f0f0f0 !important;
+  border: 1px solid #c8c8c8 !important;
+  padding: getSize(15vw) getSize(23vw);
+  max-height: getSize(280 * 1.5vw);
+  overflow-y: scroll;
+  border-radius: getSize(3vw);
+  letter-spacing: 0;
+  font-weight: 400;
+
+  @include media(pc) {
+    width: 875px;
+    margin: 19px auto 0;
+    padding: 27px 48px;
+    max-height: 225px;
+    border-radius: 3px;
+  }
+}
+
+.contact-form_personalDesc {
+  text-align: justify;
+}
+
+.contact-form_personalItem {
+  &:nth-child(n + 2) {
+    margin-top: getSize(45vw);
+
+    @include media(pc) {
+      margin-top: 20px;
+    }
+  }
+}
+
+/*-------- 
+mwwpformタグ
+---------*/
+.mwform-checkbox-field {
+  .mod-personal & {
+    @include media(sp, max) {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  &.horizontal-item {
+    @include media(sp, max) {
+      display: block !important;
+      width: 100%;
+    }
+  }
+
+  label {
+    font-weight: 500;
+    @include media(sp, max) {
+      display: block;
+      width: 40%;
+      margin: getSize(33vw) auto 0;
+    }
+    @include media(pc) {
+      width: auto;
+      margin-left: 20px;
+    }
+
+    .add-error_check & {
+      input {
+        &::before {
+          background-color: #fcc !important;
+        }
+      }
+    }
+
+    .mod-personal & {
+      @include media(sp, max) {
+        display: block;
+      }
+      display: inline-block;
+      line-height: 1.5;
+      font-weight: 500;
+      cursor: pointer;
+
+      input {
+        position: relative;
+        @include none-appearance;
+        margin-right: getSize(13vw);
+
+        @include media(pc) {
+          margin-right: 10px;
+        }
+
+        &::before {
+          cursor: pointer;
+          content: "";
+          box-sizing: border-box;
+          display: inline-block;
+          border: 2px solid #c8c8c8;
+          background-color: #fff;
+          width: getSize(30vw);
+          height: getSize(30vw);
+          margin: 0;
+
+          @include media(sp, min) {
+            height: 21px;
+            width: 21px;
+
+            .add-iPad & {
+              transform: translateY(-3px);
+            }
+          }
+        }
+
+        &:checked {
+          &::after {
+            cursor: pointer;
+            content: "";
+            display: block;
+            position: absolute;
+            border-bottom: 2px solid #323232;
+            border-left: 2px solid #323232;
+            height: getSize(8vw);
+            width: getSize(15vw);
+            top: 32%;
+            left: getSize(7vw);
+            transform: translate(0, -50%) rotate(-45deg);
+
+            @include media(sp, min) {
+              height: 5px;
+              width: 10px;
+              left: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/*-------- 
+確認・送信ボタン
+---------*/
+
+// .contact_formBtn {
+//   display: none;
+// }
+
+.contact-form_submitBtnFlexWrap {
+  &.mod-confirm {
+    display: none;
+  }
+}
+
+.contact-form_submitBtnWrap {
+  width: getSize(361vw);
+  height: getSize(86vw);
+  margin: getSize(5vw) auto 0;
+
+  @include media(pc) {
+    margin: 11px auto 0 387px;
+    width: 240px;
+    height: 86px;
+  }
+}
+
+.contact-form_submitBtn {
+  width: 100%;
+  height: 100%;
+
+  background-color: #14509f;
+  color: #fff;
+  position: relative;
+  font-size: getSize(28vw);
+  border-radius: getSize(5vw);
+  display: block;
+  margin: 0 auto;
+  transition: color 0.3s;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 1.25em;
+  text-indent: 0.7em;
+
+  @include media(pc) {
+    font-size: 26px;
+    border-radius: 5px;
+    &:not(.mod-formBack) {
+      border: 1px solid #14509f;
+      transition: background-image 0.3s, background-color 0.3s, color 0.3s !important;
+      &:hover {
+        opacity: 1 !important;
+        background-color: #fff;
+        color: #14509f !important;
+        &::after {
+          background: url(../images/common/arrow4.svg) no-repeat center
+            center/100% auto;
+        }
+      }
+    }
+  }
+
+  &.mod-formBack {
+    background-color: #666;
+    text-indent: 1.7em;
+  }
+
+  &::after {
+    @include after;
+    background: url(../images/common/arrow3.svg) no-repeat center center/100%
+      auto;
+    width: getSize(14vw);
+    height: getSize(32vw);
+    position: absolute;
+    top: 51.5%;
+    transform: translateY(-50%);
+    right: getSize(15vw);
+    transition: opacity 0.3s, background-image 0.3s;
+
+    @include media(pc) {
+      right: 17px;
+      width: 14px;
+      height: 30px;
+    }
+  }
+
+  &.mod-formBack {
+    &::after {
+      left: getSize(15vw);
+      right: auto;
+      transform: translateY(-50%) rotate(180deg);
+      @include media(pc) {
+        left: 17px;
+      }
+    }
+  }
+
+  @include media(pc) {
+    transition: opacity 0.2s;
+    text-decoration: none;
+    cursor: pointer;
+    @include media(pc) {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+.contact-logo {
+  margin-top: getSize(75vw);
+
+  .parts-privacyMark {
+    width: getSize(306vw);
+    margin: 0 auto;
+  }
+  @include media(pc) {
+    margin-top: 53px;
+  }
+}
+
+.add-error {
+  background-color: #fcc !important;
+}
+
+// リキャプチャ
+
+// .grecaptcha-badge {
+//   z-index: 0;
+
+//   right: -194px !important;
+//   transform-origin: 0% 0%;
+//   transform: scale(0.9) !important;
+//   overflow: visible !important;
+
+//   &.add-recaptcha {
+//     transform: scale(0.9) !important;
+//     right: -26px !important;
+//   }
+// }
+
+// // リキャプチャカバー用
+// .recaptcha_cover {
+//   z-index: 2;
+//   width: 256px;
+//   height: 60px;
+//   display: block;
+//   position: fixed;
+//   border-radius: 2px;
+//   bottom: 14px;
+//   right: -192px !important;
+//   transform-origin: 0% 0%;
+//   transform: scale(0.9) translateX(0px) !important;
+//   transition: transform 0.3s !important;
+//   overflow: visible !important;
+
+//   &.add-recaptcha {
+//     z-index: 2;
+//     width: 70px;
+//     height: 60px;
+//     display: block;
+//     position: fixed;
+//     border-radius: 2px;
+//     right: -21px !important;
+//     bottom: 14px;
+//     transform-origin: 0% 0%;
+//     transition: transform 0.3s !important;
+//     overflow: visible !important;
+//     transform: scale(0.9) translateX(-200px) !important;
+//     @include media(pc) {
+//       transform: scale(0.9) translateX(-200px) !important;
+//     }
+//   }
+// }
+
+.error {
+  font-size: 0px;
+  &::before {
+    display: block;
+    content: "要求がタイムアウトになりました。\A続けるには、再度「確認画面」を押してください。";
+    white-space: pre;
+
+    font-size: getSize(24vw);
+    margin-top: getSize(45vw);
+
+    text-align: center;
+    @include media(pc) {
+      font-size: 15px;
+      content: "要求がタイムアウトになりました。続けるには、再度「確認画面」を押してください。";
+      margin-top: 30px;
+    }
+  }
+}
+#contact .page-wrapper {
+  @include media(sp,max){
+    -webkit-overflow-scrolling: auto;
+  }
+}
+.grecaptcha-badge {
+  &.add-invisible {
+    visibility: hidden;
+  }
+}

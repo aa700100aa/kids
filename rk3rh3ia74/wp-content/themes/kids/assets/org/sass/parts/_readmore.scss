@@ -1,0 +1,109 @@
+$minVh: 0.775193798449612;
+$tab: 0.785714285714286;
+$vw: 1400;
+
+.part-readMore_link {
+  position: relative;
+  color: #fff;
+  font-size: getSize(28, 750) + "vw";
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: getSize(2, 750) + "vw";
+
+  white-space: nowrap;
+  .top-horizontal & {
+    .add-iPad & {
+      font-size: 14px;
+      width: 118px;
+      margin-left: 0;
+    }
+
+    .add-pc.add-vh & {
+      @include media(pc) {
+        font-size: getSize(14, 774) + "vh";
+        width: 15.353488vh;
+        margin-left: 0;
+      }
+      @include kvMinH {
+        font-size: 14px * $minVh;
+        width: 118.836px * $minVh;
+      }
+    }
+    .add-pc.add-vw & {
+      @include media(pc) {
+        font-size: getSize(14, $vw) + "vw";
+        width: getSize(118.836, $vw) + "vw";
+        margin-left: 0;
+      }
+      @include screenBelowKv {
+        font-size: 14px * $tab;
+        width: 118.836px * $tab;
+      }
+    }
+  }
+
+  .top-vertical & {
+    @include media(pc) {
+      font-size: 14px;
+      margin-left: 6px;
+    }
+  }
+
+  &::before {
+    @include after;
+
+    @include media(sp) {
+      background: url(../images/common/arrow2.svg) no-repeat center center/99%
+        auto;
+    }
+    background: url(../images/common/arrow2.svg) no-repeat center center/100%
+      auto;
+    display: inline-block;
+    width: getSize(31, 750) + "vw";
+    padding-top: getSize(32, 750) + "vw";
+    margin-right: getSize(17, 750) + "vw";
+
+    .top-horizontal & {
+      .add-iPad & {
+        width: 16px;
+        padding-top: 18px;
+        margin-right: 9px;
+      }
+
+      .add-pc.add-vh & {
+        @include media(pc) {
+          width: 2.137984vh;
+          padding-top: 2.237984vh;
+          margin-right: 1.058398vh;
+        }
+        @include kvMinH {
+          width: 16.547px * $minVh;
+          padding-top: 17.322px * $minVh;
+          margin-right: 8.192px * $minVh;
+        }
+      }
+      .add-pc.add-vw & {
+        @include media(pc) {
+          width: 2.137984vh;
+          padding-top: 2.237984vh;
+          margin-right: 1.058398vh;
+        }
+        @include screenBelowKv {
+          width: 16.547px * $tab;
+          padding-top: 17.322px * $tab;
+          margin-right: 8.192px * $tab;
+        }
+      }
+    }
+    .top-vertical & {
+      @include media(pc) {
+        width: 16px;
+        padding-top: 18px;
+        margin-right: 9px;
+      }
+    }
+  }
+}

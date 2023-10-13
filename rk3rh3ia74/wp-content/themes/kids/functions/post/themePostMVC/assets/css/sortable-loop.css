@@ -1,0 +1,101 @@
+.sortable-loop-list-action {
+    margin: 1rem;
+}
+.sortable-loop-list-action span {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    display: inline-block;
+    cursor: pointer;
+}
+.sortable-loop-list-action span:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    width: auto;
+    height: auto;
+    font-size: 2rem;
+    -webkit-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+}
+.sortable.loop {
+    position: relative;
+    margin: 0 1rem;
+}
+.sortable.loop .sortable-loop-item {
+    position: relative;
+    margin: 1rem 0;
+    border: 1px solid #eee;
+    border-radius: 0.5rem;
+    background-clip: #fff;
+    overflow: hidden;
+}
+.sortable.loop .sortable-loop-header {
+    text-align: right;
+    background-color: #eee;
+}
+.sortable.loop .sortable-loop-header span {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    display: inline-block;
+    cursor: pointer;
+}
+.sortable.loop .sortable-loop-header span:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    width: auto;
+    height: auto;
+    font-size: 2rem;
+    -webkit-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+}
+.sortable.loop .sortable-loop-header span:first-child {
+    float: left;
+    cursor: ns-resize;
+    padding-left: 1rem;
+}
+.sortable.loop .sortable-loop-header span:first-child {
+    float: left;
+    cursor: ns-resize;
+    padding-left: 1rem;
+}
+.sortable.loop .sortable-loop-header span.dashicons-plus-alt {
+    color: #0085ba;
+    width: 26px;
+}
+.sortable.loop .sortable-loop-header span.dashicons-dismiss {
+    color: #a00;
+    width: 26px;
+}
+.sortable.loop .sortable-loop-item.close .sortable-loop-header span.dashicons-arrow-up {
+    transform: scale(1, -1);
+    filter: FlipV;
+    -ms-filter: "FlipV";
+}
+.sortable.loop .sortable-loop-item.close .sortable-loop-body {
+    height: 0;
+    overflow: hidden;
+}
+.sortable.loop .sortable-loop-item.close .sortable-loop-body > .custom_field:first-child td > * {
+    position: absolute;
+    top: 50%;
+    left: -webkit-calc(36px + 1rem);
+    left:         calc(36px + 1rem);
+    width: -webkit-calc(100% - 36px * 4 - 20px);
+    width:         calc(100% - 36px * 4 - 20px);
+    -webkit-transform: translate(0,-50%);
+            transform: translate(0,-50%);
+}
+.sortable.loop .sortable-loop-item.close .sortable-loop-body > .custom_field:first-child td * {
+    padding: 0;
+    margin: 0;
+}
+.sortable.loop .sortable-loop-item.close .sortable-loop-body > .custom_field:first-child td input ,
+.sortable.loop .sortable-loop-item.close .sortable-loop-body > .custom_field:first-child td textarea ,
+.sortable.loop .sortable-loop-item.close .sortable-loop-body > .custom_field:first-child td select {
+    padding: 3px 5px;
+}

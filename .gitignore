@@ -1,0 +1,14 @@
+wp-admin
+wp-includes
+.DS_Store
+mu-plugins
+uploads
+languages
+wp-config.php
+rk3rh3ia74/*.php
+rk3rh3ia74/*.txt
+rk3rh3ia74/*.html
+templates_c
+rk3rh3ia74/wp-content/*.sql
+rk3rh3ia74/wp-content/*.gz
+.htaccess
