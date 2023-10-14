@@ -1467,13 +1467,6 @@ main {
   @media screen and (min-width: 768px) {
     .header-nav_item:nth-of-type(n + 3) {
       margin-left: 36px; } }
-  .header-nav_item.mod-service {
-    position: relative; }
-    .header-nav_item.mod-service:hover .header-service_list {
-      opacity: 1;
-      transform: scaleY(1); }
-    .header-nav_item.mod-service.add-noClick .header-nav_link {
-      pointer-events: none; }
 
 .header-nav_link {
   display: block;

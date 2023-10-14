@@ -60,7 +60,7 @@ export const common = () => {
     if (ua.isTablet)
       d.querySelector('meta[name="viewport"]').setAttribute(
         "content",
-        "width=1220"
+        "width=1200"
       );
     /**
      * Androidの時にのみCSSを適用
@@ -88,60 +88,6 @@ export const common = () => {
       });
       if (util.mql.matches) cancelBurgerMenu();
       util.mql.addListener(cancelBurgerMenu);
-    })();
-    /**
-     * ヘッダーアコーディオン関連の処理
-     */
-    const headerAccordionFunc = (() => {
-      const headerNavItemService = d.getElementById("js-headerNavItemService");
-      const headerNavLinkService = d.getElementById("js-headerNavLinkService");
-      const noClick = "add-noClick";
-      const hoverAction = "add-hoverAction";
-      let isheaderNavItemServiceClicked = false;
-      if (ua.isTablet) {
-        headerNavItemService.addEventListener("touchstart", function (e) {
-          if (!isheaderNavItemServiceClicked) {
-            isheaderNavItemServiceClicked = true;
-            headerNavItemService.classList.add(noClick);
-            headerNavLinkService.classList.add(hoverAction);
-          } else {
-            isheaderNavItemServiceClicked = false;
-            headerNavItemService.classList.remove(noClick);
-          }
-        });
-        headerNav.addEventListener("touchstart", (e) => {
-          e.stopPropagation();
-        });
-        d.body.addEventListener("touchstart", () => {
-          if (isheaderNavItemServiceClicked) {
-            isheaderNavItemServiceClicked = false;
-            headerNavLinkService.classList.remove(hoverAction);
-            headerNavItemService.classList.remove(noClick);
-          }
-        });
-      }
-      const headerAccordion = d.getElementById("js-headerServiceList");
-      const cancelAnimation = () => {
-        if (util.mql.matches) {
-          headerAccordion.style.transition = "opacity 0.3s";
-          setTimeout(() => {
-            headerAccordion.style.transition = "";
-          }, util.loadAnimationDuration);
-        }
-      };
-      util.mql.addListener(cancelAnimation);
-
-      //事業紹介のアコーディオンにカーソル合わせてもホバーアクションが出るように。
-      headerAccordion.addEventListener("mouseover", () => {
-        if (util.mql.matches) {
-          headerNavLinkService.classList.add(hoverAction);
-        }
-      });
-      headerAccordion.addEventListener("mouseleave", () => {
-        if (util.mql.matches) {
-          headerNavLinkService.classList.remove(hoverAction);
-        }
-      });
     })();
 
     const setFillHeight = () => {

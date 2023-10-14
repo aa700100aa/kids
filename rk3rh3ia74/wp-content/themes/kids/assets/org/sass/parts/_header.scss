@@ -351,20 +351,6 @@ _::-webkit-full-page-media, _:future, :root .header-outer:after {
       margin-left: 36px;
     }
   }
-  &.mod-service {
-    position: relative;
-    &:hover {
-      .header-service_list {
-        opacity: 1;
-        transform: scaleY(1);
-      }
-    }
-    &.add-noClick {
-      .header-nav_link {
-        pointer-events: none;
-      }
-    }
-  }
 }
 .header-nav_link {
   display: block;

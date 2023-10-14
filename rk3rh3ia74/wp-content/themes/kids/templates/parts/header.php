@@ -46,34 +46,11 @@ if(is_category() || is_single()) {
       <div class='header-content' id="js-headerNav">
         <nav class='header-nav'>
           <ul class='header-nav_list'>
-            <li class='header-nav_item mod-service' id="js-headerNavItemService">
-              <a class="header-nav_link <?php if( is_page('service') ) echo 'add-active'; ?>" id="js-headerNavLinkService" href="<?php echo home_url(); ?>/service/" >事業紹介</a>
-              <ul class="header-service_list" id='js-headerServiceList'>
-                <li class="header-service_item mod-security">
-                  <a class="header-service_link js-serviceLink js-burgerServiceLink" href="<?php echo home_url(); ?>/service/#security" >Security</a>
-                </li>
-                <li class="header-service_item">
-                  <a class="header-service_link js-serviceLink js-burgerServiceLink" href="<?php echo home_url(); ?>/service/#resale" >Resale</a>
-                </li>
-                <li class="header-service_item">
-                  <a class="header-service_link js-serviceLink js-burgerServiceLink mod-it" href="<?php echo home_url(); ?>/service/#solution" >IT Solution</a>
-                </li>
-                <li class="header-service_item">
-                  <a class="header-service_link js-serviceLink js-burgerServiceLink" href="<?php echo home_url(); ?>/service/#education" >Education</a>
-                </li>
-              </ul>
+            <li class='header-nav_item'>
+              <a class="header-nav_link <?php if( is_page('about') ) echo 'add-active'; ?>" href="<?php echo home_url(); ?>/about/" >当園について</a>
             </li>
             <li class='header-nav_item'>
-              <a class="header-nav_link <?php if( is_page('about') ) echo 'add-active'; ?>" href="<?php echo home_url(); ?>/about/" >GFDとは</a>
-            </li>
-            <li class='header-nav_item'>
-              <a class="header-nav_link <?php if($ancestorCat == 'case') echo 'add-active'; ?>" href="<?php echo home_url(); ?>/category/case/" >実績紹介</a>
-            </li>
-            <li class='header-nav_item'>
-              <a class="header-nav_link <?php if( is_page('employment') ) echo 'add-active'; ?>" href="<?php echo home_url(); ?>/employment/" >採用情報</a>
-            </li>
-            <li class='header-nav_item'>
-              <a class="header-nav_link <?php if( is_page('company') ) echo 'add-active'; ?>" href="<?php echo home_url(); ?>/company/" >会社情報</a>
+              <a class="header-nav_link <?php if( is_page('flow') ) echo 'add-active'; ?>" href="<?php echo home_url(); ?>/flow/" >一日の流れ</a>
             </li>
             <li class='header-nav_item'>
               <a class="header-nav_link <?php if($ancestorCat == 'news') echo 'add-active';?>" href="<?php echo home_url(); ?>/category/news/" >お知らせ</a>
