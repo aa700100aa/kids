@@ -58,12 +58,7 @@ export const top = () => {
       ---------*/
 
       const listener = (e) => {
-        if (e.matches) {
-          setInView();
-          observeHeaderArchi();
-        } else {
-          setInView();
-        }
+        setInView();
       };
       util.mql.addListener(listener);
     });
