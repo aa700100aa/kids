@@ -65,29 +65,24 @@ body {
 }
 
 .header-outer {
-  color: #fff;
   line-height: 1;
-  color: #4D4D4D;
   z-index: $zIndexHeader;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  @include fontYuGothic();
-  font-weight: 500;
+  @include fontZenMaruGothic();
+  font-weight: 700;
   height: getSize(108vw);
   @include media(pc,min){
     height: 90px;
-    background-color: $primary-b;
+    background-color: #fff;
     min-width: $min-width;
     transform: translateY(-1px);
   }
   .header-nav_link,
   .header-service_link {
-    color: #4D4D4D;
-    @include media(pc,min){
-      color: #fff;
-    }
+    color: $base-b;
   }
   _::-webkit-full-page-media, _:future, :root & {
     font-weight: 400;

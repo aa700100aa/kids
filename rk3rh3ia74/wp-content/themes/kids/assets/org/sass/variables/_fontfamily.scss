@@ -1,9 +1,14 @@
 /*
- + fontfamilym変数	
+ + fontfamily変数	
  */
-@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap);
-  $font_def:'Noto Sans JP', '游ゴシック', 'ヒラギノ角ゴ Pro', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&family=Zen+Maru+Gothic:wght@700&display=swap');
+
+$font_def: YuGothic,"Yu Gothic","Noto Sans JP","ヒラギノ角ゴ Pro W3","メイリオ",sans-serif;
   
 @mixin fontYuGothic {
   font-family: YuGothic,"Yu Gothic","Noto Sans JP","ヒラギノ角ゴ Pro W3","メイリオ",sans-serif;
+}
+
+@mixin fontZenMaruGothic {
+  font-family: 'Zen Maru Gothic',"ヒラギノ角ゴ Pro W3","メイリオ",sans-serif;
 }

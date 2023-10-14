@@ -24,14 +24,14 @@ if(is_category() || is_single()) {
       <div class='header-logoWrap'>
         <h1 class='header-logo'>
           <span class="header-logo_link">
-            <img src="<?php echo output_file("/assets/images/common/logo.svg"); ?>" alt="株式会社GFD">
+            <img src="<?php echo output_file("/assets/images/kids/common/title.svg"); ?>" alt="あらかわ保育園">
           </span>
         </h1>
     <?php else : ?>
       <div class='header-logoWrap'>
         <div class='header-logo'>
           <a class="header-logo_link" href="<?php echo home_url(); ?>/" >
-            <img src="<?php echo output_file("/assets/images/common/logo.svg"); ?>" alt="株式会社GFD">
+            <img src="<?php echo output_file("/assets/images/kids/common/title.svg"); ?>" alt="あらかわ保育園">
           </a>
         </div>
     <?php endif; ?>
