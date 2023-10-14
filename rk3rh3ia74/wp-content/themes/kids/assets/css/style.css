@@ -1203,41 +1203,6 @@ main {
     color: #5E3500; }
   .header-outer _::-webkit-full-page-media, .header-outer _:future, :root .header-outer {
     font-weight: 400; }
-  .header-outer:after {
-    content: '';
-    background-image: url("../images/common/header/archi-top.png");
-    background-size: 100% 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 18.13333vw;
-    z-index: -1; }
-    @media screen and (max-width: 767.9px) {
-      .header-outer:after {
-        display: none; } }
-    @media screen and (min-width: 768px) {
-      .header-outer:after {
-        background-image: url("../images/common/header/pc/archi-top.png");
-        top: 89px;
-        height: 39.5px;
-        background-size: 100% 100%;
-        background-repeat: no-repeat; } }
-    @media screen and (min-width: 1400px) {
-      .header-outer:after {
-        height: 2.82143vw;
-        background-position-y: -0.0282vw; } }
-  @media screen and (min-width: 768px) {
-    .header-outer.add-archiInvisible:after {
-      display: none; } }
-
-@media screen and (min-width: 768px) {
-  _::-webkit-full-page-media, _:future, :root .header-outer:after {
-    background-position-y: 0; } }
-
-@media screen and (min-width: 768px) {
-  .add-iPad .header-outer.add-archiInvisible:after {
-    display: block; } }
 
 .header-bg {
   position: fixed;
@@ -5898,33 +5863,6 @@ soon
   @media screen and (min-width: 768px) and (max-width: 1400px) {
     #top .footer {
       margin-top: -38px; } }
-
-.top-vertical {
-  position: relative; }
-  .add-iPad .top-vertical::before {
-    content: "";
-    display: block;
-    background: url(../images/top/kv/wave1.svg) repeat-x top center/1400px;
-    width: 100%;
-    height: 20px;
-    position: absolute;
-    top: -117px;
-    z-index: -1; }
-  @media screen and (min-width: 768px) {
-    .add-pc .top-vertical::before {
-      content: "";
-      display: block;
-      background: url(../images/top/kv/wave1.svg) repeat-x top center/1350px auto;
-      width: 100%;
-      height: 20px; } }
-
-@media screen and (max-width: 767.9px) {
-  .top-bg {
-    background: url(../images/top/kv/img1.svg) repeat-x top center/100% auto;
-    width: 100%;
-    height: 100%;
-    background-position-x: 0;
-    will-change: background-position-x; } }
 
 /*
  +	utilのimportはここで呼び出す

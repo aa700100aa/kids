@@ -41,33 +41,17 @@ export const top = () => {
       }
 
       const setInView = () => {
-        const reference = 768 > innerWidth ? scrollElm : w;
         const visibleType = 540 < innerWidth ? 120 : 80;
         const fadeElmTop = d.getElementsByClassName("js-fadeIn_top");
         new InView({
-          reference,
           visibleType,
         });
         new InView({
-          reference,
           visibleType: "bottom",
           elemment: fadeElmTop,
         });
       };
       setInView();
-
-      const topEx = d.getElementById("js-topEx");
-      const headerOuter = d.getElementById("js-headerOuter");
-      const observeHeaderArchi = () => {
-        if (topEx.getBoundingClientRect().top < 160) {
-          headerOuter.classList.remove("add-archiInvisible");
-        } else {
-          headerOuter.classList.add("add-archiInvisible");
-        }
-      };
-      w.addEventListener("scroll", () => {
-        observeHeaderArchi();
-      });
 
       /*-------- 
       utilMqlの判定

@@ -87,47 +87,6 @@ body {
   _::-webkit-full-page-media, _:future, :root & {
     font-weight: 400;
   }
-  &:after {
-    content: '';
-    background-image: url($images + 'common/header/archi-top.png');
-    background-size: 100% 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: getSize(136vw);
-    z-index: -1;
-    @include media(sp,max){
-      display: none;
-    }
-    @include media(pc,min){
-      background-image: url($images + 'common/header/pc/archi-top.png');
-      top: 89px;
-      height: 39.5px;
-      background-size: 100% 100%;
-      background-repeat: no-repeat;
-    }
-    @media screen and (min-width:1400px) {
-      height: getSize(39.5 , 1400) + 'vw';
-      background-position-y: -0.0282vw;
-    }
-  }
-  &.add-archiInvisible:after {
-    @include media(pc,min){
-      display: none;
-    }
-  }
-}
-_::-webkit-full-page-media, _:future, :root .header-outer:after {
-  @include media(pc,min){
-    background-position-y: 0;
-  }
-}
-
-.add-iPad .header-outer.add-archiInvisible:after {
-  @include media(pc,min){
-    display: block;
-  }
 }
 .header-bg {
   position: fixed;
