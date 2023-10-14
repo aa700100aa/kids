@@ -16,7 +16,6 @@ export const posts = () => {
 
       setTimeout(() => {
         new InView({
-          reference: d.getElementById("js-scrollElm"),
           visibleType: "middle",
         });
       }, util.loadAnimationDuration);

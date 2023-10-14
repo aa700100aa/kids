@@ -658,7 +658,7 @@ body {
   font-size: 3.2vw;
   line-height: 1.75;
   letter-spacing: 0.05em;
-  background-color: #A3C0EF;
+  background-color: #fff;
   -moz-text-size-adjust: none;
    -ms-text-size-adjust: none;
        text-size-adjust: none;
@@ -670,10 +670,6 @@ body {
       font-size: 15px;
       line-height: 2.8;
       min-width: 1170px; } }
-  @media screen and (min-width: 768px) {
-    body:not(#top) {
-      height: 100%;
-      overflow-y: hidden; } }
 
 body::-webkit-scrollbar {
   display: none;
@@ -697,27 +693,6 @@ main {
   @media screen and (min-width: 768px) {
     main {
       padding-top: 80px; } }
-
-.page-wrapper {
-  scrollbar-width: none; }
-  @media screen and (max-width: 767.9px) {
-    .page-wrapper {
-      height: 100vh;
-      height: calc(var(--vh) * 100);
-      overflow: scroll;
-      -webkit-overflow-scrolling: touch; } }
-  body:not(#top) .page-wrapper {
-    overflow: scroll; }
-    @media screen and (min-width: 768px) {
-      body:not(#top) .page-wrapper {
-        height: calc(var(--vh) * 100); } }
-  @media screen and (min-width: 768px) {
-    body.add-iPad:not(#top) .page-wrapper {
-      height: calc(var(--vh) * 100); } }
-
-.page-wrapper::-webkit-scrollbar {
-  display: none;
-  /*Google Chrome、Safari、Microsoft Edge対応のスクロールバー非表示コード*/ }
 
 /*
   +	partsのimportはここで呼び出す
@@ -5084,7 +5059,7 @@ ex
     width: 1100px; } }
 
 .top-ex_ttl {
-  color: #fff;
+  color: #5E3500;
   font-size: 4.8vw;
   font-weight: bold;
   line-height: 1;
@@ -5299,7 +5274,7 @@ ex
   display: block; }
 
 .top-ex_itemTxt {
-  color: #fff;
+  color: #5E3500;
   font-size: 3.2vw;
   font-weight: bold;
   line-height: 1.625;
@@ -5318,7 +5293,7 @@ ex
       margin-top: 27px; } }
 
 .top-ex_itemDateTxt {
-  color: #fff;
+  color: #5E3500;
   font-size: 2.66667vw;
   line-height: 1;
   letter-spacing: 0.04em;
@@ -5391,7 +5366,7 @@ notice
         padding-top: 2px; } }
 
 .top-notice_ttl {
-  color: #fff;
+  color: #5E3500;
   font-size: 4.8vw;
   font-weight: bold;
   line-height: 1;
@@ -5492,7 +5467,7 @@ notice
 
 .top-notice_itemDateTxt {
   display: block;
-  color: #fff;
+  color: #5E3500;
   font-size: 2.66667vw;
   line-height: 1;
   letter-spacing: 0.04em;
@@ -5506,7 +5481,7 @@ notice
       margin-top: 0px; } }
 
 .top-notice_itemTtl {
-  color: #fff;
+  color: #5E3500;
   font-size: 4vw;
   font-weight: bold;
   line-height: 1.46667;
@@ -5525,7 +5500,7 @@ notice
       margin-top: 10px; } }
 
 .top-notice_itemTxt {
-  color: #fff;
+  color: #5E3500;
   font-size: 3.2vw;
   line-height: 1.54167;
   letter-spacing: 0.05em;
@@ -5864,7 +5839,7 @@ soon
       transform: translate(-50%, 0%); } }
 
 .top-soon_head {
-  color: #fff;
+  color: #5E3500;
   line-height: 1;
   font-size: 4.66667vw;
   font-weight: bold;
@@ -5897,7 +5872,7 @@ soon
       top: 270px; } }
 
 .top-soon_txt {
-  color: #fff;
+  color: #5E3500;
   line-height: 1;
   font-weight: bold;
   white-space: nowrap;

@@ -431,7 +431,6 @@ export const contact = () => {
           /**
            * メッセージを結合して、アラートを表示する
            */
-          const scrollElm = d.getElementById("js-scrollElm");
           const addErrorElms = d.querySelectorAll(".add-error");
           const headerLogoWrap = d.querySelector(".header-logoWrap");
 
@@ -450,10 +449,10 @@ export const contact = () => {
               const targetElmParent = addErrorElm.closest(".js-scrollTarget");
               const targetOffset =
                 targetElmParent.getBoundingClientRect().top +
-                scrollElm.scrollTop -
+                w.scrollY -
                 parseInt(headerHeight_contact);
 
-              scrollElm.scrollTo({
+              w.scrollTo({
                 top: targetOffset,
                 behavior: "smooth",
               });
@@ -466,19 +465,5 @@ export const contact = () => {
 
       submitBtnElm.addEventListener("click", valid);
     });
-
-    w.addEventListener('load', () => {
-      const recapcha = d.querySelector('.grecaptcha-badge');
-      const footer = d.querySelector('.footer');
-      const scrollElm = d.getElementById("js-scrollElm");
-      scrollElm.addEventListener('scroll', () => {
-        if (footer.getBoundingClientRect().bottom < innerHeight * 1.1) {
-          recapcha.classList.add('add-invisible');
-        }
-        else {
-          recapcha.classList.remove('add-invisible');
-        }
-      })
-    })
   })(document, window);
 };

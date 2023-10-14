@@ -76,29 +76,12 @@ export const top = () => {
       const listener = (e) => {
         if (e.matches) {
           setInView();
-          kv_observerResize();
           observeHeaderArchi();
         } else {
           setInView();
-          kv_observerResize();
         }
       };
       util.mql.addListener(listener);
-
-      /*-------- 
-      アンカースクロール
-      ---------*/
-      d.getElementById("js-ancScroll").addEventListener("click", (event) => {
-        const targetElement = d.getElementById("js-ancTarget");
-        const paddingRatio = 25 / 750;
-        const viewportHeight = innerHeight;
-        const padding = viewportHeight * paddingRatio;
-        const targetOffset = targetElement.offsetTop - padding;
-        scrollElm.scrollTo({
-          top: targetOffset,
-          behavior: "smooth",
-        });
-      });
     });
   })(document, window);
 };

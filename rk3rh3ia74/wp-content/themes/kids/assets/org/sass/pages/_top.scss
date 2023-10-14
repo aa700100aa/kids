@@ -89,7 +89,7 @@ ex
 }
 
 .top-ex_ttl {
-  color: #fff;
+  color: $base-b;
   font-size: getSize(36, 750) + "vw";
   font-weight: bold;
   line-height: 1;
@@ -179,7 +179,7 @@ ex
 }
 
 .top-ex_itemTxt {
-  color: #fff;
+  color: $base-b;
   font-size: getSize(24, 750) + "vw";
   font-weight: bold;
 
@@ -196,7 +196,7 @@ ex
 }
 
 @mixin dateTxt {
-  color: #fff;
+  color: $base-b;
   font-size: getSize(20, 750) + "vw";
 
   line-height: 1;
@@ -273,7 +273,7 @@ notice
 }
 
 .top-notice_ttl {
-  color: #fff;
+  color: $base-b;
   font-size: getSize(36, 750) + "vw";
   font-weight: bold;
   line-height: 1;
@@ -389,7 +389,7 @@ notice
 }
 
 .top-notice_itemTtl {
-  color: #fff;
+  color: $base-b;
   font-size: getSize(30, 750) + "vw";
   font-weight: bold;
   line-height: lh(44, 30);
@@ -406,7 +406,7 @@ notice
 }
 
 .top-notice_itemTxt {
-  color: #fff;
+  color: $base-b;
   font-size: getSize(24, 750) + "vw";
 
   line-height: lh(37, 24);
@@ -820,7 +820,7 @@ soon
 }
 
 .top-soon_head {
-  color: #fff;
+  color: $base-b;
   line-height: 1;
   font-size: getSize(35, 750) + "vw";
   font-weight: bold;
@@ -858,7 +858,7 @@ soon
 }
 
 .top-soon_txt {
-  color: #fff;
+  color: $base-b;
   line-height: 1;
   font-weight: bold;
   white-space: nowrap;
