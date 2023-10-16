@@ -24,9 +24,6 @@ $minVh: 0.775193798449612;
       display: flex;
       flex-wrap: nowrap;
       min-height: 600px;
-      @include kvMinH {
-        padding-right: -164px * $minVh;
-      }
     }
   }
 }
@@ -40,12 +37,6 @@ $minVh: 0.775193798449612;
         left/getSize(4520, $vh) + "vh" auto;
       background-position-x: getSize(2125, $vh) + "vh";
     }
-    @include kvMinH {
-      background: url(../images/top/kv/pc/img1.svg) no-repeat bottom left/3503px
-        auto;
-      background-position-x: 2125px * $minVh;
-      // padding: 2125px * $minVh;
-    }
   }
   .add-pc.add-vw & {
     @include media(pc) {
@@ -54,11 +45,6 @@ $minVh: 0.775193798449612;
       background: url(../images/top/kv/pc/img1.svg) no-repeat bottom
         left/getSize(4520, $vw) + "vw" auto;
       background-position-x: getSize(2125, $vw) + "vw";
-    }
-    @include screenBelowKv {
-      background: url(../images/top/kv/pc/img1.svg) no-repeat bottom left/3503px
-        auto;
-      background-position-x: 2125px * $tab;
     }
   }
 }

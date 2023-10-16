@@ -64,63 +64,97 @@ body {
   }
 }
 
-.header-outer {
-  line-height: 1;
-  z-index: $zIndexHeader;
+.header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 10;
+}
+.header-outer {
+  line-height: 1;
   @include fontZenMaruGothic();
   font-weight: 700;
   height: getSize(108vw);
+  border-top: getSize(10vw) solid $base-b;
   @include media(pc,min){
-    height: 90px;
+    height: 105px;
     background-color: #fff;
     min-width: $min-width;
-    transform: translateY(-1px);
+    border-top: none;
   }
   .header-nav_link,
   .header-service_link {
-    color: $base-b;
+    color: #fff;
+    @include media(pc,min){
+      color: $base-b;
+    }
   }
   _::-webkit-full-page-media, _:future, :root & {
     font-weight: 400;
   }
 }
-.header-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  display: block;
-  background-color: #fff;
-  z-index: $zIndexHeaderBg;
-  visibility: hidden;
-  transition:  visibility 0s 0s;
-  @include media(pc,min){
-    display: none;
-  }
-  .add-headerOpen & {
-    visibility: visible;
-    transition: visibility 0s 0.3s;
-  }
-}
 .header-inner {
   @include media(pc,min){
     min-width: $min-width;
-    max-width: 1400px;
     margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 41px 0 45px;
+    position: relative;
+    &:before,&:after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      width: 653px;
+      height: 195px;
+    }
+    &:before {
+      top: -1px;
+      left: 50%;
+      transform: translate(-1020px);
+      background: url(../images/kids/common/flag_left.png) no-repeat center/contain;
+    }
+    &:after {
+      top: -1px;
+      right: 50%;
+      transform: translate(1020px);
+      background: url(../images/kids/common/flag_right.png) no-repeat center/contain;
+    }
+  }
+  @include large_desktop {
+    &:before {
+      transform: translate(0px);
+      left: -60px;
+    }
+    &:after {
+      transform: translate(0px);
+      right: -60px;
+    }
+  }
+  @include small_desktop {
+    &:before {
+      transform: translate(0px);
+      left: -420px;
+    }
+    &:after {
+      transform: translate(0px);
+      right: -420px;
+    }
+  }
+}
+.header-border {
+  @include media(pc,min){
+    height: 6px;
+    background-color: $base-b;
+    width: 100%;
+    position: absolute;
+    z-index: 11;
+    top: 0;
+    left: 0;
   }
 }
 .header-burgerIcon {
   width: getSize(60vw);
   height: getSize(60vw);
-  background-color: rgba($color: #000000, $alpha: 0);
+  background-color: #fff;
   position: relative;
   display: flex;
   align-items: center;
@@ -147,7 +181,8 @@ body {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: $primary-lb;
+  border-radius: 1px;
+  background-color: $base-b;
   display: block;
   &.mod-top {
     top: 0;
@@ -182,41 +217,53 @@ body {
 }
 
 .header-logoWrap {
-  z-index: 1;
-  position: relative;
   @include media(sp,max){
     display: flex;
     justify-content: space-between;
-    position: fixed;
-    top: 0px;
-    left: 0;
-    width: 100%;
     height: getSize(108vw);
-    background-color: $primary-b;
-    transform: translateY(-1px);
+    background-color: #fff;
   }
   @include media(pc,min){
-    padding-top: 18px;
+    position: relative;
   }
 }
 .header-logo {
-  width: getSize(160vw);
   @include media(sp,max){
-    position: relative;
-    top: getSize(15.47vw);
     margin: 0 0 0 getSize(34.5vw);
   }
   @include media(pc,min){
-    width: 101px;
-  }
-  .add-android & {
-    @include media(sp,max){
-      top: 2.4vw;
-    }
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 .header-logo_link {
-  display: block;
+  display: flex;
+  align-items: center;
+  @include media(sp,max){
+    height: 14.4vw;
+  }
+  @include media(pc,min){
+    flex-direction: column;
+  }
+}
+.header-logo_icon {
+  width: 13vw;
+  @include media(pc,min){
+    width: 87px;
+  }
+}
+.header-logo_title {
+  width: 55vw;
+  @include media(sp,max){
+    margin-left: 3vw;
+    transform: translateY(0.5vw);
+  }
+  @include media(pc,min){
+    width: 170px;
+    margin-top: 7px;
+  }
 }
 .header-content {
   scrollbar-width: none;
@@ -230,27 +277,13 @@ body {
     transition: opacity 0.3s , visibility 0s 0.3s, height 0s 0.3s;
   }
   @include media(pc,min){
-    padding-left: 66px;
-    width: calc(100% - 102px);
+    padding-top: 3px;
   }
   .add-headerOpen & {
     height: calc(var(--vh) * 100);
     visibility: visible;
     opacity: 1;
     transition: opacity 0.3s , visibility 0s, height 0s;
-  }
-  &:after {
-    content: '';
-    background-image: url($images + 'common/header/archi-top.png');
-    background-size: 100% 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: getSize(136vw);
-    @include media(pc,min){
-      display: none;
-    }
   }
 }
 .header-content::-webkit-scrollbar{
@@ -259,14 +292,14 @@ body {
 
 .header-nav {
   @include media(sp,max){
+    background-color: $base-b;
     min-height: calc(var(--vh) * 100);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
   @include media(pc,min){
-    padding-top: 22px;
-    width: 100%;
+    margin-top: 6px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -274,35 +307,35 @@ body {
 }
 .header-nav_list {
   @include media(sp,max){
-    padding: getSize(143vw) getSize(51vw) getSize(10vw);
+    padding: 3vw getSize(51vw) getSize(10vw);
   }
   @include media(pc,min){
+    min-width: 1200px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
   }
 }
 .header-nav_item {
-  font-size: getSize(26vw);
-  letter-spacing: 0.05em;
   @include media(sp,max){
-    font-weight: bold;
+    &:after {
+      background-color: #fff;
+      border-radius: 0.5px;
+      content: "";
+      display: block;
+      height: 1px;
+    }
   }
   @include media(pc,min){
-    font-size: 15px;
-    color: #fff;
-    height: 42px;
-  }
-  & + .header-nav_item {
-    @include media(sp,max){
-      border-top: #666 1px solid;
+    &:nth-child(3) {
+      margin-left: 220px;
     }
-    @include media(pc,min){
-      margin-left: 32px;
+    &:nth-child(2),&:nth-child(4) {
+      margin-left: 20px;
     }
-  }
-  &:nth-of-type(n + 3) {
-    @include media(pc,min){
-      margin-left: 36px;
+    &:nth-child(1),&:nth-child(2) {
+      transform: translateX(-17px);
     }
   }
 }
@@ -317,29 +350,14 @@ body {
     height: 100%;
     display: flex;
     align-items: center;
-  }
-  &:before {
-    @include media(pc,min){
-      content: '';
-      display: block;
-      height: 2px;
-      width: 60px;
-      background-color: #64aee5;
-      z-index: 1;
-      position: absolute;
-      right: 50%;
-      bottom: 0px;
-      transform: translateX(50%) scaleX(0);
-      transform-origin: center center;
-      transition: transform 0.25s;
-    }
+    flex-direction: column;
   }
   &:after {
     @include media(sp,max){
       content: '';
       display: block;
       position: absolute;
-      background-image: url($images + 'common/arrow.svg');
+      background-image: url($images + 'kids/common/arrow_white.svg');
       background-size: 100% 100%;
       background-repeat: no-repeat;
       width: getSize(15vw);
@@ -348,151 +366,16 @@ body {
       top: calc(50% - #{getSize(13vw)});
     }
   }
-  &:hover {
-    @include media(pc,min){
-      opacity: 1;
-    }
-    &:before {
-      @include media(pc,min){
-        transform: translateX(50%) scaleX(0.6);
-      }
-    }
-  }
-  &.add-active {
-    &:before {
-      @include media(pc,min){
-        background-color: #fff;
-      }
-    }
-  }
-  &.add-hoverAction,
-  &.add-active {
-    &:before {
-      @include media(pc,min){
-        transform: translateX(50%) scaleX(0.6);
-      }
-    }
-  }
 }
-.header-service_list {
-  font-size: getSize(26vw);
-  display: flex;
-  flex-wrap: wrap;
-  font-weight: 500;
-  @include media(pc,min){
-    position: absolute;
-    left: -20px;
-    top: 100%;
-    font-size: 15px;
-    transition: opacity 0.3s,transform 0.3s;
-    transform-origin: top center;
-    opacity: 0;
-    transform: scaleY(0);
-    padding: 0 20px 20px;
-    background-color: $primary-b;
-  }
-  _::-webkit-full-page-media, _:future, :root & {
-    font-weight: 400;
-  }
+.header-nav_img {
+  width: 95px;
 }
-.header-service_item {
-  @include media(sp,max){
-    width: 50%;
-    border-top: 1px #666 solid;
-    text-align: center;
-  }
-  @include media(pc,min){
-    padding-top: 15px;
-  }
-  &:nth-of-type(even) {
-    @include media(sp,max){
-      border-left: 1px #666 solid;
-    }
-  }
-  &.mod-security {
-    @include media(pc,min){
-      padding: 40px 0 0 0;
-    }
-  }
-}
-.header-service_link {
-  display: block;
-  @include media(sp,max){
-    padding: getSize(30.5vw) 0;
-  }
-  @include media(pc,min){
-    line-height: 1.2;
-  }
-  &.mod-it {
-    @include media(pc,min){
-      white-space: nowrap;
-    }
-  }
-}
-.header-sns {
-  display: flex;
-  flex-wrap: wrap;
-  @include media(sp,max){
-    height: getSize(136vw);
-    background-image: url($images + 'common/header/archi-bottom.png');
-    background-size: 100% 100%;
-    width: 100%;
-    z-index: 1;
-    margin-top: getSize(-10vw);
-    position: relative;
-    padding: getSize(14.2vw) 0 0 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  @include media(pc,min){
-    margin-top: 7px;
-  }
-}
-.header-sns_ttl {
-  color: #fff;
+.header-nav_text {
   font-size: getSize(26vw);
   font-weight: bold;
+  display: inline-block;
   @include media(pc,min){
-    display: none;
-  }
-}
-.header-sns_list {
-  display: flex;
-  flex-wrap: wrap;
-  @include media(sp,max){
-    margin: getSize(50vw) 0 0 getSize(71vw);
-  }
-  @include media(pc,min){
-    padding-top: 29px;
-  }
-}
-.header-sns_item {
-  @include media(sp,max){
-    margin-left: getSize(27vw);
-  }
-}
-.header-sns_link {
-  color: #fff;
-  display: inline-flex;
-  align-items: center;
-}
-.header-sns_img {
-  width: getSize(38vw);
-  @include media(sp,max){
-    padding-top: getSize(6vw);
-  }
-  @include media(pc,min){
-    width: 24px;
-  }
-}
-.header-sns_name {
-  font-size: getSize(22vw);
-  @include media(sp,max){
-    padding-left: getSize(10vw);
-  }
-  @include media(pc,min){
-    font-size: 12px;
-    padding-right: 8px;
+    font-size: 15px;
+    margin-top: 3px;
   }
 }

@@ -114,12 +114,12 @@ export const common = () => {
       }
     });
     //横スクロール時のheader位置調整
-    const headerOuter = d.getElementById("js-headerOuter");
+    const header = d.getElementById("js-header");
     w.addEventListener("scroll", () => {
       if (util.mql.matches) {
-        headerOuter.style.left = `-${pageXOffset}px`;
+        header.style.left = `-${pageXOffset}px`;
       } else {
-        headerOuter.style.left = 0;
+        header.style.left = 0;
       }
     });
 

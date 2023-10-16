@@ -333,9 +333,9 @@ function get_meta_description()
       $content = $page->post_content;
 
       if ($current_category->name == 'NEWS') {
-        $description = '株式会社GFDのお知らせに関する一覧ページです。' . $content;
+        $description = '株式会社GFDのお知らせに関する一覧ページです。';
       } elseif ($current_category->name == 'CASE') {
-        $description = '株式会社GFDの実績紹介に関する一覧ページです。' . $content;
+        $description = '株式会社GFDの実績紹介に関する一覧ページです。';
       }
     } else {
       $current_title = $current_category->name;
@@ -346,9 +346,9 @@ function get_meta_description()
       $content = $page->post_content;
 
       if ($parent_category->name == 'NEWS') {
-        $description = 'お知らせの' . $current_title . 'に関する一覧ページです。' . $content;
+        $description = 'お知らせの' . $current_title . 'に関する一覧ページです。';
       } elseif ($parent_category->name == 'CASE') {
-        $description = '実績紹介の' . $current_title . 'に関する一覧ページです。' . $content;
+        $description = '実績紹介の' . $current_title . 'に関する一覧ページです。';
       }
     }
 

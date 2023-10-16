@@ -27,20 +27,12 @@ $vw: 1400;
         width: 15.353488vh;
         margin-left: 0;
       }
-      @include kvMinH {
-        font-size: 14px * $minVh;
-        width: 118.836px * $minVh;
-      }
     }
     .add-pc.add-vw & {
       @include media(pc) {
         font-size: getSize(14, $vw) + "vw";
         width: getSize(118.836, $vw) + "vw";
         margin-left: 0;
-      }
-      @include screenBelowKv {
-        font-size: 14px * $tab;
-        width: 118.836px * $tab;
       }
     }
   }
@@ -79,22 +71,12 @@ $vw: 1400;
           padding-top: 2.237984vh;
           margin-right: 1.058398vh;
         }
-        @include kvMinH {
-          width: 16.547px * $minVh;
-          padding-top: 17.322px * $minVh;
-          margin-right: 8.192px * $minVh;
-        }
       }
       .add-pc.add-vw & {
         @include media(pc) {
           width: 2.137984vh;
           padding-top: 2.237984vh;
           margin-right: 1.058398vh;
-        }
-        @include screenBelowKv {
-          width: 16.547px * $tab;
-          padding-top: 17.322px * $tab;
-          margin-right: 8.192px * $tab;
         }
       }
     }

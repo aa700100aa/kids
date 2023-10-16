@@ -16,22 +16,24 @@ if(is_category() || is_single()) {
   $ancestorCat = mb_strtolower(sortCategoryByAncestors()[0]['name']);
 }
 ?>
-<header class='header'>
-  <div class='header-bg'></div>
-  <div class='header-outer' id='js-headerOuter'>
+<header class='header' id='js-header'>
+  <div class='header-outer'>
     <div class='header-inner'>
+      <div class="header-border"></div>
     <?php if (is_front_page()) : ?>
       <div class='header-logoWrap'>
         <h1 class='header-logo'>
           <span class="header-logo_link">
-            <img src="<?php echo output_file("/assets/images/kids/common/title.svg"); ?>" alt="あらかわ保育園">
+            <img class="header-logo_icon" src="<?php echo output_file("/assets/images/kids/common/icon.svg"); ?>" alt="">
+            <img class="header-logo_title" src="<?php echo output_file("/assets/images/kids/common/title.svg"); ?>" alt="あらかわ保育園">
           </span>
         </h1>
     <?php else : ?>
       <div class='header-logoWrap'>
         <div class='header-logo'>
           <a class="header-logo_link" href="<?php echo home_url(); ?>/" >
-            <img src="<?php echo output_file("/assets/images/kids/common/title.svg"); ?>" alt="あらかわ保育園">
+            <img class="header-logo_icon" src="<?php echo output_file("/assets/images/kids/common/icon.svg"); ?>" alt="">
+            <img class="header-logo_title" src="<?php echo output_file("/assets/images/kids/common/title.svg"); ?>" alt="あらかわ保育園">
           </a>
         </div>
     <?php endif; ?>
@@ -47,27 +49,30 @@ if(is_category() || is_single()) {
         <nav class='header-nav'>
           <ul class='header-nav_list'>
             <li class='header-nav_item'>
-              <a class="header-nav_link <?php if( is_page('about') ) echo 'add-active'; ?>" href="<?php echo home_url(); ?>/about/" >当園について</a>
+              <a class="header-nav_link <?php if( is_page('about') ) echo 'add-active'; ?>" href="<?php echo home_url(); ?>/about/" >
+                <img class="header-nav_img util-pc" src="<?php echo output_file("/assets/images/kids/common/about.png"); ?>" alt="">
+                <span class='header-nav_text'>当園について</span>
+              </a>
             </li>
             <li class='header-nav_item'>
-              <a class="header-nav_link <?php if( is_page('flow') ) echo 'add-active'; ?>" href="<?php echo home_url(); ?>/flow/" >一日の流れ</a>
+              <a class="header-nav_link <?php if( is_page('flow') ) echo 'add-active'; ?>" href="<?php echo home_url(); ?>/flow/" >
+                <img class="header-nav_img util-pc" src="<?php echo output_file("/assets/images/kids/common/flow.png"); ?>" alt="">
+                <span class='header-nav_text'>一日の流れ</span>
+              </a>
             </li>
             <li class='header-nav_item'>
-              <a class="header-nav_link <?php if($ancestorCat == 'news') echo 'add-active';?>" href="<?php echo home_url(); ?>/category/news/" >お知らせ</a>
+              <a class="header-nav_link <?php if($ancestorCat == 'news') echo 'add-active';?>" href="<?php echo home_url(); ?>/category/news/" >
+                <img class="header-nav_img util-pc" src="<?php echo output_file("/assets/images/kids/common/news.png"); ?>" alt="">
+                <span class='header-nav_text'>お知らせ</span>
+              </a>
             </li>
             <li class='header-nav_item'>
-              <a class="header-nav_link <?php if( is_page('contact') ) echo 'add-active'; ?>" href="<?php echo home_url(); ?>/contact/" >お問い合わせ</a>
+              <a class="header-nav_link <?php if( is_page('contact') ) echo 'add-active'; ?>" href="<?php echo home_url(); ?>/contact/" >
+                <img class="header-nav_img util-pc" src="<?php echo output_file("/assets/images/kids/common/contact.png"); ?>" alt="">
+                <span class='header-nav_text'>お問い合わせ</span>
+              </a>
             </li>
           </ul>
-          <div class='header-sns'>
-            <div class='header-sns_ttl'>Follow us</div>
-            <div class='header-sns_item'>
-              <a class="header-sns_link" href="https://www.instagram.com/gfd_pr/" target="_blank">
-                <span class='header-sns_name util-pc'>Instagram</span>
-                <img class='header-sns_img' src="<?php echo output_file("/assets/images/common/icon-instagram.svg"); ?>" alt="Instagram">
-              </a>
-            </div>
-          </div>
         </nav>
       </div>
     </div>
