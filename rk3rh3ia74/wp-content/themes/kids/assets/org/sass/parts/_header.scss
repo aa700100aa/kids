@@ -101,44 +101,50 @@ body {
     min-width: $min-width;
     margin: 0 auto;
     position: relative;
-    &:before,&:after {
-      content: '';
-      display: inline-block;
-      position: absolute;
-      width: 653px;
-      height: 195px;
-    }
-    &:before {
-      top: -1px;
-      left: 50%;
-      transform: translate(-1020px);
-      background: url(../images/kids/common/flag_left.png) no-repeat center/contain;
-    }
-    &:after {
-      top: -1px;
-      right: 50%;
-      transform: translate(1020px);
-      background: url(../images/kids/common/flag_right.png) no-repeat center/contain;
+    #top & {
+      &:before,&:after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        width: 653px;
+        height: 195px;
+      }
+      &:before {
+        top: -1px;
+        left: 50%;
+        transform: translate(-1020px);
+        background: url(../images/kids/common/flag_left.png) no-repeat center/contain;
+      }
+      &:after {
+        top: -1px;
+        right: 50%;
+        transform: translate(1020px);
+        background: url(../images/kids/common/flag_right.png) no-repeat center/contain;
+      }
     }
   }
   @include large_desktop {
-    &:before {
-      transform: translate(0px);
-      left: -60px;
-    }
-    &:after {
-      transform: translate(0px);
-      right: -60px;
+    #top & {
+      &:before {
+        transform: translate(0px);
+        left: -60px;
+      }
+      &:after {
+        transform: translate(0px);
+        right: -60px;
+      }
     }
   }
   @include small_desktop {
-    &:before {
-      transform: translate(0px);
-      left: -420px;
-    }
-    &:after {
-      transform: translate(0px);
-      right: -420px;
+    #top & {
+      &:before {
+        transform: translate(0px);
+        left: -420px;
+      }
+      &:after {
+        transform: translate(0px);
+        right: -420px;
+      }
     }
   }
 }
