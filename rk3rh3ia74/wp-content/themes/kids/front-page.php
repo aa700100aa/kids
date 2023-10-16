@@ -2,7 +2,31 @@
 <main>
   <div class="top-outer">
     <div class="top-vertical">
-
+      <div class="top-kv">
+        <picture>
+          <source media="(min-width: 768px)" srcset="<?php echo output_file("/assets/images/kids/top/kv/pc/kv.jpg"); ?>" />
+          <img src="<?php echo output_file("/assets/images/kids/top/kv/kv.jpg"); ?>" alt="" />
+        </picture>
+        <div class="top-kv_textWrap">
+          <p class="top-kv_text">
+            <span class="mod-pink">た</span>
+            <span>の</span>
+            <span class="mod-blue">し</span>
+            <span>く</span>
+            <br>
+            <span>げ</span>
+            <span class="mod-yellow">ん</span>
+            <span>き</span>
+            <span class="mod-green">に</span>
+            <br>
+            <span class="mod-orenge">す</span>
+            <span>こ</span>
+            <span class="mod-pink mod-space">や</span>
+            <span>か</span>
+            <span class="mod-blue">に</span>
+          </p>
+        </div>
+      </div>
       <section class="top-ex" id='js-topEx'>
         <h2 class="top-ex_ttl js-inView">
           <span>事例紹介</span>

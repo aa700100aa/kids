@@ -28,42 +28,64 @@ $minVh: 0.775193798449612;
   }
 }
 
-.top-pc_townBg {
-  .add-pc.add-vh & {
-    @include media(pc) {
-      // padding-right: getSize(164, $vh) + "vh";
-      display: flex;
-      background: url(../images/top/kv/pc/img1.svg) no-repeat bottom
-        left/getSize(4520, $vh) + "vh" auto;
-      background-position-x: getSize(2125, $vh) + "vh";
-    }
+/*-------- 
+kv
+---------*/
+
+.top-kv {
+  position: relative;
+}
+.top-kv_textWrap {
+  background-color: rgba(255,255,255,0.5);
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%,50%);
+  text-align: center;
+  border-radius: 4vw;
+  padding: 4vw 6vw;
+  @include media(pc,min) {
+    border-radius: 25px;
+    padding: 20px 30px;
   }
-  .add-pc.add-vw & {
-    @include media(pc) {
-      // padding-right: getSize(164, $vh) + "vw";
-      display: flex;
-      background: url(../images/top/kv/pc/img1.svg) no-repeat bottom
-        left/getSize(4520, $vw) + "vw" auto;
-      background-position-x: getSize(2125, $vw) + "vw";
-    }
+}
+.top-kv_text {
+  font-size: 11vw;
+  white-space: nowrap;
+  @include fontZenMaruGothic;
+  letter-spacing: -0.11em;
+  color: #fff;
+  transform: translate(-0.055em,-0.05em);
+  filter:drop-shadow(0.4vw 0.4vw 0.4vw rgba(0, 0, 0, 0.7));
+  line-height: 1.25;
+  @include media(pc,min) {
+    font-size: 67px;
+    line-height: 1.35;
+    filter:drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+  }
+  .mod-pink {
+    color: $primary-p;
+  }
+  .mod-blue {
+    color: $primary-b;
+  }
+  .mod-yellow {
+    color: $primary-y;
+  }
+  .mod-green {
+    color: $primary-g;
+  }
+  .mod-orenge {
+    color: $primary-o;
+  }
+  .mod-space {
+    letter-spacing: 0em;
   }
 }
 
 /*-------- 
 ex
 ---------*/
-
-.top-vertical {
-  margin-top: getSize(-100, 750) + "vw";
-
-  .add-iPad & {
-    margin-top: -14px;
-  }
-  @include media(pc) {
-    margin-top: -15px;
-  }
-}
-
 .top-ex {
   .add-iPad & {
     margin: 350px auto 0;

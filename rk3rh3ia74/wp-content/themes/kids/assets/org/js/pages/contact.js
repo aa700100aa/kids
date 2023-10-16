@@ -438,7 +438,7 @@ export const contact = () => {
 
           const setHeaderHeight = () => {
             headerHeight_contact = util.mql.matches
-              ? "80px"
+              ? "105px"
               : `${headerLogoWrap.clientHeight}px`;
           };
 

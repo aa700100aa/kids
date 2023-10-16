@@ -47,6 +47,6 @@ img {
 main {
   padding-top: getSize(108vw);
   @include media(pc) {
-    padding-top: 80px;
+    padding-top: 105px;
   }
 }

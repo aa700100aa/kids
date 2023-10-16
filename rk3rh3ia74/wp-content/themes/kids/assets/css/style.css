@@ -692,7 +692,7 @@ main {
   padding-top: 14.4vw; }
   @media screen and (min-width: 768px) {
     main {
-      padding-top: 80px; } }
+      padding-top: 105px; } }
 
 /*
   +	partsのimportはここで呼び出す
@@ -1191,6 +1191,7 @@ main {
 
 .header-outer {
   line-height: 1;
+  background-color: #fff;
   font-family: 'Zen Maru Gothic',"ヒラギノ角ゴ Pro W3","メイリオ",sans-serif;
   font-weight: 700;
   height: 14.4vw;
@@ -1198,7 +1199,6 @@ main {
   @media screen and (min-width: 768px) {
     .header-outer {
       height: 105px;
-      background-color: #fff;
       min-width: 1200px;
       border-top: none; } }
   .header-outer .header-nav_link,
@@ -1211,43 +1211,44 @@ main {
   .header-outer _::-webkit-full-page-media, .header-outer _:future, :root .header-outer {
     font-weight: 400; }
 
-@media screen and (min-width: 768px) {
-  .header-inner {
-    min-width: 1200px;
-    margin: 0 auto;
-    position: relative; }
-    .header-inner:before, .header-inner:after {
-      content: '';
-      display: inline-block;
-      position: absolute;
-      width: 653px;
-      height: 195px; }
+.header-inner {
+  background-color: rgba(245, 225, 154, 0.2); }
+  @media screen and (min-width: 768px) {
+    .header-inner {
+      height: 105px;
+      min-width: 1200px;
+      margin: 0 auto;
+      position: relative; }
+      .header-inner:before, .header-inner:after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        width: 653px;
+        height: 195px; }
+      .header-inner:before {
+        top: -1px;
+        left: 50%;
+        transform: translate(-1020px);
+        background: url(../images/kids/common/flag_left.png) no-repeat center/contain; }
+      .header-inner:after {
+        top: -1px;
+        right: 50%;
+        transform: translate(1020px);
+        background: url(../images/kids/common/flag_right.png) no-repeat center/contain; } }
+  @media screen and (min-width: 1920px) {
     .header-inner:before {
-      top: -1px;
-      left: 50%;
-      transform: translate(-1020px);
-      background: url(../images/kids/common/flag_left.png) no-repeat center/contain; }
+      transform: translate(0px);
+      left: -60px; }
     .header-inner:after {
-      top: -1px;
-      right: 50%;
-      transform: translate(1020px);
-      background: url(../images/kids/common/flag_right.png) no-repeat center/contain; } }
-
-@media screen and (min-width: 1920px) {
-  .header-inner:before {
-    transform: translate(0px);
-    left: -60px; }
-  .header-inner:after {
-    transform: translate(0px);
-    right: -60px; } }
-
-@media screen and (min-width: 768px) and (max-width: 1200px) {
-  .header-inner:before {
-    transform: translate(0px);
-    left: -420px; }
-  .header-inner:after {
-    transform: translate(0px);
-    right: -420px; } }
+      transform: translate(0px);
+      right: -60px; } }
+  @media screen and (min-width: 768px) and (max-width: 1200px) {
+    .header-inner:before {
+      transform: translate(0px);
+      left: -420px; }
+    .header-inner:after {
+      transform: translate(0px);
+      right: -420px; } }
 
 @media screen and (min-width: 768px) {
   .header-border {
@@ -4860,29 +4861,58 @@ p.add-one {
     flex-wrap: nowrap;
     min-height: 600px; } }
 
-@media screen and (min-width: 768px) {
-  .add-pc.add-vh .top-pc_townBg {
-    display: flex;
-    background: url(../images/top/kv/pc/img1.svg) no-repeat bottom left/583.97933vh auto;
-    background-position-x: 274.5478vh; } }
+/*-------- 
+kv
+---------*/
+.top-kv {
+  position: relative; }
 
-@media screen and (min-width: 768px) {
-  .add-pc.add-vw .top-pc_townBg {
-    display: flex;
-    background: url(../images/top/kv/pc/img1.svg) no-repeat bottom left/322.85714vw auto;
-    background-position-x: 151.78571vw; } }
+.top-kv_textWrap {
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%, 50%);
+  text-align: center;
+  border-radius: 4vw;
+  padding: 4vw 6vw; }
+  @media screen and (min-width: 768px) {
+    .top-kv_textWrap {
+      border-radius: 25px;
+      padding: 20px 30px; } }
+
+.top-kv_text {
+  font-size: 11vw;
+  white-space: nowrap;
+  font-family: 'Zen Maru Gothic',"ヒラギノ角ゴ Pro W3","メイリオ",sans-serif;
+  letter-spacing: -0.11em;
+  color: #fff;
+  transform: translate(-0.055em, -0.05em);
+  -webkit-filter: drop-shadow(0.4vw 0.4vw 0.4vw rgba(0, 0, 0, 0.7));
+          filter: drop-shadow(0.4vw 0.4vw 0.4vw rgba(0, 0, 0, 0.7));
+  line-height: 1.25; }
+  @media screen and (min-width: 768px) {
+    .top-kv_text {
+      font-size: 67px;
+      line-height: 1.35;
+      -webkit-filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+              filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5)); } }
+  .top-kv_text .mod-pink {
+    color: #F692A8; }
+  .top-kv_text .mod-blue {
+    color: #A3C0EF; }
+  .top-kv_text .mod-yellow {
+    color: #F5E19A; }
+  .top-kv_text .mod-green {
+    color: #96D3C1; }
+  .top-kv_text .mod-orenge {
+    color: #F9B083; }
+  .top-kv_text .mod-space {
+    letter-spacing: 0em; }
 
 /*-------- 
 ex
 ---------*/
-.top-vertical {
-  margin-top: -13.33333vw; }
-  .add-iPad .top-vertical {
-    margin-top: -14px; }
-  @media screen and (min-width: 768px) {
-    .top-vertical {
-      margin-top: -15px; } }
-
 .add-iPad .top-ex {
   margin: 350px auto 0; }
 

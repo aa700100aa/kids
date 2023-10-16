@@ -73,13 +73,13 @@ body {
 }
 .header-outer {
   line-height: 1;
+  background-color: #fff;
   @include fontZenMaruGothic();
   font-weight: 700;
   height: getSize(108vw);
   border-top: getSize(10vw) solid $base-b;
   @include media(pc,min){
     height: 105px;
-    background-color: #fff;
     min-width: $min-width;
     border-top: none;
   }
@@ -95,7 +95,9 @@ body {
   }
 }
 .header-inner {
+  background-color: rgba(245,225,154,0.2);
   @include media(pc,min){
+    height: 105px;
     min-width: $min-width;
     margin: 0 auto;
     position: relative;
