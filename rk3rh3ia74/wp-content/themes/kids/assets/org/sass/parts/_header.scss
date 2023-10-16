@@ -237,7 +237,7 @@ body {
 }
 .header-logo {
   @include media(sp,max){
-    margin: 0 0 0 getSize(34.5vw);
+    margin: 0 0 0 11.5vw;
   }
   @include media(pc,min){
     position: absolute;
@@ -265,7 +265,7 @@ body {
 .header-logo_title {
   width: 55vw;
   @include media(sp,max){
-    margin-left: 3vw;
+    margin-left: 4vw;
     transform: translateY(0.5vw);
   }
   @include media(pc,min){

@@ -27,6 +27,44 @@
           </p>
         </div>
       </div>
+      <section class="top-about">
+        <h2 class="top-about_title">
+          <img class="top-about_titleLogo" src="<?php echo output_file("/assets/images/kids/common/about.png"); ?>" alt="">
+          <span class="top-about_titleText">当園について</span>
+        </h2>
+        <div class="top-about_imgWrap">
+          <figure>
+            <img class="top-about_img mod-first" src="<?php echo output_file("/assets/images/kids/top/about/photo_01.jpg"); ?>" alt="">
+          </figure>
+          <figure>
+            <img class="top-about_img mod-last" src="<?php echo output_file("/assets/images/kids/top/about/photo_02.jpg"); ?>" alt="">
+          </figure>
+        </div>
+        <div class="top-about_inner">
+          <p class="top-about_mainText">「たのしく げんきに すこやかに」<br>を保育目標とし、<br>お子様を第一優先に考えて保育に取り組みます。</p>
+          <p class="top-about_subText">私たちは保育目標を達成するために<br class="util-sp">丁寧な保育を心がけています。<br>思いやりのあるたくましい子を育てるためには、<br>自分を大切に思う心が育つ環境づくりが重要です。</p>
+          <p class="top-about_subText">日々の保育を大切に、<br>子どもたちが成長していけるような保育園を<br class="util-sp">職員みんなでつくっています。</p>
+        </div>
+        <figure class="top-about_sun">
+          <img src="<?php echo output_file("/assets/images/kids/top/about/sun.png"); ?>" alt="">
+        </figure>
+        <figure class="top-about_cloud">
+          <img src="<?php echo output_file("/assets/images/kids/top/about/cloud.png"); ?>" alt="">
+        </figure>
+      </section>
+      <section class="top-flow">
+        <h2 class="top-flow_title">
+          <img class="top-flow_titleLogo" src="<?php echo output_file("/assets/images/kids/common/flow.png"); ?>" alt="">
+          <span class="top-flow_titleText">一日の流れ</span>
+        </h2>
+        <figure class="top-flow_imgWrap">
+          <img class="top-flow_img" src="<?php echo output_file("/assets/images/kids/top/flow/photo_01.jpg"); ?>" alt="">
+        </figure>
+        <div class="top-flow_inner">
+          <p class="top-flow_mainText">子どもたち一人ひとりが<br class="util-pc">安心してすごせる毎日。</p>
+          <p class="top-flow_subText">当園では子どもたちが安心してすごせるように遊びや食事の時間を考え、生活リズムを整えられるような保育を提供しております。</p>
+        </div>
+      </section>
       <section class="top-ex" id='js-topEx'>
         <h2 class="top-ex_ttl js-inView">
           <span>事例紹介</span>
