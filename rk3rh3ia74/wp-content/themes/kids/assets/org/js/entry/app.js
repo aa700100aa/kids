@@ -3,7 +3,6 @@ import { top } from "../pages/top";
 import { posts } from "../pages/posts";
 import { post } from "../pages/post";
 import { contact } from "../pages/contact";
-import { confirm } from "../pages/confirm";
 
 ((d, w) => {
   common();
@@ -20,9 +19,6 @@ import { confirm } from "../pages/confirm";
       break;
     case "contact":
       contact();
-      break;
-    case "confirm":
-      confirm();
       break;
   }
 })(document, window);

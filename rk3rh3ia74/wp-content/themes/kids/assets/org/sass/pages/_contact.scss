@@ -10,6 +10,11 @@ $sp: 750;
   bottom: 0;
 }
 
+#contact {
+  input:focus {
+    outline: solid 2px $primary-y;
+  }
+}
 .contact-outer {
   overflow: hidden;
   position: relative;
@@ -76,8 +81,10 @@ $sp: 750;
 }
 
 .contact-requiredTxt_inline {
-  background-color: #14509f;
-  color: #fff;
+  background-color: $primary-y;
+  color: $base-b;
+  @include fontZenMaruGothic;
+  font-weight: bold;
   margin-right: getSize(17vw);
   font-size: getSize(16.94vw);
   width: getSize(61vw);
@@ -128,12 +135,6 @@ $sp: 750;
       order: 0;
     }
   }
-
-  .mod-select & {
-    @include media(pc) {
-      transform: translate(9px, 0);
-    }
-  }
 }
 
 .contact-form_list {
@@ -150,10 +151,8 @@ $sp: 750;
 
   @include media(pc) {
     padding: 37.5px 30px;
-    &:not(.mod-select) {
-      display: flex;
-      align-items: center;
-    }
+    display: flex;
+    align-items: center;
     &.mod-detail {
       align-items: flex-start;
     }
@@ -162,17 +161,6 @@ $sp: 750;
   &::after {
     @include after;
     @include border_contact;
-  }
-
-  &.mod-select {
-    @include media(pc) {
-      padding: 40px 30px 63px;
-    }
-    &::before {
-      @include after;
-      @include border_contact;
-      top: 0;
-    }
   }
 
   &.mod-personal {
@@ -197,28 +185,6 @@ $sp: 750;
   }
 }
 
-.contact-form_inquirySelect {
-  font-size: getSize(24vw);
-  width: 100%;
-  text-align: left;
-  padding: getSize(14vw) getSize(28vw) !important;
-  background-color: #f0f0f0 !important;
-  border: 1px solid #c8c8c8 !important;
-  @include none-appearance;
-  position: relative;
-  border-radius: getSize(3vw);
-
-  @include media(sp, max) {
-    height: getSize(70vw);
-  }
-
-  @include media(pc) {
-    padding: 12.5px 18px !important;
-    font-size: 17px;
-    border-radius: 3px;
-  }
-}
-
 .contact-form_inquiryDesc {
   position: relative;
   word-break: break-all;
@@ -232,41 +198,9 @@ $sp: 750;
     justify-content: space-between;
   }
 
-  .mod-select & {
-    width: getSize(498vw);
-    margin: 0 auto;
-  }
-
   @include media(pc) {
     margin-left: 30px;
     font-size: 17px;
-  }
-
-  .mod-select & {
-    @include media(pc) {
-      width: 390px;
-      // margin-top: 0;
-      margin: 5px auto 0;
-    }
-
-    &::before {
-      @include after;
-      pointer-events: none;
-      border-top: getSize(13vw) solid #000;
-      border-right: getSize(7.5vw) solid transparent;
-      border-left: getSize(7.5vw) solid transparent;
-      position: absolute;
-      top: 55%;
-      transform: translateY(-50%);
-      right: getSize(20vw);
-      z-index: 10;
-      @include media(pc) {
-        border-top: 8px solid #000;
-        border-right: 5px solid transparent;
-        border-left: 5px solid transparent;
-        right: 10px;
-      }
-    }
   }
 
   .mod-departName & {
@@ -284,17 +218,6 @@ $sp: 750;
   font-weight: 500;
   @include media(pc) {
     font-size: 17px;
-  }
-
-  .mod-select & {
-    @include media(sp, max) {
-      justify-content: center;
-      // width: 498px;
-      margin: 0 auto;
-    }
-    @include media(pc) {
-      justify-content: center;
-    }
   }
 
   &.mod-left {
@@ -333,20 +256,6 @@ $sp: 750;
   }
 }
 
-.contact-form_personalTerm {
-  @include media(pc) {
-    font-size: 16px;
-    line-height: lh(28, 16);
-  }
-}
-
-.contact-form_personalDesc {
-  @include media(pc) {
-    font-size: 16px;
-    line-height: lh(28, 16);
-  }
-}
-
 .contact_formTerm {
   margin-top: getSize(10vw);
   display: flex;
@@ -366,9 +275,9 @@ $sp: 750;
   font-size: getSize(24vw);
   width: 100%;
   @include none-appearance;
-  border: 1px solid #c8c8c8;
+  border: 1px solid #bbb;
   padding: getSize(20vw) getSize(27vw);
-  background-color: #f0f0f0;
+  background-color: #f5f5f5;
   opacity: 0.7;
   border-radius: getSize(3vw);
 
@@ -457,40 +366,6 @@ $sp: 750;
   @include media(pc) {
     width: 239px;
     display: inline-block;
-  }
-}
-
-.contact-form_personalList {
-  margin-top: getSize(16vw);
-  background-color: #f0f0f0 !important;
-  border: 1px solid #c8c8c8 !important;
-  padding: getSize(15vw) getSize(23vw);
-  max-height: getSize(280 * 1.5vw);
-  overflow-y: scroll;
-  border-radius: getSize(3vw);
-  letter-spacing: 0;
-  font-weight: 400;
-
-  @include media(pc) {
-    width: 875px;
-    margin: 19px auto 0;
-    padding: 27px 48px;
-    max-height: 225px;
-    border-radius: 3px;
-  }
-}
-
-.contact-form_personalDesc {
-  text-align: justify;
-}
-
-.contact-form_personalItem {
-  &:nth-child(n + 2) {
-    margin-top: getSize(45vw);
-
-    @include media(pc) {
-      margin-top: 20px;
-    }
   }
 }
 
@@ -630,7 +505,7 @@ mwwpformタグ
   width: 100%;
   height: 100%;
 
-  background-color: #14509f;
+  background-color: $base-b;
   color: #fff;
   position: relative;
   font-size: getSize(28vw);
@@ -646,19 +521,6 @@ mwwpformタグ
   @include media(pc) {
     font-size: 26px;
     border-radius: 5px;
-    &:not(.mod-formBack) {
-      border: 1px solid #14509f;
-      transition: background-image 0.3s, background-color 0.3s, color 0.3s !important;
-      &:hover {
-        opacity: 1 !important;
-        background-color: #fff;
-        color: #14509f !important;
-        &::after {
-          background: url(../images/common/arrow4.svg) no-repeat center
-            center/100% auto;
-        }
-      }
-    }
   }
 
   &.mod-formBack {

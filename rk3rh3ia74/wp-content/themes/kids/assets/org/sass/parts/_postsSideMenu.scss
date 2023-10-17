@@ -50,12 +50,12 @@
   color: #000;
   word-wrap: break-word;
   &.add-selected {
-    background-color: #14509f;
+    background-color: $primary-g;
     color: #fff;
   }
   &:hover {
     @include media(sp, min) {
-    background-color: #14509f;
+    background-color: $primary-g;
     color: #fff;
     opacity: 1;
     }

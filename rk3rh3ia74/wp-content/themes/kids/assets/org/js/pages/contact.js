@@ -23,54 +23,6 @@ export const contact = () => {
       const requiredNameTxt = ".js-requiredName";
       const selectTxt = "選択してください";
 
-      const contentSelectElm = d.querySelector(".js-required_select");
-      // 判定を関数に切り出す
-      const checkSelectedOption = (option) => {
-        if (option === "採用について") {
-          d.body.classList.add("add-hidden");
-        } else {
-          d.body.classList.remove("add-hidden");
-        }
-      };
-
-      //お問い合わせ内容の、希望のselectBox文字列のindexを返す関数
-      const getSelectBoxIndex = (optionName) => {
-        let selectBoxIndex;
-        contentSelectElm.querySelectorAll('option').forEach((option, index) => {
-          if (option.text === optionName) {
-            selectBoxIndex = index;
-          }
-        });
-        return selectBoxIndex;
-      }
-      //クエリパラメータがemployment=1だったらセレクトボックスの初期値変更
-      const queryString = location.search.substring(1);
-      const urlParams = new URLSearchParams(queryString);
-      if (urlParams.get('employment') === '1') {
-        contentSelectElm.options[getSelectBoxIndex('採用について')].selected = true;
-        const textArea = d.getElementById('contact-form_detail');
-
-        textArea.value = `【${urlParams.get('jobname')}の求人に関して】\n\n`;
-      }
-
-      // 選択オプションの変更時に判定を実行
-      contentSelectElm.addEventListener("change", () => {
-        if (contentSelectElm.value == selectTxt) {
-          contentSelectElm.classList.add(addErrorTxt);
-        } else {
-          contentSelectElm.classList.remove(addErrorTxt);
-        }
-
-        const selectedOption =
-          contentSelectElm.options[contentSelectElm.selectedIndex].text;
-        checkSelectedOption(selectedOption);
-      });
-
-      // ページのロード時にも判定を実行
-      const initialSelectedOption =
-        contentSelectElm.options[contentSelectElm.selectedIndex].text;
-      checkSelectedOption(initialSelectedOption);
-
       /* ---------------------------------------
       名前
       --------------------------------------- */
@@ -93,36 +45,6 @@ export const contact = () => {
         if (!lastNameElm.value == "") {
           // 値がなにもない時
           lastNameElm.classList.remove(addErrorTxt);
-        }
-      });
-
-      /* ---------------------------------------
-      法人名
-      --------------------------------------- */
-      const companyElm = d.querySelector(
-        `${requiredNameTxt} input[name="corpName"]`
-      );
-      companyElm.addEventListener("change", () => {
-        if (companyElm.value == "") {
-          // 値がなにもない時
-          companyElm.classList.add(addErrorTxt);
-        } else {
-          companyElm.classList.remove(addErrorTxt);
-        }
-      });
-
-      /* ---------------------------------------
-      事業部
-      --------------------------------------- */
-      const departElm = d.querySelector(
-        `${requiredNameTxt} input[name="departName"]`
-      );
-      departElm.addEventListener("change", () => {
-        if (departElm.value == "") {
-          // 値がなにもない時
-          departElm.classList.add(addErrorTxt);
-        } else {
-          departElm.classList.remove(addErrorTxt);
         }
       });
 
@@ -229,12 +151,9 @@ export const contact = () => {
       実行
       --------------------------------------- */
       const valid = (e) => {
+
         // 名前
         const hasNameValue = firstNameElm.value && lastNameElm.value;
-        // 会社名
-        const hasCompanyValue = companyElm.value;
-        // 部署名
-        // const hasDepartValue = departElm.value;
         // 電話番号
         const hasTelValue = telPattern.test(telElm.value);
         // メールアドレス
@@ -245,31 +164,16 @@ export const contact = () => {
         const hasDetailValue = detailElm.value;
         // 個人情報
         const checkPrivacy = personalElm.checked;
-        const contentSelect = contentSelectElm.value !== selectTxt;
 
         let canSubmit;
-        if (d.body.classList.contains("add-hidden")) {
-          // まとめ
-          canSubmit =
-            checkPrivacy &&
-            contentSelect &&
-            hasDetailValue &&
-            hasNameValue &&
-            hasTelValue &&
-            hasEmailValue &&
-            hasEmailCheckValue;
-        } else {
-          // まとめ
-          canSubmit =
-            hasCompanyValue &&
-            checkPrivacy &&
-            contentSelect &&
-            hasDetailValue &&
-            hasTelValue &&
-            hasEmailValue &&
-            hasEmailCheckValue &&
-            hasNameValue;
-        }
+        // まとめ
+        canSubmit =
+          checkPrivacy &&
+          hasDetailValue &&
+          hasTelValue &&
+          hasEmailValue &&
+          hasEmailCheckValue &&
+          hasNameValue;
 
         /**
          * 必須項目が未入力だったら
@@ -277,21 +181,6 @@ export const contact = () => {
         if (!canSubmit) {
           // 送信のイベントキャンセル
           e.preventDefault();
-
-          // 会社名
-          if (contentSelectElm.value == selectTxt) {
-            contentSelectElm.classList.add(addErrorTxt);
-          }
-
-          // 法人名
-          if (companyElm.value === "") {
-            companyElm.classList.add(addErrorTxt);
-          }
-          // // 事業部
-          // if (departElm.value === "") {
-          //   departElm.classList.add(addErrorTxt);
-          // }
-
           // 苗字
           if (lastNameElm.value === "") {
             lastNameElm.classList.add(addErrorTxt);
@@ -330,41 +219,12 @@ export const contact = () => {
             {
               conditions: [
                 {
-                  check: () => contentSelectElm.value == selectTxt,
-                  message: "「お問い合わせ内容」をお選びください。",
-                },
-              ],
-            },
-            {
-              conditions: [
-                {
                   check: () =>
                     firstNameElm.value === "" || lastNameElm.value === "",
                   message: "「お名前」を入力してください。",
                 },
               ],
             },
-            // "add-hidden" が含まれていない場合のみ、以下の条件を含める
-            ...(d.body.classList.contains("add-hidden")
-              ? []
-              : [
-                {
-                  conditions: [
-                    {
-                      check: () => companyElm.value === "",
-                      message: "「法人名」を入力してください。",
-                    },
-                  ],
-                },
-                // {
-                //   conditions: [
-                //     {
-                //       check: () => departElm.value === "",
-                //       message: "「部署名」を入力してください。",
-                //     },
-                //   ],
-                // },
-              ]),
             {
               conditions: [
                 {
