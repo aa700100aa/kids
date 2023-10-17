@@ -304,7 +304,7 @@ function get_meta_title()
   }
 
   // その他
-  if (is_front_page()) $page_id = $top_id;
+  if (is_home() || is_front_page()) $page_id = $top_id;
   if (is_page('contact') || is_page('confirm') || is_page('complete')) $page_id = get_page_by_path('contactdesc');
 
   $page = get_post($page_id);
@@ -333,9 +333,9 @@ function get_meta_description()
       $content = $page->post_content;
 
       if ($current_category->name == 'NEWS') {
-        $description = '株式会社GFDのお知らせに関する一覧ページです。';
+        $description = 'あらかわ保育園のお知らせに関する一覧ページです。';
       } elseif ($current_category->name == 'CASE') {
-        $description = '株式会社GFDの実績紹介に関する一覧ページです。';
+        $description = 'あらかわ保育園の実績紹介に関する一覧ページです。';
       }
     } else {
       $current_title = $current_category->name;
@@ -417,7 +417,7 @@ function get_first_image_from_post_content($post_content)
 
 function get_meta_og_img()
 {
-  return get_template_directory_uri() . '/assets/images/ogp.jpg';
+  return get_template_directory_uri() . '/assets/images/kids/ogp.png';
 }
 
 
@@ -477,7 +477,6 @@ function set_meta_tag()
     echo <<<END
     <title>$title</title>
       <meta property="og:image" content="$og_img">
-      <meta name="robots" content="noindex, nofollow">\n
     END;
   } else {
     echo <<<END
@@ -485,7 +484,7 @@ function set_meta_tag()
       <meta name="description" content="$desc">
       <link rel="canonical" href="$url">
       <meta property="og:locale" content="ja_JP">
-      <meta property="og:site_name" content="株式会社GFD">
+      <meta property="og:site_name" content="あらかわ保育園">
       <meta property="og:title" content="$title">
       <meta property="og:type" content="$og_type">
       <meta property="og:description" content="$desc">
@@ -525,28 +524,14 @@ function set_body_id()
 
   if (is_home() || is_front_page()) {
     $id = 'top';
-  } elseif (is_page('service')) {
-    $id = 'service';
-  } elseif (is_page('about')) {
-    $id = 'about';
   } elseif (is_category()) {
     $id = 'posts';
-  } elseif (is_page('employment')) {
-    $id = 'employment';
-  } elseif (is_page('csr')) {
-    $id = 'csr';
-  } elseif (is_page('company')) {
-    $id = 'company';
   } elseif (is_page('contact')) {
     $id = 'contact';
   } elseif (is_page('confirm')) {
     $id = 'confirm';
   } elseif (is_page('complete')) {
     $id = 'complete';
-  } elseif (is_page('policy')) {
-    $id = 'policy';
-  } elseif (is_page('security')) {
-    $id = 'security';
   } elseif (is_404()) {
     $id = 'notFound';
   } elseif (is_single('post')) {  //カスタム投稿タイプ名はまだ不明なので仮あて
@@ -570,56 +555,6 @@ function mvwpform_autop_filter()
   }
 }
 mvwpform_autop_filter();
-
-
-function my_mail($Mail, $values, $Data)
-{
-  $auto_reply_body = $Mail->body;
-  $Mail->body =
-    $Data->get('firstName') . "様
-
-この度は、株式会社GFDにお問い合せ頂き、誠にありがとうございます。
-本メールは、お客様のお問い合わせを受け付けた時点で送信される自動配信メールです。
-
-後ほど、弊社担当より改めてご連絡を差し上げます。
-なおご返信までにお時間をいただく場合がございます。あらかじめご了承ください。
-お急ぎの場合は、お手数をお掛けいたしますが営業時間内にお電話ください。" . "\n"
-    . "\n" .
-    "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" . "\n" .
-    "\n" .
-    '■お問い合わせ内容' . "\n" .
-    $Data->get('inquirySelect') . "\n" .
-    "\n" .
-    '■お問い合わせ詳細' . "\n" .
-    $Data->get('detail') . "\n" .
-    "\n" .
-    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━' . "\n" .
-    "\n" .
-    '■お客様情報' . "\n" .
-    (($Data->get('inquirySelect') !== '採用について') ? '【必須項目】' . "\n" : '') .
-    'お名前：' . $Data->get('firstName') . ' ' . $Data->get('lastName') . "\n" .
-    (($Data->get('inquirySelect') !== '採用について') ? '法人名：' . $Data->get('corpName') . "\n" : '') .
-    '電話番号：' . $Data->get('tel') . "\n" .
-    'メールアドレス：' . $Data->get('mail') . "\n" . "\n" .
-    (($Data->get('inquirySelect') !== '採用について') ? '【任意項目】' . "\n" . '部署名：' . $Data->get('departName') . "\n" : '') .
-    "\n" .
-    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━' . "\n"
-    . "\n" .
-    "■本メールに心当たりのない場合
-機密情報に関する注意事項：
-本メールは当社が指定した受信者のみが利用することを目的としたものです。
-お心当たりのない場合は、お手数ですが当社へのご連絡と本メールの破棄をお願いいたします。" . "\n"
-    . "\n" .
-    "————————————————————————————————— 
-
-$auto_reply_body; 
-
-—————————————————————————————————";
-
-  return $Mail;
-}
-add_filter('mwform_auto_mail_mw-wp-form-107', 'my_mail', 10, 3);
-
 
 // カスタム投稿タイプのビジュアルエディタ無効
 function disable_visual_editor_in_page()
@@ -739,40 +674,6 @@ function solecolor_wp_terms_checklist_args($args, $post_id)
 }
 add_filter('wp_terms_checklist_args', 'solecolor_wp_terms_checklist_args', 10, 2);
 
-//採用情報の新規投稿のプレースホルダーを変更
-function change_default_title($title)
-{
-  $screen = get_current_screen();
-  if ($screen->post_type == 'employment-info') {
-    $title = '職種名';
-  }
-  return $title;
-}
-add_filter('enter_title_here', 'change_default_title');
-
-//募集要項のタイトルを必須入力にする
-function validatePostTitle()
-{
-?>
-  <script>
-    window.addEventListener('load', () => {
-      const postType = document.getElementById('post_type');
-      if (postType.value === 'employment-info') {
-        const publish = document.getElementById('publish');
-        const title = document.getElementById('title');
-        publish.addEventListener('click', (e) => {
-          if (!title.value) {
-            alert('職種名を入力してください。');
-            e.preventDefault();
-          }
-        })
-      }
-    })
-  </script>
-<?php
-}
-add_action('admin_head-post-new.php', 'validatePostTitle');
-
 
 /**
  * 構造化データ追加
@@ -784,7 +685,7 @@ function append_structure_data()
   $basicCompanyInfo = array(
     'homeUrl' => esc_url(home_url('/')),
     'currentUrl' => esc_url(get_the_permalink()),
-    'companyName' => '株式会社GFD',
+    'companyName' => 'あらかわ保育園',
     'companyLogo' => esc_url(get_template_directory_uri() . '/assets/images/common/logo-blue.svg')
   );
 
@@ -809,13 +710,6 @@ function append_structure_data()
         '@type' => 'ContactPoint',
         'telephone' => '+81-45-440-0327',
         'contactType' => 'customer support'
-      ),
-      'founder' => array(
-        "@type" => "Person",
-        "name" => "横溝芳郎"
-      ),
-      'sameAs' => array(
-        'https://www.instagram.com/gfd_pr/'
       )
     );
   };
@@ -856,7 +750,7 @@ function append_structure_data()
     $itemListElement[] = array(
       "@type"    => "ListItem",
       "position" => $position++,
-      "name" => "トップ",
+      "name" => "TOP",
       "item"  => esc_url(home_url('/'))
     );
     if (is_page()) {
@@ -975,7 +869,7 @@ function get_image_as_thumbnail($post_id, $size) {
       return $matches[1];
     } else {
       // 画像がなかったら
-      return output_file("/assets/images/posts/thumb_logo.jpg");
+      return output_file("/assets/images/kids/posts/thumb_logo.png");
     }
   }
 }

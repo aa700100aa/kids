@@ -3,7 +3,7 @@
   // height: calc(var(--vh) * 100 - #{getSize(125, 750)+"vw"});
   height: getSize(900,750)+"vw";
   // min-height: getSize(885, 750) + "vw";
-  background-color: #64afe5;
+  background-color: #fff;
 
   // @media screen and (min-width: 768px) and (max-width: 1170px) {
   //   height: 400px;
@@ -13,24 +13,6 @@
     min-height: 700px;
     // height: getSize(400, 1180) + "vw";
     height: 500px;
-  }
-
-  &::before {
-    @include after;
-    background: url(../images/404/yokohama2.svg) no-repeat center center/100%
-      auto;
-    width: 90%;
-    padding-top: getSize(280, 750) + "vw";
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    @include media(pc) {
-      width: 600px;
-      padding-top: 285px;
-      bottom: calc(0px + #{getSize(15, 1400)+"vw"});
-      // bottom: calc(0 + #{getSize(10, 1400)}) + "vw";
-    }
   }
 }
 
@@ -46,7 +28,7 @@
 }
 
 .page404-ttl {
-  color: #fff;
+  color: $base-b;
   font-size: getSize(36, 750) + "vw";
   font-weight: bold;
   line-height: lh(66, 36);
@@ -59,7 +41,7 @@
 }
 
 .page404-txt {
-  color: #fff;
+  color: $base-b;
   font-size: getSize(24, 750) + "vw";
   line-height: 1.8;
   letter-spacing: 0.115em;
@@ -73,7 +55,6 @@
 }
 #notFound .footer {
   @include media(pc,min){
-    background-color: #64afe5;
     margin-top: -47px;
   }
 }

@@ -951,7 +951,7 @@ main {
   justify-content: center;
   width: 100%;
   height: 100%;
-  background-color: #1450a0;
+  background-color: #5E3500;
   color: #fff;
   font-size: 4vw;
   font-weight: bold;
@@ -959,13 +959,7 @@ main {
   @media screen and (min-width: 768px) {
     .part-gotoTop_link {
       font-size: 20px;
-      border-radius: 5px;
-      border: 1px solid #14509f;
-      transition: background-color 0.3s, color 0.3s !important; }
-      .part-gotoTop_link:hover {
-        opacity: 1 !important;
-        background-color: #fff;
-        color: #14509f !important; } }
+      border-radius: 5px; } }
 
 @-webkit-keyframes burger-close-top {
   0% {
@@ -1545,7 +1539,7 @@ main {
 .parts-articleCategory {
   flex-shrink: 0;
   padding: 1.42857% 7.61905%;
-  background-color: #14509f;
+  background-color: #96D3C1;
   font-size: 2.66667vw;
   line-height: 1;
   letter-spacing: 0.05em;
@@ -1609,7 +1603,7 @@ main {
     display: block;
     width: 37.09677%;
     padding-top: 2px;
-    background-color: #64aee5;
+    background-color: #96D3C1;
     position: absolute;
     bottom: -1px;
     left: 50%;
@@ -1960,26 +1954,11 @@ main {
 .page404-outer {
   position: relative;
   height: 120vw;
-  background-color: #64afe5; }
+  background-color: #fff; }
   @media screen and (min-width: 768px) {
     .page404-outer {
       min-height: 700px;
       height: 500px; } }
-  .page404-outer::before {
-    content: "";
-    display: block;
-    background: url(../images/404/yokohama2.svg) no-repeat center center/100% auto;
-    width: 90%;
-    padding-top: 37.33333vw;
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%); }
-    @media screen and (min-width: 768px) {
-      .page404-outer::before {
-        width: 600px;
-        padding-top: 285px;
-        bottom: calc(0px + 1.07143vw); } }
 
 .page404-container {
   position: absolute;
@@ -1992,7 +1971,7 @@ main {
       top: 30%; } }
 
 .page404-ttl {
-  color: #fff;
+  color: #5E3500;
   font-size: 4.8vw;
   font-weight: bold;
   line-height: 1.83333;
@@ -2003,7 +1982,7 @@ main {
       margin-top: 22px; } }
 
 .page404-txt {
-  color: #fff;
+  color: #5E3500;
   font-size: 3.2vw;
   line-height: 1.8;
   letter-spacing: 0.115em;
@@ -2016,7 +1995,6 @@ main {
 
 @media screen and (min-width: 768px) {
   #notFound .footer {
-    background-color: #64afe5;
     margin-top: -47px; } }
 
 .contact-complete_wrap {

@@ -107,7 +107,7 @@
 .parts-articleCategory {
   flex-shrink: 0;
   padding: getSize(6%, 420) getSize(32%, 420);
-  background-color: #14509f;
+  background-color: $primary-g;
   font-size: getSize(20vw);
   line-height: 1;
   letter-spacing: 0.05em;

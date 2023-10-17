@@ -37,7 +37,7 @@
       @include after;
       width: getSize(115%, 310);
       padding-top: 2px;
-      background-color: #64aee5;
+      background-color: $primary-g;
       position: absolute;
       bottom: -1px;
       left: 50%;
