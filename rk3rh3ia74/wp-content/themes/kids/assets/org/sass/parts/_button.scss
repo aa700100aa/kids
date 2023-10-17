@@ -1,0 +1,36 @@
+.part-button {
+  position: relative;
+  text-align: center;
+  background-color: $base-b;
+  height: 100%;
+  width: 53vw;
+  display: inline-block;
+  margin-top: 4.5vw;
+  border-radius: 4vw;
+  &.mod-space {
+    margin-top: 6vw;
+  }
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background-image: url(../images/kids/common/arrow_white.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: getSize(9vw,375);
+    height: getSize(15.9834vw,375);
+    right: 2.2vw;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+.part-button_text {
+  font-size: 4vw;
+  line-height: 1;
+  @include fontZenMaruGothic;
+  color: #fff;
+  display: inline-block;
+  padding: 3.5vw 0;
+  transform: translateX(-0.5vw);
+  display: inline-block;
+}
