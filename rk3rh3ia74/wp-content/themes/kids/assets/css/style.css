@@ -1746,24 +1746,6 @@ main {
       padding: 9px 14px 10px;
       font-size: 18px; } }
 
-.parts-privacyMark {
-  display: flex;
-  justify-content: center; }
-
-.parts-privacyMark_img.mod-iso {
-  width: 32.8vw; }
-  @media screen and (min-width: 768px) {
-    .parts-privacyMark_img.mod-iso {
-      width: 123px; } }
-
-.parts-privacyMark_img.mod-privacyMark {
-  width: 14.66667vw;
-  margin-left: 3.2vw; }
-  @media screen and (min-width: 768px) {
-    .parts-privacyMark_img.mod-privacyMark {
-      width: 55px;
-      margin-left: 30px; } }
-
 .part-readMore_link {
   position: relative;
   color: #fff;
@@ -2465,15 +2447,6 @@ mwwpformタグ
   @media screen and (min-width: 768px) and (min-width: 768px) {
     .contact-form_submitBtn:hover {
       opacity: 0.7; } }
-
-.contact-logo {
-  margin-top: 10vw; }
-  .contact-logo .parts-privacyMark {
-    width: 40.8vw;
-    margin: 0 auto; }
-  @media screen and (min-width: 768px) {
-    .contact-logo {
-      margin-top: 53px; } }
 
 .add-error {
   background-color: #fcc !important; }

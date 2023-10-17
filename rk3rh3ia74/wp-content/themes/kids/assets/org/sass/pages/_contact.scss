@@ -570,18 +570,6 @@ mwwpformタグ
   }
 }
 
-.contact-logo {
-  margin-top: getSize(75vw);
-
-  .parts-privacyMark {
-    width: getSize(306vw);
-    margin: 0 auto;
-  }
-  @include media(pc) {
-    margin-top: 53px;
-  }
-}
-
 .add-error {
   background-color: #fcc !important;
 }

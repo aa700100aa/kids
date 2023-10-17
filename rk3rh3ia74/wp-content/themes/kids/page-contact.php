@@ -6,9 +6,6 @@
       get_template_part('templates/parts/mainTtl', null, $args);
     ?>
     <?php echo do_shortcode('[mwform_formkey key="6"]'); ?>
-    <div class="contact-logo">
-      <?php get_template_part('templates/parts/privacyMark'); ?>
-    </div>
   </div>
 </main>
 <?php get_footer(); ?>
