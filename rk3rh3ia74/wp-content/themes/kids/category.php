@@ -17,7 +17,10 @@ if ($category) {
 <?php get_header(); ?>
 <main class="posts-main">
   <div class="posts-ttlWrap">
-    <?php get_template_part('templates/parts/mainTtl', '', $category); ?>
+    <?php
+      $args = ['ttl' => 'お知らせ', 'img' => 'kids/news/icon.png', 'background' => 'kids/news/titile_background.jpg'];
+      get_template_part('templates/parts/mainTtl', null, $args);
+    ?>
   </div>
   <div class="posts-contentWrap">
     <div class="posts-contentWrapInner">

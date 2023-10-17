@@ -17,7 +17,10 @@ $json_array = json_encode($key);
 
   <div class="contact-outer">
 
-    <h1 class="contact-ttl"><img src="<?php echo output_file("/assets/images/contact/icon1.svg"); ?>" alt="">お問い合わせ</h1>
+    <?php
+      $args = ['ttl' => 'お問い合わせ', 'img' => 'kids/contact/icon.png', 'background' => 'kids/news/titile_background.jpg'];
+      get_template_part('templates/parts/mainTtl', null, $args);
+    ?>
 
     <div class="contact-head_container">
       <p class="contact-head_txt">お問い合わせ内容をご確認のうえ、<br>よろしければ「送信する」ボタンを押して下さい。</p>

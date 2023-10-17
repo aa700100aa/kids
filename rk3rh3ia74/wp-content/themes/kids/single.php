@@ -58,12 +58,10 @@ $next_post = get_next_post($args);
 <main class="post">
   <div class='post-outer'>
     <div class="post-ttlWrap">
-      <?php if ($parent_category_name === 'case' || $parent_category_name === 'news') : ?>
-        <div class="part-mainTtl">
-          <img src="<?php echo output_file("/assets/images/" . $img); ?>" alt="" class="part-mainTtl_img">
-          <span class="part-mainTtl_span"><?php echo $ttl; ?></span>
-        </div>
-      <?php endif; ?>
+      <?php
+        $args = ['ttl' => 'お知らせ', 'img' => 'kids/news/icon.png', 'background' => 'kids/news/titile_background.jpg'];
+        get_template_part('templates/parts/mainTtl', null, $args);
+      ?>
     </div>
     <div class="post-wrap">
       <?php if (have_posts()) : ?>

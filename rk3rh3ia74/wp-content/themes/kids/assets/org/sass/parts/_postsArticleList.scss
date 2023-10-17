@@ -1,3 +1,16 @@
+.part-mainTtl_wrap {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 22vw;
+  @include media(pc, min) {
+    margin: 0 auto;
+    height: 150px;
+    #posts & {
+      width: 1100px;
+    }
+  }
+}
 .parts-articleItem {
   width: getSize(650%);
   margin: 0 auto;

@@ -1,15 +1,27 @@
+.part-mainTtl_wrap {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 22vw;
+  @include media(pc, min) {
+    margin: 0 auto;
+    height: 150px;
+    #posts & {
+      width: 1100px;
+    }
+    #contact &,
+    #confirm &,
+    #complete &,
+    #post & {
+      width: 1000px;
+    }
+  }
+}
+
 .part-mainTtl {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  #posts &,
-  #post & {
-    transform: translateX(-3%);
-    @include media(sp, min) {
-      transform: translateX(0);
-    }
-  }
 }
 
 .part-mainTtl_img {
@@ -25,8 +37,10 @@
   line-height: lh(64, 36);
   letter-spacing: 0.05em;
   font-weight: 700;
-  color: #14509f;
+  color: #fff;
+  filter:drop-shadow(0.4vw 0.4vw 0.4vw rgba(0, 0, 0, 0.7));
   @include media(sp, min) {
+    filter:drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
     margin-left: 28px;
     font-size: 30px;
     line-height: lh(53, 30);
