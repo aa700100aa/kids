@@ -728,6 +728,9 @@ main {
       border-radius: 25px; } }
   .part-button.mod-space {
     margin-top: 6vw; }
+    @media screen and (min-width: 768px) {
+      .part-button.mod-space {
+        margin-top: 30px; } }
   .part-button::after {
     content: '';
     display: block;
@@ -3238,6 +3241,9 @@ p.add-one {
   position: relative;
   overflow: hidden;
   margin-bottom: 28vw; }
+  @media screen and (min-width: 768px) {
+    .top-outer {
+      margin-bottom: 120px; } }
 
 @media screen and (min-width: 768px) {
   .top-horizontal {
@@ -3581,8 +3587,7 @@ notice
   width: 56vw; }
   @media screen and (min-width: 768px) {
     .top-notice_itemBox {
-      margin-left: 15px;
-      width: 400px; } }
+      width: 445px; } }
 
 .top-notice_itemDateTxt {
   display: block;
@@ -3590,11 +3595,12 @@ notice
   color: #5E3500;
   text-align: justify;
   font-weight: bold;
+  line-height: 1;
   font-family: 'Zen Maru Gothic',"ヒラギノ角ゴ Pro W3","メイリオ",sans-serif;
   margin-top: 0.66667vw; }
   @media screen and (min-width: 768px) {
     .top-notice_itemDateTxt {
-      font-size: 18px;
+      font-size: 16px;
       margin-top: 0px; } }
 
 .top-notice_itemTtl {
@@ -3613,7 +3619,7 @@ notice
   @media screen and (min-width: 768px) {
     .top-notice_itemTtl {
       -webkit-line-clamp: 1;
-      font-size: 19px;
+      font-size: 18px;
       line-height: 1.5;
       margin-top: 10px; } }
 

@@ -8,6 +8,9 @@ $minVh: 0.775193798449612;
   position: relative;
   overflow: hidden;
   margin-bottom: 28vw;
+  @include media(pc) {
+    margin-bottom: 120px;
+  }
 }
 
 .top-horizontal {
@@ -377,8 +380,7 @@ notice
 .top-notice_itemBox {
   width: 56vw;
   @include media(pc) {
-    margin-left: 15px;
-    width: 400px;
+    width: 445px;
   }
 }
 
@@ -388,11 +390,12 @@ notice
   color: $base-b;
   text-align: justify;
   font-weight: bold;
+  line-height: 1;
   @include fontZenMaruGothic;
   margin-top: getSize(5, 750) + "vw";
 
   @include media(pc) {
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 0px;
   }
 }
@@ -409,7 +412,7 @@ notice
 
   @include media(pc) {
     -webkit-line-clamp: 1;
-    font-size: 19px;
+    font-size: 18px;
     line-height: 1.5;
     margin-top: 10px;
   }
