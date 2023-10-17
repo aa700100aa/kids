@@ -2,11 +2,16 @@
   position: relative;
   text-align: center;
   background-color: $base-b;
-  height: 100%;
   width: 53vw;
   display: inline-block;
   margin-top: 4.5vw;
   border-radius: 4vw;
+  @include media(pc,min) {
+    width: 200px;
+    margin-top: 15px;
+    border-radius: 25px;
+    border-radius: 25px;
+  }
   &.mod-space {
     margin-top: 6vw;
   }
@@ -22,6 +27,11 @@
     right: 2.2vw;
     top: 50%;
     transform: translateY(-50%);
+    @include media(pc,min) {
+      width: 9px;
+      height: 15.9834px;
+      right: 10px;
+    }
   }
 }
 .part-button_text {
@@ -33,4 +43,8 @@
   padding: 3.5vw 0;
   transform: translateX(-0.5vw);
   display: inline-block;
+  @include media(pc,min) {
+    font-size: 16px;
+    padding: 12px 0;
+  }
 }

@@ -107,6 +107,10 @@ about,flow,news共通
 .top-notice_titleText {
   @include fontZenMaruGothic;
   font-size: 3.5vw;
+  line-height: 1.75;
+  @include media(pc,min) {
+    font-size: 16px;
+  }
 }
 .top-about_imgWrap,
 .top-flow_imgWrap {
@@ -119,18 +123,34 @@ about,flow,news共通
 .top-about_inner,
 .top-flow_inner {
   margin-top: 6vw;
+  @include media(pc,min) {
+    margin-top: 30px;
+  }
 }
 .top-about_mainText,
 .top-flow_mainText {
   font-size: 4vw;
+  line-height: 1.75;
+  @include fontZenMaruGothic;
+  @include media(pc,min) {
+    font-size: 24px;
+  }
 }
 .top-about_subText, 
 .top-flow_subText {
   margin-top: 30px;
   font-size: 3.1vw;
   margin-top: 6vw;
+  line-height: 1.75;
+  @include media(pc,min) {
+    font-size: 15px;
+    margin-top: 30px;
+  }
   & + .top-about_subText {
     margin-top: 3vw;
+    @include media(pc,min) {
+      margin-top: 15px;
+    }
   }
 }
 /*-------- 
@@ -141,6 +161,9 @@ about
   font-weight: bold;
   margin-top: 12vw;
   position: relative;
+  @include media(pc,min) {
+    margin-top: 120px;
+  }
 }
 .top-about_imgWrap {
   @include media(sp,max) {
@@ -154,6 +177,20 @@ about
     }
     &.mod-last {
       border-radius: 0 4vw 4vw 0;
+    }
+  }
+  @include media(pc,min) {
+    width: 300px;
+    border-radius: 25px;
+    &.mod-first {
+      position: absolute;
+      top: 200px;
+      left: 40px;
+    }
+    &.mod-last {
+      position: absolute;
+      top: 200px;
+      right: 40px;
     }
   }
 }
@@ -178,13 +215,35 @@ flow
   font-weight: bold;
   margin-top: 10vw;
   position: relative;
+  @include media(pc,min) {
+    margin-top: 100px;
+    text-align: justify;
+  }
+}
+.top-flow_wrap {
+  @include media(pc,min) {
+    display: flex;
+    align-items: center;
+    width: 1060px;
+    margin: 30px auto 0;
+  }
 }
 .top-flow_img {
   border-radius: 4vw;
-  margin-top: 4.5vw;
+  @include media(sp,max) {
+    margin-top: 4.5vw;
+  }
+  @include media(pc,min) {
+    width: 530px;
+    border-radius: 25px;
+  }
 }
 .top-flow_inner {
   padding: 0 getSize(15vw,375);
+  @include media(pc,min) {
+    padding: 0 0 0 70px;
+    margin-top: 0;
+  }
 }
 .top-flow_mainText {
   text-align: justify;
@@ -192,6 +251,9 @@ flow
 .top-flow_subText {
   text-align: justify;
   margin-top: 3vw;
+  @include media(pc,min) {
+    margin-top: 15px;
+  }
 }
 
 /*-------- 
@@ -203,6 +265,9 @@ notice
   text-align: center;
   margin-top: 14vw;
   padding: 0 4vw;
+  @include media(pc,min) {
+    margin-top: 140px;
+  }
   @include media(pc) {
     width: 1100px;
     margin: 58px * 2 auto 65px * 2;
@@ -216,6 +281,10 @@ notice
 .top-noticeInner {
   position: relative;
   margin-top: 4.5vw;
+  @include media(pc,min) {
+    width: 640px;
+    margin: 30px auto 0;
+  }
   &::before {
     @include after;
     width: 100%;
@@ -243,6 +312,9 @@ notice
 .top-notice_list {
   position: relative;
   padding: 4.5vw 2.5vw;
+  @include media(pc) {
+    padding: 20px;
+  }
 }
 
 .top-notice_item {
@@ -253,7 +325,7 @@ notice
 
   @include media(pc) {
     margin: 0;
-    padding: 47px 77px;
+
     justify-content: flex-start;
     position: relative;
 
@@ -281,7 +353,7 @@ notice
   &:nth-child(n + 2) {
     margin-top: 3vw;
     @include media(pc) {
-      margin-top: 0;
+      margin-top: 15px;
     }
   }
 }
@@ -297,16 +369,16 @@ notice
   height: getSize(200, 750) + "vw";
   overflow: hidden;
   @include media(pc) {
-    width: 121px;
-    height: 121px;
+    width: 130px;
+    height: 130px;
   }
 }
 
 .top-notice_itemBox {
   width: 56vw;
   @include media(pc) {
-    width: 789px;
-    margin-left: 45px;
+    margin-left: 15px;
+    width: 400px;
   }
 }
 
@@ -338,7 +410,7 @@ notice
   @include media(pc) {
     -webkit-line-clamp: 1;
     font-size: 19px;
-    line-height: lh(37, 19);
+    line-height: 1.5;
     margin-top: 10px;
   }
 }

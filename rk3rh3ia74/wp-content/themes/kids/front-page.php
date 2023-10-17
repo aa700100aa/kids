@@ -57,16 +57,18 @@
           <img class="top-flow_titleLogo" src="<?php echo output_file("/assets/images/kids/common/flow.png"); ?>" alt="">
           <span class="top-flow_titleText">一日の流れ</span>
         </h2>
-        <figure class="top-flow_imgWrap">
-          <img class="top-flow_img" src="<?php echo output_file("/assets/images/kids/top/flow/photo_01.jpg"); ?>" alt="">
-        </figure>
-        <div class="top-flow_inner">
-          <p class="top-flow_mainText">子どもたち一人ひとりが<br class="util-pc">安心してすごせる毎日。</p>
-          <p class="top-flow_subText">当園では子どもたちが安心してすごせるように遊びや食事の時間を考え、生活リズムを整えられるような保育を提供しております。</p>
-          <?php
-            $args = ['text' => '詳しくはこちら', 'link' => home_url().'/flow/','modify' => ''];
-            get_template_part('templates/parts/button', null, $args);
-          ?>
+        <div class="top-flow_wrap">
+          <figure class="top-flow_imgWrap">
+            <img class="top-flow_img" src="<?php echo output_file("/assets/images/kids/top/flow/photo_01.jpg"); ?>" alt="">
+          </figure>
+          <div class="top-flow_inner">
+            <p class="top-flow_mainText">子どもたち一人ひとりが<br class="util-pc">安心してすごせる毎日。</p>
+            <p class="top-flow_subText">当園では子どもたちが安心してすごせるように遊びや食事の時間を考え、生活リズムを整えられるような保育を提供しております。</p>
+            <?php
+              $args = ['text' => '詳しくはこちら', 'link' => home_url().'/flow/','modify' => ''];
+              get_template_part('templates/parts/button', null, $args);
+            ?>
+          </div>
         </div>
       </section>
       <section class="top-notice">

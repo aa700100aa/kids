@@ -8,47 +8,8 @@
   transform: scale(1);
   transition: transform 0.5s;
   border-radius: 4vw;
-
-
   @include media(pc){
-    .part-topicsArticleLink:hover & {
-      transform: scale(1.1)
-    }
-    
-    
-  }
-
-  // &.mod-dummy {
-  //   background-image: url("https://placehold.jp/293x293.png");
-  // }
-
-  &.mod-dummy {
-    background-image: url("https://placehold.jp/293x293.png");
-  }
-
-  &.mod-dummy1 {
-    background-image: url("../images/top/ex/fig1.jpg");
-  }
-
-  &.mod-dummy2 {
-    background-image: url("../images/top/ex/fig2.jpg");
-  }
-
-  &.mod-dummy3 {
-    background-image: url("../images/top/ex/fig3.jpg");
-  }
-
-  &.mod-dummy4 {
-    background-image: url("../images/top/ex/fig4.jpg");
-  }
-  &.mod-dummy5 {
-    background-image: url("../images/top/ex/fig5.jpg");
-  }
-  &.mod-dummy6 {
-    background-image: url("../images/top/ex/fig6.jpg");
-  }
-  &.mod-dummy7 {
-    background-image: url("../images/top/ex/fig7.jpg");
+    border-radius: 25px;
   }
 }
 
