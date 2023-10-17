@@ -73,7 +73,6 @@ body {
 }
 .header-outer {
   line-height: 1;
-  background-color: #fff;
   @include fontZenMaruGothic();
   font-weight: 700;
   height: getSize(108vw);
@@ -95,8 +94,8 @@ body {
   }
 }
 .header-inner {
-  background-color: rgba(245,225,154,0.2);
   @include media(pc,min){
+    background-color: $base-y;
     height: 105px;
     min-width: $min-width;
     margin: 0 auto;
@@ -162,7 +161,7 @@ body {
 .header-burgerIcon {
   width: getSize(60vw);
   height: getSize(60vw);
-  background-color: #fff;
+  background-color: $base-y;
   position: relative;
   display: flex;
   align-items: center;
@@ -226,10 +225,10 @@ body {
 
 .header-logoWrap {
   @include media(sp,max){
+    background-color: $base-y;
     display: flex;
     justify-content: space-between;
     height: getSize(108vw);
-    background-color: #fff;
   }
   @include media(pc,min){
     position: relative;

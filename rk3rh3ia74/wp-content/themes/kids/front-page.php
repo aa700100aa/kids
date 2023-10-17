@@ -62,7 +62,7 @@
             <img class="top-flow_img" src="<?php echo output_file("/assets/images/kids/top/flow/photo_01.jpg"); ?>" alt="">
           </figure>
           <div class="top-flow_inner">
-            <p class="top-flow_mainText">子どもたち一人ひとりが<br class="util-pc">安心してすごせる毎日。</p>
+            <p class="top-flow_mainText">子どもたち一人ひとりが<br class="util-pc">安心してすごせる毎日</p>
             <p class="top-flow_subText">当園では子どもたちが安心してすごせるように遊びや食事の時間を考え、生活リズムを整えられるような保育を提供しております。</p>
             <?php
               $args = ['text' => '詳しくはこちら', 'link' => home_url().'/flow/','modify' => ''];
