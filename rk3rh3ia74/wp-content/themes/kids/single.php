@@ -85,23 +85,23 @@ $next_post = get_next_post($args);
       <div class="post-btnBox">
         <?php if (!empty($next_post)) : ?>
           <a href="<?php echo esc_url(get_permalink($next_post->ID)); ?>" class="post-backIndex mod-prev">
-            <span>prev</span>
+            <span>前の記事</span>
           </a>
         <?php else : ?>
           <div class="post-backIndex mod-prev mod-disable">
-            <span>prev</span>
+            <span>前の記事</span>
           </div>
         <?php endif; ?>
         <a class="post-backIndex js-backToIndex" href="<?php echo $back_url; ?>">
-          <span>Back to Index</span>
+          <span>記事一覧へ戻る</span>
         </a>
         <?php if (!empty($prev_post)) : ?>
           <a href="<?php echo get_permalink($prev_post->ID); ?>" class="post-backIndex mod-next">
-            <span>next</span>
+            <span>次の記事</span>
           </a>
         <?php else : ?>
           <div class="post-backIndex mod-next mod-disable">
-            <span>next</span>
+            <span>次の記事</span>
           </div>
         <?php endif; ?>
       </div>

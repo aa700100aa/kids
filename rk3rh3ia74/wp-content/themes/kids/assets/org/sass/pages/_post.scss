@@ -5,8 +5,6 @@
 //   }
 // }
 
-$mainB: #14509f;
-
 .post-outer {
   position: relative;
   overflow: hidden;
@@ -35,7 +33,7 @@ $mainB: #14509f;
   justify-content: space-between;
   align-items: center;
   line-height: 1;
-  border-bottom: 1px solid $mainB;
+  border-bottom: 1px solid $primary-g;
   padding-bottom: getSize(20vw);
   margin-bottom: getSize(27vw);
   @include media(pc) {
@@ -43,7 +41,7 @@ $mainB: #14509f;
     margin-bottom: 44px;
     padding-bottom: 0;
     border-bottom: 0;
-    border-top: 1px solid $mainB;
+    border-top: 1px solid $primary-g;
     padding-top: 35px;
   }
 }
@@ -270,7 +268,7 @@ $mainB: #14509f;
     border: 0;
     &::before {
       @include after;
-      background-color: $mainB;
+      background-color: $primary-g;
       height: 1px;
     }
   }
@@ -367,7 +365,7 @@ $mainB: #14509f;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $mainB;
+  background-color: $primary-g;
   padding: getSize(6vw) getSize(17vw);
   @include media(pc) {
     padding: 4px 14px;
@@ -401,7 +399,7 @@ $mainB: #14509f;
 }
 
 .post-btnBox {
-  border-top: 1px solid $mainB;
+  border-top: 1px solid $primary-g;
   // text-align: center;
   display: flex;
   align-items: center;
@@ -412,7 +410,7 @@ $mainB: #14509f;
   // }
 
   span {
-    color: $mainB;
+    color: $primary-g;
     font-size: getSize(24vw);
     font-weight: 500;
     @include media(pc) {

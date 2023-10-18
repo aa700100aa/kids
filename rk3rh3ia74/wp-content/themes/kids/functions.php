@@ -686,7 +686,7 @@ function append_structure_data()
     'homeUrl' => esc_url(home_url('/')),
     'currentUrl' => esc_url(get_the_permalink()),
     'companyName' => 'あらかわ保育園',
-    'companyLogo' => esc_url(get_template_directory_uri() . '/assets/images/common/logo-blue.svg')
+    'companyLogo' => esc_url(get_template_directory_uri() . '/assets/images/kids/common/image_object.png')
   );
 
   function create_type_of_organization()
@@ -700,15 +700,15 @@ function append_structure_data()
       'logo' => $basicCompanyInfo['companyLogo'],
       'address' => array(
         '@type' => 'PostalAddress',
-        'streetAddress' => '5-14 クアドリフォリオ3階',
-        'addressLocality' => '横浜市神奈川区金港町',
+        'streetAddress' => 'XX-XX-XX',
+        'addressLocality' => 'XXX市XXX区',
         'addressRegion' => '神奈川県',
-        'postalCode' => '221-0056',
+        'postalCode' => 'XXX-XXXX',
         'addressCountry' => 'JP'
       ),
       'contactPoint' => array(
         '@type' => 'ContactPoint',
-        'telephone' => '+81-45-440-0327',
+        'telephone' => '+81-00-000-0000',
         'contactType' => 'customer support'
       )
     );
@@ -735,7 +735,7 @@ function append_structure_data()
       ),
       'image' => array(
         '@type' => 'ImageObject',
-        'url' => esc_url(get_template_directory_uri() . '/assets/images/common/logo-blue.svg')
+        'url' => esc_url(get_template_directory_uri() . '/assets/images/kids/common/image_object.png')
       )
     );
   };

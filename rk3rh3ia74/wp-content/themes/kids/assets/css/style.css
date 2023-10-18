@@ -2498,7 +2498,7 @@ mwwpformタグ
   justify-content: space-between;
   align-items: center;
   line-height: 1;
-  border-bottom: 1px solid #14509f;
+  border-bottom: 1px solid #96D3C1;
   padding-bottom: 2.66667vw;
   margin-bottom: 3.6vw; }
   @media screen and (min-width: 768px) {
@@ -2507,7 +2507,7 @@ mwwpformタグ
       margin-bottom: 44px;
       padding-bottom: 0;
       border-bottom: 0;
-      border-top: 1px solid #14509f;
+      border-top: 1px solid #96D3C1;
       padding-top: 35px; } }
 
 .post-time {
@@ -2677,7 +2677,7 @@ mwwpformタグ
     .post hr::before {
       content: "";
       display: block;
-      background-color: #14509f;
+      background-color: #96D3C1;
       height: 1px; }
   .post p.add-one, .post p.add-two, .post p.add-three, .post p.add-four {
     margin-bottom: 5.86667vw; }
@@ -2731,7 +2731,7 @@ mwwpformタグ
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #14509f;
+  background-color: #96D3C1;
   padding: 0.8vw 2.26667vw; }
   @media screen and (min-width: 768px) {
     .post-category {
@@ -2759,12 +2759,12 @@ mwwpformタグ
       margin: 0 auto 92px; } }
 
 .post-btnBox {
-  border-top: 1px solid #14509f;
+  border-top: 1px solid #96D3C1;
   display: flex;
   align-items: center;
   justify-content: space-between; }
   .post-btnBox span {
-    color: #14509f;
+    color: #96D3C1;
     font-size: 3.2vw;
     font-weight: 500; }
     @media screen and (min-width: 768px) {
