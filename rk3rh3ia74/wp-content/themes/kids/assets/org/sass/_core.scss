@@ -11,7 +11,7 @@ body {
   font-family: $font_def;
   font-feature-settings: "palt";
   font-size: getSize(24vw);
-  line-height: lh(42, 24);
+  line-height: 1.5;
   letter-spacing: 0.05em;
   background-color: #fff;
   color: $base-b;
@@ -20,7 +20,6 @@ body {
   scrollbar-width: none; /*Firefox対応のスクロールバー非表示コード*/
   @include media(pc) {
     font-size: 15px;
-    line-height: lh(42, 15);
     min-width: $min-width;
   }
 }
@@ -46,7 +45,7 @@ img {
 }
 
 main {
-  padding-top: getSize(108vw);
+  padding-top: 15.7vw;
   @include media(pc) {
     padding-top: 105px;
   }

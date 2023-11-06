@@ -3,6 +3,9 @@
   background-repeat: no-repeat;
   background-position: center;
   height: 22vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   @include media(pc, min) {
     margin: 0 auto;
     height: 150px;
@@ -32,8 +35,9 @@
 }
 
 .part-mainTtl_span {
+  @include fontZenMaruGothic;
   margin-left: getSize(34%);
-  font-size: getSize(36vw);
+  font-size: 5.5vw;
   line-height: lh(64, 36);
   letter-spacing: 0.05em;
   font-weight: 700;

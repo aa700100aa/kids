@@ -532,6 +532,8 @@ function set_body_id()
     $id = 'confirm';
   } elseif (is_page('complete')) {
     $id = 'complete';
+  } elseif (is_page('flow')) {
+    $id = 'flow';
   } elseif (is_404()) {
     $id = 'notFound';
   } elseif (is_single('post')) {  //カスタム投稿タイプ名はまだ不明なので仮あて

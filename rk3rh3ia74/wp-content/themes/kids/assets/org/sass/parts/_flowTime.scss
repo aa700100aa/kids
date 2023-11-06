@@ -1,0 +1,37 @@
+.part-flowTime {
+  text-align: center;
+}
+.part-flowTime_title {
+  position: relative;
+  &::before,&::after {
+    content: '';
+    width: 20vw;
+    height: 2px;
+    border-radius: 1px;
+    background-color: $primary-b;
+    position: absolute;
+    @include media(pc) {
+      width: 80px;
+    }
+  }
+  &::before {
+    top: 50%;
+    left: 15vw;
+    @include media(pc) {
+      left: 39%;
+    }
+  }
+  &::after {
+    top: 50%;
+    right: 15vw;
+    @include media(pc) {
+      right: 39%;
+    }
+  }
+}
+.part-flowTime_img {
+  width: 12vw;
+  @include media(pc) {
+    width: 50px;
+  }
+}
