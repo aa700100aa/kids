@@ -1,9 +1,5 @@
 .posts-main {
-  padding: getSize(152%) 0 getSize(116%);
   background-color: #fff;
-  @include media(sp, min) {
-    padding: 150px 0 309px;
-  }
 }
 
 .posts-contentWrap {

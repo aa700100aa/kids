@@ -1,21 +1,9 @@
-.part-mainTtl_wrap {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 22vw;
-  @include media(pc, min) {
-    margin: 0 auto;
-    height: 150px;
-    #posts & {
-      width: 1100px;
-    }
-  }
-}
 .parts-articleItem {
   width: getSize(650%);
   margin: 0 auto;
   padding: getSize(49%, 650) 0;
-  border-bottom: 1px solid #c8c8c8;
+  border-bottom: 2px solid $base-b;
+  border-radius: 1px;
   @include media(sp, min) {
     width: 833px;
     padding: 55px 0 41px;
@@ -53,12 +41,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  transform: scale(1);
-  transition: transform 0.5s;
+  border-radius: 4vw;
   @include media(sp, min) {
-    .parts-articleLink:hover & {
-      transform: scale(1.1);
-    }
+    border-radius: 25px;
   }
 }
 
@@ -79,6 +64,7 @@
 
 .parts-articleInfoBox {
   display: flex;
+  color: $base-b;
   justify-content: space-between;
   align-items: center;
   margin-bottom: getSize(6%, 420);
@@ -89,6 +75,8 @@
 }
 
 .parts-articleTtl {
+  color: $base-b;
+  @include fontZenMaruGothic;
   font-size: getSize(30vw);
   line-height: lh(44, 30);
   letter-spacing: 0.05em;
@@ -128,13 +116,16 @@
   max-width: getSize(252%, 420);
   text-align: center;
   word-wrap: break-word;
+  border-radius: 1vw;
   @include media(sp, min) {
     padding: 4px 14px 5px;
     font-size: 12px;
+    border-radius: 5px;
   }
 }
 
 .parts-articleDetailTxt {
+  color: $base-b;
   margin-top: getSize(8%, 420);
   font-size: getSize(24vw);
   line-height: lh(37, 24);

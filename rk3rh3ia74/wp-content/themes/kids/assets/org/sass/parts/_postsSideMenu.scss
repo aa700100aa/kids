@@ -21,8 +21,8 @@
     width: 100%;
     margin: 0;
     padding: 28px 0;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
+    border-top: 2px solid $base-b;
+    border-bottom: 2px solid $base-b;
   }
 }
 
@@ -43,12 +43,14 @@
 
 .part-sideMenuItem_link {
   display: block;
+  @include fontZenMaruGothic;
   padding: 3% 6% 3.5%;
   font-size: getSize(25vw);
   line-height: 1;
   font-weight: 700;
-  color: #000;
+  color: $base-b;
   word-wrap: break-word;
+  border-radius: 1vw;
   &.add-selected {
     background-color: $primary-g;
     color: #fff;
@@ -61,6 +63,7 @@
     }
   }
   @include media(sp, min) {
+    border-radius: 5px;
     padding: 9px 14px 10px;
     font-size: 18px;
   }

@@ -20,50 +20,49 @@
   transform: translate(50%, 50%);
   z-index: 15;
 }
-.loader {
-  color: $base-b;
-  text-indent: -99999em;
-  font-size: getSize(12vw);
-  margin: 0 auto;
-  position: relative;
+.loader,
+.loader:after {
+  border-radius: 50%;
   width: 10em;
   height: 10em;
-  box-shadow: inset 0 0 0 1em;
+}
+.loader {
+  margin: 0 auto;
+  font-size: getSize(12vw);
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgba(94, 53, 0, 0.5);
+  border-right: 1.1em solid rgba(94, 53, 0, 0.5);
+  border-bottom: 1.1em solid rgba(94, 53, 0, 0.5);
+  border-left: 1.1em solid $base-b;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
   transform: translateZ(0);
-  border-radius: 50%;
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
   @include media(pc,min){
     font-size: 11px;
     margin: 0 auto;
   }
-  &:before,
-  &:after {
-    border-radius: 50%;
-    position: absolute;
-    content: '';
-    width: 5.5em;
-    height: 10.5em;
-    background: $base-y;
-    top: -0.1em;
-  }
-  &:before {
-    border-radius: 10.2em 0 0 10.2em;
-    left: -0.2em;
-    height: 10.6em;
-    transform-origin: 5.1em 5.1em;
-    animation: load2 2s infinite ease 1.5s;
-  }
-  &:after {
-    border-radius: 0 10.2em 10.2em 0;
-    left: 5em;
-    transform-origin: 0.1em 5.1em;
-    animation: load2 2s infinite ease;
-  }
 }
-@keyframes load2 {
+@-webkit-keyframes load8 {
   0% {
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   100% {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+

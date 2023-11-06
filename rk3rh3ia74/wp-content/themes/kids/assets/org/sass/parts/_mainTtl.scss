@@ -2,13 +2,14 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 22vw;
+  height: 28vw;
   display: flex;
   align-items: center;
   justify-content: center;
   @include media(pc, min) {
     margin: 0 auto;
-    height: 150px;
+    height: 200px;
+    border-radius: 25px;
     #posts & {
       width: 1100px;
     }
@@ -28,7 +29,8 @@
 }
 
 .part-mainTtl_img {
-  width: getSize(116%);
+  width: 24%;
+  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, .5));
   @include media(sp, min) {
     width: 97px;
   }
@@ -36,7 +38,7 @@
 
 .part-mainTtl_span {
   @include fontZenMaruGothic;
-  margin-left: getSize(34%);
+  margin-left: 1.5%;
   font-size: 5.5vw;
   line-height: lh(64, 36);
   letter-spacing: 0.05em;
@@ -45,7 +47,7 @@
   filter:drop-shadow(0.4vw 0.4vw 0.4vw rgba(0, 0, 0, 0.7));
   @include media(sp, min) {
     filter:drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
-    margin-left: 28px;
+    margin-left: 15px;
     font-size: 30px;
     line-height: lh(53, 30);
   }
