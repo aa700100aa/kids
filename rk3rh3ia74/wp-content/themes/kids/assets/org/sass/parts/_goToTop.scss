@@ -1,14 +1,15 @@
 .part-goToTopBtn {
   position: relative;
-
-  width: getSize(564vw);
-  height: getSize(138vw);
+  font-size: 4.5vw;
   margin: getSize(30vw) auto 0;
+  width: 53vw;
+  margin-top: 4.5vw;
+  transform: translateX(-0.5vw);
   // border-radius: getSize(5vw);
-  @include media(sp, min) {
+  @include media(pc) {
+    font-size: 18px;
+    width: 200px;
     margin: 30px auto 0;
-    width: 240px;
-    height: 86px;
   }
 }
 
@@ -18,13 +19,16 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-  background-color: $base-b;
   color: #fff;
   font-size: getSize(30vw);
   font-weight: bold;
   border-radius: getSize(5vw);
+  background-color: $base-b;
+  padding: 3.5vw 0;
+  border-radius: 4vw;
   @include media(pc) {
     font-size: 20px;
-    border-radius: 5px;
+    padding: 12px 0;
+    border-radius: 25px;
   }
 }

@@ -24,19 +24,19 @@
     'current' => $current_page,
     'total'   => $total_pages, // 総ページ数
     'mid_size' => $mid_size, // 現在のページの両側の数字の数
-    'prev_text' => 'prev', // 前へのテキストを変更
-    'next_text' => 'next', // 次へのテキストを変更
+    'prev_text' => 'PREV', // 前へのテキストを変更
+    'next_text' => 'NEXT', // 次へのテキストを変更
     'type' => 'array', // ページネーションのリンクを配列として取得
   ));
 
   if ($pagination_links) {
     $check_array = $pagination_links;
     if (!strpos(array_shift($check_array), 'prev')) {
-      $disabled_prev = '<span class="prev page-numbers disabled">prev</span>';
+      $disabled_prev = '<span class="prev page-numbers disabled">PREV</span>';
       array_unshift($pagination_links, $disabled_prev);
     }
     if (!strpos(end($check_array), 'next')) {
-      $disabled_next = '<span class="next page-numbers disabled">next</span>';
+      $disabled_next = '<span class="next page-numbers disabled">NEXT</span>';
       array_push($pagination_links, $disabled_next);
     }
 

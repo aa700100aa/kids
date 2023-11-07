@@ -1,7 +1,7 @@
 .page404-outer {
   position: relative;
   // height: calc(var(--vh) * 100 - #{getSize(125, 750)+"vw"});
-  height: getSize(900,750)+"vw";
+  height: 100vw;
   // min-height: getSize(885, 750) + "vw";
   background-color: #fff;
 
@@ -10,7 +10,7 @@
   // }
 
   @include media(pc) {
-    min-height: 700px;
+    min-height: 500px;
     // height: getSize(400, 1180) + "vw";
     height: 500px;
   }
@@ -18,13 +18,10 @@
 
 .page404-container {
   position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%, 50%);
   text-align: center;
-  @include media(pc) {
-    top: 30%;
-  }
 }
 
 .page404-ttl {
@@ -34,9 +31,10 @@
   line-height: lh(66, 36);
   letter-spacing: 0.05em;
 
+  @include fontZenMaruGothic;
+
   @include media(pc) {
     font-size: 30px;
-    margin-top: 22px;
   }
 }
 

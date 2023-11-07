@@ -90,9 +90,10 @@
 }
 @mixin border_contact {
   @include after;
-  background: #cccccc;
+  background: $base-b;
   width: 100%;
-  height: 1px;
+  height: 2px;
+  border-radius: 1px;
   position: absolute;
   left: 0%;
   bottom: 0;

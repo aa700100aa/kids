@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <main class="flow">
   <?php
-    $args = ['ttl' => '一日の流れ', 'img' => 'kids/flow/icon.png', 'background' => 'kids/flow/26883381_m.jpg'];
+    $args = ['ttl' => '一日の流れ', 'img' => 'kids/flow/icon.png', 'background' => 'kids/flow/kv.jpg'];
     get_template_part('templates/parts/mainTtl', null, $args);
   ?>
   <p class="flow-lead">当園の一日の主な流れをご紹介。<br>ミルク・離乳食・排泄・睡眠など<br>0歳児から一人一人のリズムに合わせて保育を行います。</p>

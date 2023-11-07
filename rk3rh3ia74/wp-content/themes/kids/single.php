@@ -59,7 +59,7 @@ $next_post = get_next_post($args);
   <div class='post-outer'>
     <div class="post-ttlWrap">
       <?php
-        $args = ['ttl' => 'お知らせ', 'img' => 'kids/news/icon.png', 'background' => 'kids/news/titile_background.jpg'];
+        $args = ['ttl' => 'お知らせ', 'img' => 'kids/news/icon.png', 'background' => 'kids/news/kv.jpg'];
         get_template_part('templates/parts/mainTtl', null, $args);
       ?>
     </div>

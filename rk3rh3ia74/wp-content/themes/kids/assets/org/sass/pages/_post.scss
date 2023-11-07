@@ -12,19 +12,15 @@
 }
 
 .post-ttlWrap {
-  margin-top: getSize(44vw);
-  @include media(pc) {
-    margin-top: 68px;
-  }
 }
 
 .post-wrap {
   position: relative;
   width: getSize(650vw);
-  margin: getSize(70vw) auto getSize(80vw);
+  margin: getSize(70vw) auto 0;
   @include media(pc) {
     width: 1000px;
-    margin: 75px auto 309px;
+    margin: 75px auto 0px;
   }
 }
 

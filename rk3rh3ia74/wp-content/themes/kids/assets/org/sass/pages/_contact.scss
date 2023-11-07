@@ -1,15 +1,5 @@
 $sp: 750;
 
-@mixin border_contact {
-  @include after;
-  background: #969696;
-  width: 100%;
-  height: 1px;
-  position: absolute;
-  left: 0%;
-  bottom: 0;
-}
-
 #contact {
   input:focus {
     outline: solid 2px $primary-y;
@@ -19,11 +9,6 @@ $sp: 750;
   overflow: hidden;
   position: relative;
   background-color: #fff;
-  padding-bottom: getSize(86vw);
-
-  @include media(pc) {
-    padding-bottom: 289px;
-  }
 }
 
 .contact-ttl {
@@ -31,7 +16,6 @@ $sp: 750;
   margin: getSize(44vw) auto 0;
   font-weight: bold;
   font-size: getSize(36vw);
-  color: #14509f;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -91,8 +75,10 @@ $sp: 750;
   line-height: 2;
   text-align: center;
   display: inline-block;
+  border-radius: 1vw;
 
   @include media(pc) {
+    border-radius: 5px;
     padding: 0;
     margin-right: 0px;
     width: 43px;
@@ -139,8 +125,20 @@ $sp: 750;
 
 .contact-form_list {
   margin-top: getSize(16vw);
+  position: relative;
   @include media(pc) {
     margin-top: 18px;
+  }
+  &::before {
+    content: "";
+    display: block;
+    background: $base-b;
+    width: 100%;
+    height: 1px;
+    border-radius: 0.5px;
+    position: absolute;
+    left: 0;
+    top: 0;
   }
 }
 
@@ -159,8 +157,15 @@ $sp: 750;
   }
 
   &::after {
-    @include after;
-    @include border_contact;
+    content: "";
+    display: block;
+    background: $base-b;
+    width: 100%;
+    height: 1px;
+    border-radius: 0.5px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
   }
 
   &.mod-personal {
@@ -169,7 +174,7 @@ $sp: 750;
     @include media(pc) {
       display: block;
       padding-top: 45px;
-      padding-bottom: 25px;
+      padding-bottom: 35px;
     }
   }
 
@@ -233,7 +238,8 @@ $sp: 750;
   }
 
   .mod-personal & {
-    justify-content: flex-start;
+    justify-content: center;
+    text-align: center;
     &:last-of-type {
       margin-top: getSize(35vw);
     }
@@ -281,6 +287,10 @@ $sp: 750;
   opacity: 0.7;
   border-radius: getSize(3vw);
 
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #f5f5f5 inset; // 好きな色を背景色に指定できる
+    -webkit-text-fill-color: $base-b; // 好きな色をフォントカラーに指定できる
+  }
   @include media(sp, max) {
     height: getSize(64vw);
   }
@@ -312,6 +322,9 @@ $sp: 750;
     max-width: getSize(650vw);
     min-height: getSize(288vw);
     max-height: getSize(500vw);
+    &:focus-visible {
+      outline: solid 2px $primary-y;
+    }
     @include media(pc) {
       min-width: 635px;
       max-width: 635px;
@@ -423,6 +436,12 @@ mwwpformタグ
         @include none-appearance;
         margin-right: getSize(13vw);
 
+        &:focus {
+          outline:none !important;
+        }
+        &:focus-visible {
+          outline: solid 2px $primary-y !important;
+        }
         @include media(pc) {
           margin-right: 10px;
         }
@@ -486,30 +505,30 @@ mwwpformタグ
 .contact-form_submitBtnFlexWrap {
   &.mod-confirm {
     display: none;
+    @include media(pc) {
+      max-width: 600px;
+      margin: 0 auto;
+    }
   }
 }
 
 .contact-form_submitBtnWrap {
   width: getSize(361vw);
-  height: getSize(86vw);
-  margin: getSize(5vw) auto 0;
+  margin: 5vw auto 0;
 
   @include media(pc) {
-    margin: 11px auto 0 387px;
+    margin: 60px auto 0 387px;
     width: 240px;
-    height: 86px;
   }
 }
 
 .contact-form_submitBtn {
   width: 100%;
-  height: 100%;
-
+  @include fontZenMaruGothic;
   background-color: $base-b;
   color: #fff;
   position: relative;
-  font-size: getSize(28vw);
-  border-radius: getSize(5vw);
+  font-size: 4.5vw;
   display: block;
   margin: 0 auto;
   transition: color 0.3s;
@@ -517,10 +536,19 @@ mwwpformタグ
   line-height: 1;
   letter-spacing: 1.25em;
   text-indent: 0.7em;
+  width: 53vw;
+  margin-top: 4.5vw;
+  border-radius: 4vw;
+  padding: 3.5vw 0;
+  transform: translateX(-0.5vw);
 
   @include media(pc) {
-    font-size: 26px;
-    border-radius: 5px;
+    font-size: 18px;
+    width: 200px;
+    margin-top: 15px;
+    border-radius: 25px;
+    border-radius: 25px;
+    padding: 12px 0;
   }
 
   &.mod-formBack {
@@ -529,21 +557,22 @@ mwwpformタグ
   }
 
   &::after {
-    @include after;
-    background: url(../images/common/arrow3.svg) no-repeat center center/100%
-      auto;
-    width: getSize(14vw);
-    height: getSize(32vw);
+    content: '';
+    display: block;
     position: absolute;
-    top: 51.5%;
+    background-image: url(../images/kids/common/arrow_white.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 2.4vw;
+    height: 4.26224vw;
+    right: 2.2vw;
+    top: 50%;
     transform: translateY(-50%);
-    right: getSize(15vw);
-    transition: opacity 0.3s, background-image 0.3s;
 
     @include media(pc) {
-      right: 17px;
-      width: 14px;
-      height: 30px;
+      width: 9px;
+      height: 15.9834px;
+      right: 10px;
     }
   }
 

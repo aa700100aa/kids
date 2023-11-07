@@ -18,7 +18,7 @@ if ($category) {
 <main class="posts-main">
   <div class="posts-ttlWrap">
     <?php
-      $args = ['ttl' => 'お知らせ', 'img' => 'kids/news/icon.png', 'background' => 'kids/news/titile_background.jpg'];
+      $args = ['ttl' => 'お知らせ', 'img' => 'kids/news/icon.png', 'background' => 'kids/news/kv.jpg'];
       get_template_part('templates/parts/mainTtl', null, $args);
     ?>
   </div>

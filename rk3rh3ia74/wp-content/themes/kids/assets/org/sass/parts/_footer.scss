@@ -6,8 +6,10 @@
   @include fontZenMaruGothic();
   font-weight: 500;
   padding: getSize(56vw) 0 getSize(40vw);
+  margin-top: 16vw;
   @include media(pc,min){
-    padding: 108px 0 40px;
+    margin-top: 160px;
+    padding: 80px 0 40px;
     overflow: hidden;
   }
   a {
@@ -19,25 +21,17 @@
 }
 .footer-innerContainer {
   @include media(pc,min){
-    max-width: 1310px;
+    width: 1100px;
     margin: 0 auto;
-    padding: 0 38px 0 45px;
   }
   @include media(pc,min){
     position: relative;
-  }
-  @media screen and (min-width:1311px) {
-    padding: 0 4% 0 4.6%;
-  }
-  @media screen and (min-width:1400px) {
-    padding: 0 52px 0 64px;
   }
 }
 .footer-inner {
   display: flex;
   flex-wrap: wrap;
   @include media(pc,min){
-    width: 1200px;
     justify-content: space-between;
   }
 }
@@ -77,7 +71,9 @@
   letter-spacing: 0.05em;
   font-weight: bold;
   white-space: nowrap;
+  margin-top: 3vw;
   @include media(pc,min){
+    margin-top: 5px;
     font-size: 16px;
     line-height: lh(33,16);
   }
@@ -95,11 +91,12 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-between;
   @include media(sp,max){
-    margin: 0 auto;
+    margin: 3vw auto 0;
   }
   @include media(pc,min){
-    width: 590px;
+    width: 350px;
   }
 }
 .footer-otherPages_item {
@@ -110,7 +107,7 @@
   margin-top: 2.5vw;
   width: 50%;
   @include media(pc,min){
-    width: 200px;
+    width: 150px;
     font-size: 16px;
     margin-top: 10px;
   }

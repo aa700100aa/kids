@@ -17,8 +17,8 @@ $json_array = json_encode($key);
 
   <div class="contact-outer">
 
-    <?php
-      $args = ['ttl' => 'お問い合わせ', 'img' => 'kids/contact/icon.png', 'background' => 'kids/news/titile_background.jpg'];
+  <?php
+      $args = ['ttl' => 'お問い合わせ', 'img' => 'kids/contact/icon.png', 'background' => 'kids/contact/kv.jpg'];
       get_template_part('templates/parts/mainTtl', null, $args);
     ?>
 

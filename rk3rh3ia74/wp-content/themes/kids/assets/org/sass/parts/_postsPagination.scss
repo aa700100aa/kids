@@ -20,7 +20,8 @@
   line-height: 1;
   letter-spacing: 0.1em;
   font-weight: 500;
-  color: #000;
+  color: $base-b;
+  @include fontZenMaruGothic;
   text-align: center;
   @include media(sp, min) {
     padding: 4px 0px 0;
@@ -54,13 +55,13 @@
       @include after;
       width: getSize(14%, 135);
       padding-top: getSize(20%, 135);
-      background: url(../images/posts/arrow1.png) no-repeat center center / 100%;
+      background: url(../images/kids/common/arrow_brown.svg) no-repeat center center / 100%;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
       @include media(sp, min) {
         width: 9px;
-        padding-top: 13px;
+        padding-top: 17px;
         transform: translateY(-55%);
       }
     }
@@ -70,7 +71,7 @@
     font-weight: 700;
   }
   &.prev {
-    border-right: 1px solid #000;
+    border-right: 1px solid $base-b;
     padding: getSize(6%, 654) 0 getSize(10%, 654) getSize(28%, 654);
     text-align: start;
     @include media(sp, min) {
@@ -79,10 +80,14 @@
     }
     &:after {
       left: 0;
+      transform: translateY(-50%) rotate(180deg);
+      @include media(sp, min) {
+        transform: translateY(-55%) rotate(180deg);
+      }
     }
   }
   &.next {
-    border-left: 1px solid #000;
+    border-left: 1px solid $base-b;
     padding: getSize(6%, 654) getSize(28%, 654) getSize(10%, 654) 0;
     text-align: end;
     @include media(sp, min) {
@@ -91,10 +96,6 @@
     }
     &:after {
       right: 0;
-      transform: translateY(-50%) rotate(180deg);
-      @include media(sp, min) {
-        transform: translateY(-55%) rotate(180deg);
-      }
     }
   }
   &.disabled {

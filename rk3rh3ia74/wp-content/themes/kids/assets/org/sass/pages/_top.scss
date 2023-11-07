@@ -273,7 +273,7 @@ notice
   }
   @include media(pc) {
     width: 1100px;
-    margin: 58px * 2 auto 65px * 2;
+    margin: 58px * 2 auto 0;
   }
 
   @include tab {

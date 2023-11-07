@@ -15,13 +15,6 @@
 }
 
 .contact-outer {
-  #confirm & {
-    padding-bottom: getSize(86vw * 1.5);
-
-    @include media(pc) {
-      padding-bottom: 294px;
-    }
-  }
 }
 
 .contact-requiredTxt,
@@ -60,7 +53,7 @@
 .contact-form_submitBtnWrap {
   #confirm & {
     display: flex;
-    width: getSize(240vw);
+    width: 45%;
     margin: 0 auto;
     @include media(pc) {
       width: 240px;

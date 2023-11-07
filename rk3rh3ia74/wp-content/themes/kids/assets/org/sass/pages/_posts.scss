@@ -15,7 +15,6 @@
 }
 
 .posts-contentWrapInner {
-  border-top: 1px solid #c8c8c8;
   @include media(sp, min) {
     width: 833px;
     border: none;
@@ -23,7 +22,6 @@
 }
 
 .posts-sideMenuOuter {
-  border-top: 1px solid #c8c8c8;
   @include media(sp, min) {
     padding-top: 52px;
     border: none;
