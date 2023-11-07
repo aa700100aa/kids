@@ -53,6 +53,13 @@
 }
 
 .post {
+  img {
+    height: auto;
+    border-radius: 4vw;
+    @include media(pc) {
+      border-radius: 25px;
+    }
+  }
   /*-------- 
   見出し
   ---------*/
@@ -78,12 +85,11 @@
     font-size: getSize(30vw);
     line-height: lh(52, 30);
     margin-bottom: getSize(47vw);
-    padding: 0 getSize(15vw);
+    @include fontZenMaruGothic;
     @include media(pc) {
       font-size: 28px;
       line-height: lh(35, 28);
       margin-bottom: 33px;
-      padding: 0 15px;
     }
   }
 
@@ -362,8 +368,11 @@
   align-items: center;
   justify-content: center;
   background-color: $primary-g;
+  border-radius: 1vw;
+  @include fontZenMaruGothic;
   padding: getSize(6vw) getSize(17vw);
   @include media(pc) {
+    border-radius: 5px;
     padding: 4px 14px;
     order: -1;
     transform: translateY(1px);
@@ -395,7 +404,7 @@
 }
 
 .post-btnBox {
-  border-top: 1px solid $primary-g;
+  border-top: 1px solid $base-b;
   // text-align: center;
   display: flex;
   align-items: center;
@@ -406,7 +415,7 @@
   // }
 
   span {
-    color: $primary-g;
+    color: $base-b;
     font-size: getSize(24vw);
     font-weight: 500;
     @include media(pc) {
@@ -450,9 +459,9 @@
       padding-left: 40px;
     }
     &::before {
-      background: url(../images/common/arrow2-reverse.svg) no-repeat center
+      background: url(../images/kids/common/arrow_circle.svg) no-repeat center
         center/100% auto;
-      transform: translateY(-50%) rotate(180deg);
+      transform: translateY(-60%) rotate(180deg);
       left: getSize(10vw);
       @include media(pc) {
         left: 10px;
@@ -466,9 +475,9 @@
       padding-right: 40px;
     }
     &::before {
-      background: url(../images/common/arrow2-reverse.svg) no-repeat center
+      background: url(../images/kids/common/arrow_circle.svg) no-repeat center
         center/100% auto;
-      transform: translateY(-50%);
+      transform: translateY(-60%);
       right: getSize(10vw);
       @include media(pc) {
         right: 10px;

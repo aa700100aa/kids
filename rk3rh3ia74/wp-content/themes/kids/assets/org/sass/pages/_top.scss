@@ -7,10 +7,6 @@ $minVh: 0.775193798449612;
 .top-outer {
   position: relative;
   overflow: hidden;
-  margin-bottom: 28vw;
-  @include media(pc) {
-    margin-bottom: 120px;
-  }
 }
 
 .top-horizontal {
