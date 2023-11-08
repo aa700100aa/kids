@@ -283,7 +283,7 @@ function get_meta_title()
     $current_category = get_queried_object();
     if ($current_category->parent == 0) {
       // 親カテゴリのページのとき
-      if ($current_category->name == 'NEWS') {
+      if ($current_category->name == 'お知らせ') {
         $current_title = 'お知らせ';
       } elseif ($current_category->name == 'CASE') {
         $current_title = '実績紹介';
@@ -293,7 +293,7 @@ function get_meta_title()
       // 子カテゴリのページのとき
       $current_title = $current_category->name;
       $parent_category = get_term($current_category->parent, 'category');
-      if ($parent_category->name == 'NEWS') {
+      if ($parent_category->name == 'お知らせ') {
         $parent_title = 'お知らせ';
       } elseif ($parent_category->name == 'CASE') {
         $parent_title = '実績紹介';
@@ -304,11 +304,16 @@ function get_meta_title()
   }
 
   // その他
-  if (is_home() || is_front_page()) $page_id = $top_id;
-  if (is_page('contact') || is_page('confirm') || is_page('complete')) $page_id = get_page_by_path('contactdesc');
-
-  $page = get_post($page_id);
-  $title = $page->post_title . ' | ' . (is_front_page() ? get_bloginfo('description') : get_bloginfo('name'));
+  if (is_home() || is_front_page()) {
+    $site_name = get_bloginfo('name');
+    $title = $site_name . ' | ' . '「たのしく げんきに すこやかに」を保育目標とし、お子様を第一優先に考える保育園';
+    return $title;
+  }
+  if (is_page('contact') || is_page('confirm') || is_page('complete')) {
+    $page_id = get_page_by_path('contactdesc');  $page = get_post($page_id);
+    $title = $page->post_title . ' | ' . (is_front_page() ? get_bloginfo('description') : get_bloginfo('name'));
+    return $title;
+  }
   // 404
   if (is_404()) {
     $site_name = get_bloginfo('name'); // サイトのタイトルを取得
@@ -327,12 +332,12 @@ function get_meta_description()
   if (is_category()) {
     $current_category = get_queried_object();
     if ($current_category->parent == 0) {
-      $page_path = ($current_category->name == 'NEWS') ? 'newsdesc' : 'casedesc';
+      $page_path = ($current_category->name == 'お知らせ') ? 'newsdesc' : 'casedesc';
       $page_data = get_page_by_path($page_path);
       $page = get_post($page_data);
       $content = $page->post_content;
 
-      if ($current_category->name == 'NEWS') {
+      if ($current_category->name == 'お知らせ') {
         $description = 'あらかわ保育園のお知らせに関する一覧ページです。';
       } elseif ($current_category->name == 'CASE') {
         $description = 'あらかわ保育園の実績紹介に関する一覧ページです。';
@@ -340,12 +345,12 @@ function get_meta_description()
     } else {
       $current_title = $current_category->name;
       $parent_category = get_term($current_category->parent, 'category');
-      $page_path = ($parent_category->name == 'NEWS') ? 'newsdesc' : 'casedesc';
+      $page_path = ($parent_category->name == 'お知らせ') ? 'newsdesc' : 'casedesc';
       $page_data = get_page_by_path($page_path);
       $page = get_post($page_data);
       $content = $page->post_content;
 
-      if ($parent_category->name == 'NEWS') {
+      if ($parent_category->name == 'お知らせ') {
         $description = 'お知らせの' . $current_title . 'に関する一覧ページです。';
       } elseif ($parent_category->name == 'CASE') {
         $description = '実績紹介の' . $current_title . 'に関する一覧ページです。';
@@ -355,11 +360,15 @@ function get_meta_description()
     return $description;
   } else {
     // トップページ
-    if (is_front_page()) $page_id = get_page_by_path('front-page');
+    if (is_front_page()) {
+      $description_txt = '私たちは保育目標を達成するために日々丁寧な保育を心がけています。子どもたちが成長していけるような保育園を職員みんなでつくっています。';
+    }
     // お問い合わせ
-    if (is_page('contact') || is_page('confirm') || is_page('complete')) $page_id = get_page_by_path('contactdesc');
-    $page = get_post($page_id);
-    $description_txt = $page->post_content;
+    if (is_page('contact') || is_page('confirm') || is_page('complete')){
+      $page_id = get_page_by_path('contactdesc');
+      $page = get_post($page_id);
+      $description_txt = $page->post_content;
+    }
   }
 
   // 表示に不都合な改行や空白などを除外
@@ -771,20 +780,20 @@ function append_structure_data()
         $itemListElement[] = array(
           "@type"    => "ListItem",
           "position" => $position++,
-          "name" => esc_html(get_category($parent_ID)->category_description),
+          "name" => esc_html(get_category($parent_ID)-> name),
           "item"  => esc_url(get_category_link($parent_ID))
         );
         $itemListElement[] = array(
           "@type"    => "ListItem",
           "position" => $position++,
-          "name" => esc_html($wp_obj->name),
+          "name" => esc_html($wp_obj-> name),
           "item"  => esc_url(get_category_link($wp_obj->term_id))
         );
       } else {
         $itemListElement[] = array(
           "@type"    => "ListItem",
           "position" => $position++,
-          "name" => esc_html($wp_obj->description),
+          "name" => esc_html($wp_obj-> name),
           "item"  => esc_url(get_category_link($wp_obj->term_id))
         );
       }
@@ -802,7 +811,7 @@ function append_structure_data()
       $itemListElement[] = array(
         "@type"    => "ListItem",
         "position" => $position++,
-        "name" => esc_html(get_category($breaklist[0]['id'])->category_description),
+        "name" => esc_html(get_category($breaklist[0]['id'])-> name),
         "item"  => esc_url(get_category_link($breaklist[0]['id']))
       );
       //子カテゴリ
