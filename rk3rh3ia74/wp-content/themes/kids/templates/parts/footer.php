@@ -30,9 +30,9 @@
     </div>
     <div class='footer-notes'>
       <div class='footer-notes_inner'>
-        <a class="footer-notes_link" href="<?php echo home_url(); ?>/policy/" >個人情報保護方針</a>
+        <a class="footer-notes_link" href="#policy" >個人情報保護方針</a>
         <div class='footer-notes_separator'></div>
-        <a class="footer-notes_link mod-last" href="<?php echo home_url(); ?>/security/" >情報セキュリティ方針</a>
+        <a class="footer-notes_link mod-last" href="#security" >情報セキュリティ方針</a>
       </div>
       <small class='footer-notes_copyRight'>Copyright © 2023 Arakawa Hoikuen All Right Reserved.</small>
     </div>

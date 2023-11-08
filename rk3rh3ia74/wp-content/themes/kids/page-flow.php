@@ -36,7 +36,7 @@
   </section>
   <section class="flow-time">
     <?php
-      $args = ['img' => 'kids/flow/seven.png','alt' => '9時から11時までのスケジュール'];
+      $args = ['img' => 'kids/flow/nine.png','alt' => '9時から11時までのスケジュール'];
       get_template_part('templates/parts/flowTime', null, $args);
     ?>
     <dl class="flow-time_list">
@@ -60,12 +60,12 @@
       </div>
     </dl>
     <figure class="flow-time_imageWrap">
-      <img class="flow-time_image mod-left" src="<?php echo output_file("/assets/images/kids/flow/photo_01.jpg"); ?>" alt="">
+      <img class="flow-time_image mod-left" src="<?php echo output_file("/assets/images/kids/flow/photo_02.jpg"); ?>" alt="">
     </figure>
   </section>
   <section class="flow-time">
     <?php
-      $args = ['img' => 'kids/flow/seven.png','alt' => '11時から14時までのスケジュール'];
+      $args = ['img' => 'kids/flow/eleven.png','alt' => '11時から14時までのスケジュール'];
       get_template_part('templates/parts/flowTime', null, $args);
     ?>
     <dl class="flow-time_list">
@@ -89,12 +89,12 @@
       </div>
     </dl>
     <figure class="flow-time_imageWrap">
-      <img class="flow-time_image mod-right" src="<?php echo output_file("/assets/images/kids/flow/photo_01.jpg"); ?>" alt="">
+      <img class="flow-time_image mod-right" src="<?php echo output_file("/assets/images/kids/flow/photo_03.jpg"); ?>" alt="">
     </figure>
   </section>
   <section class="flow-time">
     <?php
-      $args = ['img' => 'kids/flow/seven.png','alt' => '14時から延長保育終了時刻までのスケジュール'];
+      $args = ['img' => 'kids/flow/fourteen.png','alt' => '14時から延長保育終了時刻までのスケジュール'];
       get_template_part('templates/parts/flowTime', null, $args);
     ?>
     <dl class="flow-time_list">
@@ -127,7 +127,7 @@
       </div>
     </dl>
     <figure class="flow-time_imageWrap">
-      <img class="flow-time_image mod-left" src="<?php echo output_file("/assets/images/kids/flow/photo_01.jpg"); ?>" alt="">
+      <img class="flow-time_image mod-left" src="<?php echo output_file("/assets/images/kids/flow/photo_04.jpg"); ?>" alt="">
     </figure>
   </section>
 </main>
