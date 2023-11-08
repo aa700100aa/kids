@@ -1,6 +1,7 @@
 import InView from "../module/inView";
 import util from "../module/util";
 import GetUserAgent from "../module/getUserAgent";
+import scrollTo from "../module/scrollTo";
 
 export const top = () => {
   ((d, w) => {
@@ -16,15 +17,31 @@ export const top = () => {
     ここからロードイベント
     ---------*/
     w.addEventListener("load", () => {
-      setTimeout(() => {
-        body.classList.add("add-start");
-      }, 250);
-      setTimeout(() => {
-        body.classList.add("add-borderEnd");
-      }, 1050);
-      setTimeout(() => {
-        body.classList.add("add-change");
-      }, 550);
+      if(location.hash == "#about") {
+        setTimeout(() => {
+          scrollTo({
+            headerPadding: d.getElementById("js-header").clientHeight,
+            target: d.querySelector('#js-about'),
+            durationTime: 500,
+          });
+        }, "300");
+      }
+      const smoothScrollFunc = (() => {
+        const smoothScrollElements = [].slice.call(
+          d.querySelectorAll(".js-smoothScroll")
+        );
+        smoothScrollElements.forEach((target) => {
+          target.addEventListener("click", (event) => {
+            event.preventDefault();
+            let targetPosition = event.currentTarget.href.substring(event.currentTarget.href.indexOf("#"));
+            scrollTo({
+              headerPadding: d.getElementById("js-header").clientHeight,
+              target: d.querySelector('#js-about'),
+              durationTime: 500,
+            });
+          });
+        });
+      })();
 
       /*-------- 
       inView

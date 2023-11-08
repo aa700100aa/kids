@@ -5,42 +5,42 @@ import GetUserAgent from "../module/getUserAgent";
 
 export const common = () => {
   ((d, w) => {
-    // スクロール無効
-    function disableScroll(e) {
-      e.preventDefault();
-    }
-    const scrollOff = () => {
-      d.addEventListener("touchmove", disableScroll, {
-        passive: false,
-      });
-      d.addEventListener("mousewheel", disableScroll, {
-        passive: false,
-      });
-    };
-    scrollOff();
+    // // スクロール無効
+    // function disableScroll(e) {
+    //   e.preventDefault();
+    // }
+    // const scrollOff = () => {
+    //   d.addEventListener("touchmove", disableScroll, {
+    //     passive: false,
+    //   });
+    //   d.addEventListener("mousewheel", disableScroll, {
+    //     passive: false,
+    //   });
+    // };
+    // scrollOff();
 
-    const scrollOn = () => {
-      d.removeEventListener("touchmove", disableScroll, {
-        passive: false,
-      });
-      d.removeEventListener("mousewheel", disableScroll, {
-        passive: false,
-      });
-    };
+    // const scrollOn = () => {
+    //   d.removeEventListener("touchmove", disableScroll, {
+    //     passive: false,
+    //   });
+    //   d.removeEventListener("mousewheel", disableScroll, {
+    //     passive: false,
+    //   });
+    // };
 
     w.addEventListener("load", () => {
       d.body.classList.add("add-loaded");
       const loader = d.getElementById("js-loader");
-      setTimeout(() => {
-        if (d.body.id !== "top") {
-          scrollOn();
-        }
-      }, 100);
-      if (d.body.id == "top") {
-        setTimeout(() => {
-          scrollOn();
-        }, 1050);
-      }
+      // setTimeout(() => {
+      //   if (d.body.id !== "top") {
+      //     scrollOn();
+      //   }
+      // }, 100);
+      // if (d.body.id == "top") {
+      //   setTimeout(() => {
+      //     scrollOn();
+      //   }, 1050);
+      // }
     });
     /**
      * 広範囲で使われる変数
@@ -120,40 +120,6 @@ export const common = () => {
         header.style.left = `-${pageXOffset}px`;
       } else {
         header.style.left = 0;
-      }
-    });
-
-    /**
-     * スムーススクロール
-     */
-    const smoothScrollFunc = (() => {
-      const smoothScrollElements = [].slice.call(
-        d.querySelectorAll(".js-smoothScroll")
-      );
-      smoothScrollElements.forEach((target) => {
-        target.addEventListener("click", (event) => {
-          event.preventDefault();
-          scrollTo({
-            target: d.querySelector(
-              event.currentTarget.children[0].getAttribute("href")
-            ),
-            durationTime: 500,
-          });
-        });
-      });
-    })();
-
-    /**
-     * 別ページからアンカーリンク移動した際のズレ防止
-     */
-    w.addEventListener("load", () => {
-      if (location.hash) {
-        setTimeout(() => {
-          const target = d.querySelector(location.hash);
-          if (target) {
-            target.scrollIntoView();
-          }
-        }, 100);
       }
     });
   })(document, window);

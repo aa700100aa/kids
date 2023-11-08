@@ -27,7 +27,7 @@
           </p>
         </div>
       </div>
-      <section class="top-about">
+      <section class="top-about" id="js-about">
         <h2 class="top-about_title">
           <img class="top-about_titleLogo" src="<?php echo output_file("/assets/images/kids/common/about.png"); ?>" alt="">
           <span class="top-about_titleText">当園について</span>

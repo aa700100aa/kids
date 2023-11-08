@@ -13,9 +13,15 @@
           <li class='footer-otherPages_item'>
             <a class="footer-otherPages_link" href="<?php echo home_url(); ?>" >TOP</a>
           </li>
-          <li class='footer-otherPages_item'>
-            <a class="footer-otherPages_link" href="<?php echo home_url(); ?>/about/" >当園について</a>
-          </li>
+          <?php if (is_front_page()) : ?>
+            <li class='footer-otherPages_item'>
+              <a class="footer-otherPages_link js-smoothScroll" href="#about" >当園について</a>
+            </li>
+          <?php else : ?>
+            <li class='footer-otherPages_item'>
+              <a class="footer-otherPages_link" href="<?php echo home_url(); ?>/#about" >当園について</a>
+            </li>
+          <?php endif; ?>
           <li class='footer-otherPages_item'>
             <a class="footer-otherPages_link" href="<?php echo home_url(); ?>/flow/" >一日の流れ</a>
           </li>

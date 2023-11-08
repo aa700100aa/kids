@@ -49,10 +49,17 @@ if(is_category() || is_single()) {
         <nav class='header-nav'>
           <ul class='header-nav_list'>
             <li class='header-nav_item'>
-              <a class="header-nav_link <?php if( is_page('about') ) echo 'add-active'; ?>" href="<?php echo home_url(); ?>/about/" >
-                <img class="header-nav_img util-pc" src="<?php echo output_file("/assets/images/kids/common/about.png"); ?>" alt="">
-                <span class='header-nav_text'>当園について</span>
-              </a>
+              <?php if (is_front_page()) : ?>
+                <a class="js-smoothScroll header-nav_link <?php if( is_page('about') ) echo 'add-active'; ?>" href="#about" >
+                  <img class="header-nav_img util-pc" src="<?php echo output_file("/assets/images/kids/common/about.png"); ?>" alt="">
+                  <span class='header-nav_text'>当園について</span>
+                </a>
+              <?php else : ?>
+                <a class="header-nav_link <?php if( is_page('about') ) echo 'add-active'; ?>" href="<?php echo home_url(); ?>/#about" >
+                  <img class="header-nav_img util-pc" src="<?php echo output_file("/assets/images/kids/common/about.png"); ?>" alt="">
+                  <span class='header-nav_text'>当園について</span>
+                </a>
+              <?php endif; ?>
             </li>
             <li class='header-nav_item'>
               <a class="header-nav_link <?php if( is_page('flow') ) echo 'add-active'; ?>" href="<?php echo home_url(); ?>/flow/" >

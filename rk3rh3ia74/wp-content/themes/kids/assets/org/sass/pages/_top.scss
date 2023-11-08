@@ -162,6 +162,9 @@ about
   position: relative;
   @include media(pc,min) {
     margin-top: 120px;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 .top-about_imgWrap {
@@ -179,17 +182,17 @@ about
     }
   }
   @include media(pc,min) {
-    width: 300px;
+    width: 280px;
     border-radius: 25px;
     &.mod-first {
       position: absolute;
-      top: 200px;
-      left: 40px;
+      top: 150px;
+      left: 0px;
     }
     &.mod-last {
       position: absolute;
-      top: 200px;
-      right: 40px;
+      top: 250px;
+      right: 0px;
     }
   }
 }
@@ -198,12 +201,22 @@ about
   width: 12vw;
   top: -5vw;
   right: 10vw;
+  @include media(pc,min) {
+    width: 75px;
+    top: -35px;
+    right: 241px;
+  }
 }
 .top-about_cloud {
   position: absolute;
   width: 13vw;
   top: 4vw;
   left: 9vw;
+  @include media(pc,min) {
+    width: 100px;
+    top: 30px;
+    left: 200px;
+  }
 }
 
 /*-------- 
