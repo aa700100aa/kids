@@ -309,7 +309,7 @@ function get_meta_title()
     $title = $site_name . ' | ' . '「たのしく げんきに すこやかに」を保育目標とし、お子様を第一優先に考える保育園';
     return $title;
   }
-  if (is_page('contact') || is_page('confirm') || is_page('complete') || is_single()) {
+  if (is_page('contact') || is_page('confirm') || is_page('complete') || is_single() || is_page('flow')) {
     $page_id = get_page_by_path('contactdesc');  $page = get_post($page_id);
     $title = $page->post_title . ' | ' . (is_front_page() ? get_bloginfo('description') : get_bloginfo('name'));
     return $title;
@@ -365,12 +365,17 @@ function get_meta_description()
       $description_txt = '私たちは保育目標を達成するために日々丁寧な保育を心がけています。子どもたちが成長していけるような保育園を職員みんなでつくっています。';
     }
     // お問い合わせ
-    if (is_page('contact') || is_page('confirm') || is_page('complete') || is_single()){
+    if (is_page('contact') || is_page('confirm') || is_page('complete')){
       // $page_id = get_page_by_path('contactdesc');
       // $page = get_post($page_id);
       // $description_txt = $page->post_content;
       // $description_txt = str_replace('[mwform_formkey', '', $description_txt);
       $description_txt = 'あらかわ保育園のお問い合わせページです。ご質問やご不明点等ございましたら、こちらのフォームからお気軽にお問い合わせください。';
+    }
+    if(is_single() || is_page('flow')) {
+      $page_id = get_page_by_path('contactdesc');
+      $page = get_post($page_id);
+      $description_txt = $page->post_content;
     }
   }
 
