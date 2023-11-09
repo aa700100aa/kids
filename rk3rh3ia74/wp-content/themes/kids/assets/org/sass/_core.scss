@@ -24,6 +24,17 @@ body {
   }
 }
 
+.bodyWrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: calc(var(--loadVh) * 100);
+}
+
+main {
+  flex: 1;
+}
+
 body::-webkit-scrollbar {
   display: none; /*Google Chrome、Safari、Microsoft Edge対応のスクロールバー非表示コード*/
 }

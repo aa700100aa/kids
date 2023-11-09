@@ -118,11 +118,16 @@ export const common = () => {
       })();
     });
 
+    let setBodyHeightFlag = false;
     const setFillHeight = () => {
       const vh = w.innerHeight * 0.01;
       const vw = w.innerWidth * 0.01;
       d.documentElement.style.setProperty("--vh", `${vh}px`);
       d.documentElement.style.setProperty("--vw", `${vw}px`);
+      if(!setBodyHeightFlag) {
+        d.documentElement.style.setProperty('--loadVh', `${vh}px`);
+        setBodyHeightFlag = true;
+      }
     };
     // 画面のサイズ変動があった時に高さを再計算する
     w.addEventListener("resize", () => {

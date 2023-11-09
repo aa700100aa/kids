@@ -17,5 +17,5 @@
       <div class="loader"></div>
     </div>
   </div>
-  <div id="js-scrollElm">
+  <div class="bodyWrap">
     <?php get_template_part('templates/parts/header'); ?>
