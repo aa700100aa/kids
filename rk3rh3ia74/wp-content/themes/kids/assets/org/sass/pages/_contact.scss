@@ -653,11 +653,11 @@ mwwpformタグ
 //   }
 // }
 
-.error {
-  font-size: 0px;
+.mw_wp_form .error {
+  font-size: 0px !important;
   &::before {
     display: block;
-    content: "要求がタイムアウトになりました。\A続けるには、再度「確認画面」を押してください。";
+    content: "要求がタイムアウトになりました。\A続けるには、再度「確認」ボタンを押してください。";
     white-space: pre;
 
     font-size: getSize(24vw);
@@ -666,7 +666,7 @@ mwwpformタグ
     text-align: center;
     @include media(pc) {
       font-size: 15px;
-      content: "要求がタイムアウトになりました。続けるには、再度「確認画面」を押してください。";
+      content: "要求がタイムアウトになりました。続けるには、再度「確認」ボタンを押してください。";
       margin-top: 30px;
     }
   }
