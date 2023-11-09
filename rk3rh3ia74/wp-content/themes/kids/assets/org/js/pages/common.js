@@ -69,26 +69,54 @@ export const common = () => {
     /**
      * ヘッダーメニュー
      */
-    const headerFunc = (() => {
-      const cancelBurgerMenu = () => {
-        d.body.classList.remove(headerOpen);
-        hmbg.classList.add(burgerClose);
-        releaseModal(headerNav);
-      };
-      hmbg.addEventListener("click", (e) => {
-        e.preventDefault();
-        if (!d.body.classList.contains(headerOpen)) {
-          headerNav.scrollTop = 0; //ナビ要素のスクロール位置を初期位置に戻す
-          hmbg.classList.remove(burgerClose);
-          d.body.classList.add(headerOpen);
-          lockModal(headerNav);
-        } else {
-          cancelBurgerMenu();
-        }
-      });
-      if (util.mql.matches) cancelBurgerMenu();
-      util.mql.addListener(cancelBurgerMenu);
-    })();
+    const cancelBurgerMenu = () => {
+      d.body.classList.remove(headerOpen);
+      hmbg.classList.add(burgerClose);
+      releaseModal(headerNav);
+    };
+    hmbg.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (!d.body.classList.contains(headerOpen)) {
+        headerNav.scrollTop = 0; //ナビ要素のスクロール位置を初期位置に戻す
+        hmbg.classList.remove(burgerClose);
+        d.body.classList.add(headerOpen);
+        lockModal(headerNav);
+      } else {
+        cancelBurgerMenu();
+      }
+    });
+    if (util.mql.matches) cancelBurgerMenu();
+    util.mql.addListener(cancelBurgerMenu);
+
+    w.addEventListener("load", () => {
+      if(location.hash == "#about") {
+        setTimeout(() => {
+          scrollTo({
+            headerPadding: d.getElementById("js-header").clientHeight,
+            target: d.querySelector('#js-about'),
+            durationTime: 500,
+          });
+        }, "300");
+      }
+      const smoothScrollFunc = (() => {
+        const smoothScrollElements = [].slice.call(
+          d.querySelectorAll(".js-smoothScroll")
+        );
+        smoothScrollElements.forEach((target) => {
+          target.addEventListener("click", (event) => {
+            if (d.body.classList.contains(headerOpen)) {
+              cancelBurgerMenu();
+            }
+            event.preventDefault();
+            scrollTo({
+              headerPadding: d.getElementById("js-header").clientHeight,
+              target: d.querySelector('#js-about'),
+              durationTime: 500,
+            });
+          });
+        });
+      })();
+    });
 
     const setFillHeight = () => {
       const vh = w.innerHeight * 0.01;
