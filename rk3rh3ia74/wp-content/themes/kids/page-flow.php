@@ -31,7 +31,7 @@
       </div>
     </dl>
     <figure class="flow-time_imageWrap">
-      <img class="flow-time_image mod-right" src="<?php echo output_file("/assets/images/kids/flow/photo_01.jpg"); ?>" alt="">
+      <img class="flow-time_image mod-right js-inView" src="<?php echo output_file("/assets/images/kids/flow/photo_01.jpg"); ?>" alt="">
     </figure>
   </section>
   <section class="flow-time">
@@ -60,7 +60,7 @@
       </div>
     </dl>
     <figure class="flow-time_imageWrap">
-      <img class="flow-time_image mod-left" src="<?php echo output_file("/assets/images/kids/flow/photo_02.jpg"); ?>" alt="">
+      <img class="flow-time_image mod-left js-inView" src="<?php echo output_file("/assets/images/kids/flow/photo_02.jpg"); ?>" alt="">
     </figure>
   </section>
   <section class="flow-time">
@@ -89,7 +89,7 @@
       </div>
     </dl>
     <figure class="flow-time_imageWrap">
-      <img class="flow-time_image mod-right" src="<?php echo output_file("/assets/images/kids/flow/photo_03.jpg"); ?>" alt="">
+      <img class="flow-time_image mod-right js-inView" src="<?php echo output_file("/assets/images/kids/flow/photo_03.jpg"); ?>" alt="">
     </figure>
   </section>
   <section class="flow-time">
@@ -127,7 +127,7 @@
       </div>
     </dl>
     <figure class="flow-time_imageWrap">
-      <img class="flow-time_image mod-left" src="<?php echo output_file("/assets/images/kids/flow/photo_04.jpg"); ?>" alt="">
+      <img class="flow-time_image mod-left js-inView" src="<?php echo output_file("/assets/images/kids/flow/photo_04.jpg"); ?>" alt="">
     </figure>
   </section>
 </main>

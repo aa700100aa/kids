@@ -124,6 +124,7 @@
   text-align: center;
   word-wrap: break-word;
   border-radius: 1vw;
+  white-space: nowrap;
   @include media(sp, min) {
     padding: 4px 14px 5px;
     font-size: 12px;

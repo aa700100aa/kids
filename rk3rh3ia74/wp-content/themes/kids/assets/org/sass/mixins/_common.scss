@@ -312,20 +312,37 @@
 
 }
 
+@mixin fadeUp {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: transform 0.3s, opacity 0.5s;
+  &.add-inView {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  &.add-transition {
+    transition: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+  }
+}
 
-
-// @mixin fadeUp {
-//   opacity: 0;
-//   position: relative;
-//   transform: translateY(50px);
-//   transition: transform 0.5s, opacity 0.3s;
-
-//   &.add-inView {
-//     opacity: 1;
-//     transform: translateY(0);
-//   }
-// }
-
+@mixin fade {
+  opacity: 0;
+  transition: opacity 0.5s;
+  &.add-inView {
+    opacity: 1;
+  }
+  &.add-transition {
+    transition: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+  }
+}
 
 @mixin screenBelowKv {
   @media screen and (max-width: 1100px) {
@@ -337,4 +354,92 @@
 @mixin textIndent {
   padding-left: 1em;
   text-indent: -1em;
+}
+
+@mixin iconDisplay {
+  opacity: 0;
+  transform: scale(0);
+  transition: 900ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition-property: transform,opacity;
+  backface-visibility: hidden;
+  transform-origin: center center;
+  display: inline-block;
+  &.add-inView {
+    opacity: 1;
+    transform: scale(1);
+  }
+  &.add-transition {
+    transition: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+  }
+}
+
+.mod-scale,.mod-scale2,.mod-rotateRight,.mod-rotateLeft {
+  animation-fill-mode:backwards;
+  animation-duration:2s;
+  animation-iteration-count:infinite;
+  animation-timing-function:linear;
+  animation-delay: 0s;
+  display: inline-block;
+}
+.mod-scale {
+  animation-name: objectScale;
+}
+.mod-scale2 {
+  animation-delay: 1s;
+  animation-name: objectScale;
+}
+.mod-rotateRight {
+  animation-name: objectRotateRight;
+  transform-origin: center;
+}
+.mod-rotateLeft {
+  animation-delay: 1s;
+  animation-name: objectRotateLeft;
+  transform-origin: center;
+}
+@keyframes objectScale{
+0% {
+  transform: scale(1.05);
+}
+50% {
+  transform: scale(1.05);
+}
+51% {
+  transform: scale(1);
+}
+100% {
+  transform: scale(1);
+}
+}
+@keyframes objectRotateRight{
+0% {
+  transform: rotate(0deg);
+}
+50% {
+  transform: rotate(0deg);
+}
+51% {
+  transform: rotate(3deg);
+}
+100% {
+  transform: rotate(3deg);
+}
+}
+@keyframes objectRotateLeft{
+0% {
+  transform: rotate(-3deg);
+}
+50% {
+  transform: rotate(-3deg);
+}
+51% {
+  transform: rotate(0deg);
+}
+100% {
+  transform: rotate(0deg);
+}
 }

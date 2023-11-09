@@ -101,20 +101,21 @@ body {
     margin: 0 auto;
     position: relative;
     #top & {
-      &:before,&:after {
-        content: '';
+      .header-inner_before,.header-inner_after {
+        @include fade;
+        transition-delay: 1s;
         display: inline-block;
         position: absolute;
         width: 653px;
         height: 195px;
       }
-      &:before {
+      .header-inner_before {
         top: -1px;
         left: 50%;
         transform: translate(-1020px);
         background: url(../images/kids/common/flag_left.png) no-repeat center/contain;
       }
-      &:after {
+      .header-inner_after {
         top: -1px;
         right: 50%;
         transform: translate(1020px);
@@ -124,11 +125,11 @@ body {
   }
   @include large_desktop {
     #top & {
-      &:before {
+      .header-inner_before {
         transform: translate(0px);
         left: -60px;
       }
-      &:after {
+      .header-inner_after {
         transform: translate(0px);
         right: -60px;
       }
@@ -136,11 +137,11 @@ body {
   }
   @include small_desktop {
     #top & {
-      &:before {
+      .header-inner_before {
         transform: translate(0px);
         left: -420px;
       }
-      &:after {
+      .header-inner_after {
         transform: translate(0px);
         right: -420px;
       }
@@ -243,7 +244,12 @@ body {
     top: 14px;
     left: 50%;
     transform: translateX(-50%);
+    transform-origin: center center;
+    display: inline-block;
   }
+}
+.header-logo_inner {
+  @include iconDisplay;
 }
 .header-logo_link {
   display: flex;
@@ -325,6 +331,8 @@ body {
   }
 }
 .header-nav_item {
+  @include fadeUp;
+  transition-delay: 1s;
   @include media(sp,max){
     &:after {
       background-color: #fff;
@@ -342,7 +350,8 @@ body {
       margin-left: 20px;
     }
     &:nth-child(1),&:nth-child(2) {
-      transform: translateX(-17px);
+      position: relative;
+      left: -17px;
     }
   }
 }

@@ -46,26 +46,10 @@ export const top = () => {
       /*-------- 
       inView
       ---------*/
-      if (ua.isIphone || ua.isIpad) {
-        const inViewEl = [].slice.call(d.querySelectorAll(".js-inView"));
-        inViewEl.forEach((elm, index) => {
-          const offsetBottom =
-            elm.getBoundingClientRect().top + pageYOffset + elm.offsetHeight;
-          if (offsetBottom < innerHeight) {
-            elm.style.transitionDelay = `${1.1 + 0.1 * index}s`;
-          }
-        });
-      }
 
       const setInView = () => {
-        const visibleType = 540 < innerWidth ? 120 : 80;
-        const fadeElmTop = d.getElementsByClassName("js-fadeIn_top");
         new InView({
-          visibleType,
-        });
-        new InView({
-          visibleType: "bottom",
-          elemment: fadeElmTop,
+          visibleType: "top"
         });
       };
       setInView();

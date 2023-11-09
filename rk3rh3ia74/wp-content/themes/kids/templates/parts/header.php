@@ -15,26 +15,41 @@ function sortCategoryByAncestors() {
 if(is_category() || is_single()) {
   $ancestorCat = mb_strtolower(sortCategoryByAncestors()[0]['name']);
 }
+
+
+$prevUrl = $_SERVER['HTTP_REFERER'];
+$domain = $_SERVER['SERVER_NAME'];
+$headerClass = "";
+
+if (strpos($prevUrl, $domain) == true || !(is_home() || is_front_page()) ) {
+  $headerClass = "add-transition add-inView";
+}
 ?>
 <header class='header' id='js-header'>
   <div class='header-outer'>
     <div class='header-inner'>
+      <div class="header-inner_before js-inView <?php echo $headerClass; ?>"></div>
+      <div class="header-inner_after js-inView <?php echo $headerClass; ?>"></div>
       <div class="header-border"></div>
     <?php if (is_front_page()) : ?>
       <div class='header-logoWrap'>
         <h1 class='header-logo'>
-          <span class="header-logo_link">
-            <img class="header-logo_icon" src="<?php echo output_file("/assets/images/kids/common/icon.svg"); ?>" alt="">
-            <img class="header-logo_title" src="<?php echo output_file("/assets/images/kids/common/title.svg"); ?>" alt="あらかわ保育園">
+          <span class="header-logo_inner js-inView <?php echo $headerClass; ?>">
+            <span class="header-logo_link">
+              <img class="header-logo_icon" src="<?php echo output_file("/assets/images/kids/common/icon.svg"); ?>" alt="">
+              <img class="header-logo_title" src="<?php echo output_file("/assets/images/kids/common/title.svg"); ?>" alt="あらかわ保育園">
+            </span>
           </span>
         </h1>
     <?php else : ?>
       <div class='header-logoWrap'>
         <div class='header-logo'>
-          <a class="header-logo_link" href="<?php echo home_url(); ?>/" >
-            <img class="header-logo_icon" src="<?php echo output_file("/assets/images/kids/common/icon.svg"); ?>" alt="">
-            <img class="header-logo_title" src="<?php echo output_file("/assets/images/kids/common/title.svg"); ?>" alt="あらかわ保育園">
-          </a>
+          <span class="header-logo_inner js-inView <?php echo $headerClass; ?>">
+            <a class="header-logo_link" href="<?php echo home_url(); ?>/" >
+              <img class="header-logo_icon" src="<?php echo output_file("/assets/images/kids/common/icon.svg"); ?>" alt="">
+              <img class="header-logo_title" src="<?php echo output_file("/assets/images/kids/common/title.svg"); ?>" alt="あらかわ保育園">
+            </a>
+          </span>
         </div>
     <?php endif; ?>
         <button class='header-burgerIcon' id='js-hmbg'>
@@ -48,7 +63,7 @@ if(is_category() || is_single()) {
       <div class='header-content' id="js-headerNav">
         <nav class='header-nav'>
           <ul class='header-nav_list'>
-            <li class='header-nav_item'>
+            <li class='header-nav_item js-inView <?php echo $headerClass; ?>'>
               <?php if (is_front_page()) : ?>
                 <a class="js-smoothScroll header-nav_link <?php if( is_page('about') ) echo 'add-active'; ?>" href="#about" >
                   <img class="header-nav_img util-pc" src="<?php echo output_file("/assets/images/kids/common/about.png"); ?>" alt="">
@@ -61,19 +76,19 @@ if(is_category() || is_single()) {
                 </a>
               <?php endif; ?>
             </li>
-            <li class='header-nav_item'>
+            <li class='header-nav_item js-inView <?php echo $headerClass; ?>'>
               <a class="header-nav_link <?php if( is_page('flow') ) echo 'add-active'; ?>" href="<?php echo home_url(); ?>/flow/" >
                 <img class="header-nav_img util-pc" src="<?php echo output_file("/assets/images/kids/common/flow.png"); ?>" alt="">
                 <span class='header-nav_text'>一日の流れ</span>
               </a>
             </li>
-            <li class='header-nav_item'>
+            <li class='header-nav_item js-inView <?php echo $headerClass; ?>'>
               <a class="header-nav_link <?php if($ancestorCat == 'news') echo 'add-active';?>" href="<?php echo home_url(); ?>/category/news/" >
                 <img class="header-nav_img util-pc" src="<?php echo output_file("/assets/images/kids/common/news.png"); ?>" alt="">
                 <span class='header-nav_text'>お知らせ</span>
               </a>
             </li>
-            <li class='header-nav_item'>
+            <li class='header-nav_item js-inView <?php echo $headerClass; ?>'>
               <a class="header-nav_link <?php if( is_page('contact') ) echo 'add-active'; ?>" href="<?php echo home_url(); ?>/contact/" >
                 <img class="header-nav_img util-pc" src="<?php echo output_file("/assets/images/kids/common/contact.png"); ?>" alt="">
                 <span class='header-nav_text'>お問い合わせ</span>

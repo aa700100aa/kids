@@ -92,7 +92,7 @@ $next_post = get_next_post($args);
             <span>前の記事</span>
           </div>
         <?php endif; ?>
-        <a class="post-backIndex js-backToIndex" href="<?php echo $back_url; ?>">
+        <a class="post-backIndex js-backToIndex" href="/category/news/">
           <span>記事一覧へ戻る</span>
         </a>
         <?php if (!empty($prev_post)) : ?>
