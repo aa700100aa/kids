@@ -11,7 +11,7 @@
   <?php wp_head(); ?>
 </head>
 
-<body id="<?php echo is_single() ? 'post' : set_body_id(); ?>">
+<body class="add-preload" id="<?php echo is_single() ? 'post' : set_body_id(); ?>">
   <div id="js-loader" class="loader_container">
     <div class="loader_position">
       <div class="loader"></div>

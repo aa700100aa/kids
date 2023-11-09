@@ -17,25 +17,24 @@ export const top = () => {
     ここからロードイベント
     ---------*/
     w.addEventListener("load", () => {
-      /*-------- 
-      inView
-      ---------*/
-
-      const setInView = () => {
+      //headerとkvのtransitionが無効化されている場合
+      if(d.getElementsByClassName('add-transition').length != 0){
+        //すぐに発火してよい
         new InView({
           visibleType: "top"
         });
-      };
-      setInView();
-
-      /*-------- 
-      utilMqlの判定
-      ---------*/
-
-      const listener = (e) => {
-        setInView();
-      };
-      util.mql.addListener(listener);
+      } else {
+        //headerとkvの表示が終わってから発火
+        new InView({
+          elemment: document.getElementsByClassName('js-firstInView'),
+          visibleType: "top"
+        });
+        setTimeout(()=>{
+          new InView({
+            visibleType: "top"
+          });
+        },2000);
+      }
     });
   })(document, window);
 };

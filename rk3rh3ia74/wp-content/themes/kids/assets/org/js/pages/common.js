@@ -29,6 +29,7 @@ export const common = () => {
     // };
 
     w.addEventListener("load", () => {
+      d.body.classList.remove("add-preload");
       d.body.classList.add("add-loaded");
       const loader = d.getElementById("js-loader");
       // setTimeout(() => {
