@@ -171,6 +171,7 @@ $sp: 750;
   &.mod-personal {
     padding-top: getSize(45vw);
     padding-bottom: getSize(35vw);
+    text-align: center;
     @include media(pc) {
       display: block;
       padding-top: 45px;
@@ -240,7 +241,8 @@ $sp: 750;
   .mod-personal & {
     justify-content: center;
     text-align: center;
-    &:last-of-type {
+    display: inline-block;
+    & + .contact-form_inquiryTerm {
       margin-top: getSize(35vw);
     }
     @include media(pc) {
@@ -249,7 +251,7 @@ $sp: 750;
       &:first-of-type {
         margin-top: -7px;
       }
-      &:last-of-type {
+      & + .contact-form_inquiryTerm {
         margin-top: 36px;
       }
     }
@@ -259,6 +261,14 @@ $sp: 750;
     @include media(pc) {
       width: 200px;
     }
+  }
+}
+
+.contact-form_parsonal {
+  color: $base-b;
+  text-decoration:underline;
+  &:focus-visible {
+    outline: solid 2px $primary-y !important;
   }
 }
 
@@ -541,6 +551,10 @@ mwwpformタグ
   border-radius: 4vw;
   padding: 3.5vw 0;
   transform: translateX(-0.5vw);
+
+  &:focus-visible {
+    outline: solid 2px $primary-y !important;
+  }
 
   @include media(pc) {
     font-size: 18px;

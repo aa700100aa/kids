@@ -411,7 +411,7 @@ notice
   font-size: getSize(24, 750) + "vw";
 
   line-height: lh(37, 24);
-  text-align: justify;
+  text-align: left;
   margin-top: getSize(8, 750) + "vw";
   @include santen;
 
