@@ -60,6 +60,15 @@ if (strpos($prevUrl, $domain) == true || !(is_home() || is_front_page()) ) {
         <figure class="top-about_cloud mod-scale">
           <img class="js-inView" src="<?php echo output_file("/assets/images/kids/top/about/cloud.png"); ?>" alt="">
         </figure>
+        <figure class="top-about_flowerPink mod-scale">
+          <img class="js-inView" src="<?php echo output_file("/assets/images/kids/top/about/flower_pink.png"); ?>" alt="">
+        </figure>
+        <figure class="top-about_flowerYellow mod-scale2 util-pc">
+          <img class="js-inView" src="<?php echo output_file("/assets/images/kids/top/about/flower_yellow.png"); ?>" alt="">
+        </figure>
+        <figure class="top-about_bird mod-rotateLeft">
+          <img class="js-inView" src="<?php echo output_file("/assets/images/kids/top/about/bird.png"); ?>" alt="">
+        </figure>
       </section>
       <section class="top-flow">
         <h2 class="top-flow_title js-inView">
@@ -79,6 +88,15 @@ if (strpos($prevUrl, $domain) == true || !(is_home() || is_front_page()) ) {
             ?>
           </div>
         </div>
+        <figure class="top-about_note mod-rotateRight">
+          <img class="js-inView" src="<?php echo output_file("/assets/images/kids/top/flow/note.png"); ?>" alt="">
+        </figure>
+        <figure class="top-about_crayon mod-scale2">
+          <img class="js-inView" src="<?php echo output_file("/assets/images/kids/top/flow/crayon.png"); ?>" alt="">
+        </figure>
+        <figure class="top-about_blocks mod-rotateLeft util-pc">
+          <img class="js-inView" src="<?php echo output_file("/assets/images/kids/top/flow/blocks.png"); ?>" alt="">
+        </figure>
       </section>
       <section class="top-notice">
           <h2 class="top-notice_title js-inView">

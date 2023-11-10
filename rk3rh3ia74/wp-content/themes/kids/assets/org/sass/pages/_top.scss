@@ -202,7 +202,7 @@ about
     }
     &.mod-last {
       position: absolute;
-      top: 250px;
+      top: 350px;
       right: 0px;
     }
   }
@@ -236,6 +236,46 @@ about
   }
 }
 
+.top-about_flowerPink,.top-about_flowerYellow {
+  position: absolute;
+  img {
+    @include fadeUp;
+  }
+}
+.top-about_flowerPink {
+  bottom: -5vw;
+  width: 12vw;
+  left: 4vw;
+  @include media(pc,min) {
+    width: 60px;
+    top: 400px;
+    left: 137px;
+  }
+}
+
+.top-about_flowerYellow {
+  @include media(pc,min) {
+    width: 60px;
+    top: 400px;
+    left: 199px;
+  }
+}
+
+.top-about_bird  {
+  img {
+    @include fadeUp;
+  }
+  position: absolute;
+  width: 15vw;
+  bottom: -13vw;
+  right: 6vw;
+  @include media(pc,min) {
+    width: 70px;
+    bottom: 202px;
+    right: 175px;
+  }
+}
+
 /*-------- 
 flow
 ---------*/
@@ -247,6 +287,9 @@ flow
   @include media(pc,min) {
     margin-top: 100px;
     text-align: justify;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 .top-flow_wrap {
@@ -286,6 +329,48 @@ flow
   margin-top: 3vw;
   @include media(pc,min) {
     margin-top: 15px;
+  }
+}
+
+.top-about_note {
+  img {
+    @include fadeUp;
+  }
+  position: absolute;
+  top: 12vw;
+  left: 9vw;
+  width: 10vw;
+  @include media(pc,min) {
+    width: 65px;
+    top: 42px;
+    left: 75px;
+  }
+}
+
+.top-about_crayon {
+  img {
+    @include fadeUp;
+  }
+  position: absolute;
+  bottom: -18vw;
+  right: 3vw;
+  width: 30vw;
+  @include media(pc,min) {
+    width: 175px;
+    bottom: 319px;
+    right: 88px;
+  }
+}
+
+.top-about_blocks {
+  img {
+    @include fadeUp;
+  }
+  @include media(pc,min) {
+    position: absolute;
+    width: 84px;
+    bottom: -31px;
+    right: 112px;
   }
 }
 
