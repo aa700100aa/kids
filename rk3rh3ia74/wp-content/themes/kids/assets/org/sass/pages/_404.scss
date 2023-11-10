@@ -52,7 +52,5 @@
   }
 }
 #notFound .footer {
-  @include media(pc,min){
-    margin-top: -47px;
-  }
+  margin-top: 0px;
 }
