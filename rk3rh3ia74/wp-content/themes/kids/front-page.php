@@ -13,8 +13,8 @@ if (strpos($prevUrl, $domain) == true || !(is_home() || is_front_page()) ) {
     <div class="top-vertical">
       <div class="top-kv js-firstInView <?php echo $headerClass; ?>">
         <picture>
-          <source media="(min-width: 768px)" srcset="<?php echo output_file("/assets/images/kids/top/kv/pc/kv.jpg"); ?>" />
-          <img src="<?php echo output_file("/assets/images/kids/top/kv/kv.jpg"); ?>" alt="" />
+          <source media="(min-width: 768px)" srcset="<?php echo output_file("/assets/images/kids/top/kv/pc/kv.jpg"); ?>" >
+          <img src="<?php echo output_file("/assets/images/kids/top/kv/kv.jpg"); ?>" alt="" >
         </picture>
         <div class="top-kv_textWrap">
           <p class="top-kv_text">
